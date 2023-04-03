@@ -32,27 +32,32 @@ function SignupFormPage() {
     // ]
 
 
+
+    const demoLogin = (e) => {
+        e.preventDefault();
+        return dispatch(sessionActions.login({credential: 'demo@user.io', password: 'password'}))
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
-        if (email !== confirmEmail) {
+
+        if  (email !== confirmEmail) {
             return setErrors(['Your email must be the same as your confirmed email']);
+        } else {
+            return dispatch(sessionActions.signup({email, username, password}))
+                .catch(async (res) => {
+                    let data;
+                    try {
+                        data = await res.clone().json();
+                    } catch {
+                        data = await res.text();
+                    }
+                    if (data?.errors) setErrors(data.errors);
+                    else if (data) setErrors([data]);
+                    else setErrors([res.statusText]);
+                });
         }
-
-
-
-        return dispatch(sessionActions.signup({email, username, password}))
-            .catch(async (res) => {
-                let data;
-                try {
-                    data = await res.clone().json();
-                } catch {
-                    data = await res.text();
-                }
-                if (data?.errors) setErrors(data.errors);
-                else if (data) setErrors([data]);
-                else setErrors([res.statusText]);
-            });
     }
 
 
@@ -124,6 +129,7 @@ function SignupFormPage() {
                 
 
                 <button type='submit'>Sign Up</button>
+                <button onClick={demoLogin}>Demo Login</button>
             </form>
         </>
     )
