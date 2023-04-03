@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: moodify_production
-  username: moodify
-  password: <%= ENV["MOODIFY_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>

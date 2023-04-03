@@ -16,20 +16,20 @@ function SignupFormPage() {
 
     if (sessionUser) return <Redirect to="/" />;
 
-    const months = [
-        <option value="1">January</option>,
-        <option value="2">February</option>,
-        <option value="3">March</option>,
-        <option value="4">April</option>,
-        <option value="5">May</option>,
-        <option value="6">June</option>,
-        <option value="7">July</option>,
-        <option value="8">August</option>,
-        <option value="9">September</option>,
-        <option value="10">October</option>,
-        <option value="11">November</option>,
-        <option value="12">December</option>
-    ]
+    // const months = [
+    //     <option value="1">January</option>,
+    //     <option value="2">February</option>,
+    //     <option value="3">March</option>,
+    //     <option value="4">April</option>,
+    //     <option value="5">May</option>,
+    //     <option value="6">June</option>,
+    //     <option value="7">July</option>,
+    //     <option value="8">August</option>,
+    //     <option value="9">September</option>,
+    //     <option value="10">October</option>,
+    //     <option value="11">November</option>,
+    //     <option value="12">December</option>
+    // ]
 
 
     const handleSubmit = (e) => {
@@ -111,7 +111,7 @@ function SignupFormPage() {
                         required
                     />
                 </label> 
-                <label>
+                {/* <label>
                     Month
                     <select
                         name="month" id="month"
@@ -120,7 +120,7 @@ function SignupFormPage() {
                         onChange={(e) => setUsername(e.target.value)}
                         required
                     />
-                </label> 
+                </label>  */}
                 
 
                 <button type='submit'>Sign Up</button>
