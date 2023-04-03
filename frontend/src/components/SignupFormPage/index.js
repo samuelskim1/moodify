@@ -12,27 +12,47 @@ function SignupFormPage() {
     const [confirmEmail, setConfirmEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
+    
 
     if (sessionUser) return <Redirect to="/" />;
 
+    const months = [
+        <option value="1">January</option>,
+        <option value="2">February</option>,
+        <option value="3">March</option>,
+        <option value="4">April</option>,
+        <option value="5">May</option>,
+        <option value="6">June</option>,
+        <option value="7">July</option>,
+        <option value="8">August</option>,
+        <option value="9">September</option>,
+        <option value="10">October</option>,
+        <option value="11">November</option>,
+        <option value="12">December</option>
+    ]
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (email === confirmEmail) {
-            setErrors([]);
-            return dispatch(sessionActions.signup({email, username, password}))
-                .catch(async (res) => {
-                    let data;
-                    try {
-                        data = await res.clone().json();
-                    } catch {
-                        data = await res.text();
-                    }
-                    if (data?.errors) setErrors(data.errors);
-                    else if (data) setErrors([data]);
-                    else setErrors([res.statusText]);
-                })
+        setErrors([]);
+        if (email !== confirmEmail) {
+            return setErrors(['Your email must be the same as your confirmed email']);
         }
-        return setErrors(['Your email must be the same as your confirmed email'])
+
+
+
+        return dispatch(sessionActions.signup({email, username, password}))
+            .catch(async (res) => {
+                let data;
+                try {
+                    data = await res.clone().json();
+                } catch {
+                    data = await res.text();
+                }
+                if (data?.errors) setErrors(data.errors);
+                else if (data) setErrors([data]);
+                else setErrors([res.statusText]);
+            });
     }
 
 
@@ -90,7 +110,19 @@ function SignupFormPage() {
                         onChange={(e) => setUsername(e.target.value)}
                         required
                     />
-                </label>
+                </label> 
+                <label>
+                    Month
+                    <select
+                        name="month" id="month"
+                        value={username}
+                        placeholder='Month'
+                        onChange={(e) => setUsername(e.target.value)}
+                        required
+                    />
+                </label> 
+                
+
                 <button type='submit'>Sign Up</button>
             </form>
         </>
