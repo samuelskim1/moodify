@@ -1,0 +1,43 @@
+form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    border-style: solid;
+    border-color: black;
+    border-radius: 5px;
+    width: 60%;
+    margin: auto;
+}
+
+form label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 20px;
+}
+
+button {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+input {
+    margin: 20px;
+    padding: 10px 20px 10px 20px;
+    font-family: 'Franklin Gothic', 'Arial Narrow', sans-serif;
+}
+
+ul {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    color: red;
+    margin: auto;
+    list-style-type: none;
+    padding-inline-start: 0px;
+
+}
