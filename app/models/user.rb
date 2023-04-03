@@ -16,8 +16,8 @@ class User < ApplicationRecord
     length: { in: 3..30},
     format: { without: URI::MailTo::EMAIL_REGEXP, message:  "can't be an email" }
   
-  validates :birth_date, presence: true
-  validates :gender, presence: true
+  # validates :birth_date, presence: true
+  # validates :gender, presence: true
   validates :session_token, uniqueness: true, presence: true
 
   def self.find_by_credentials(credential, password)
