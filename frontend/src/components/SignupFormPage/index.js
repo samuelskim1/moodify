@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, NavLink } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
 
@@ -62,60 +62,66 @@ function SignupFormPage() {
 
 
     return (
-        <>
+        <div className='signup_page'>
             <header>
-                <div>
-                    {/* <a>
-                    </a> */}
-                    <h2>Sign up for free to start listening.</h2>
+                <div className="header_container">
+                    <div className="logo">
+                        <i className="fa-brands fa-spotify fa-2x"></i>
+                        <h2>Moodify</h2>
+                    </div>
+                    <h2 className="signup_title">Sign up for free to start listening.</h2>
                 </div>
             </header>
-        
-            <form onSubmit={handleSubmit}>
-                <h3>Sign up with your email address</h3>
-                <ul>
-                    {errors.map(error => <li key={error}>{error}</li>)}
-                </ul>
-                <label>
-                    What is your email?
-                    <input
-                        type="text"
-                        value={email}
-                        placeholder='Enter your email.'
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
-                </label>
-                <label>
-                    Confirm your email
-                    <input
-                        type="text"
-                        value={confirmEmail}
-                        placeholder='Enter your email again.'
-                        onChange={(e) => setConfirmEmail(e.target.value)}
-                        required
-                    />
-                </label>
-                <label>
-                    Create a password
-                    <input
-                        type="text"
-                        value={password}
-                        placeholder='Create a password.'
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                </label>
-                <label>
-                    What should we call you?
-                    <input
-                        type="text"
-                        value={username}
-                        placeholder='Enter a profile name'
-                        onChange={(e) => setUsername(e.target.value)}
-                        required
-                    />
-                </label> 
+            
+            <form onSubmit={handleSubmit} className="forms" id="signup_form">
+                <h1>Sign up with your email address</h1>
+                <div className="signup_errors">
+                    <ul>
+                        {errors.map(error => <li key={error}>{error}</li>)}
+                    </ul>
+                </div>
+                <div className="signup_labels">
+                    <label>
+                        What is your email?
+                        <input
+                            type="text"
+                            value={email}
+                            placeholder='Enter your email.'
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
+                    </label>
+                    <label>
+                        Confirm your email
+                        <input
+                            type="text"
+                            value={confirmEmail}
+                            placeholder='Enter your email again.'
+                            onChange={(e) => setConfirmEmail(e.target.value)}
+                            required
+                        />
+                    </label>
+                    <label>
+                        Create a password
+                        <input
+                            type="password"
+                            value={password}
+                            placeholder='Create a password.'
+                            onChange={(e) => setPassword(e.target.value)}
+                            required
+                        />
+                    </label>
+                    <label>
+                        What should we call you?
+                        <input
+                            type="text"
+                            value={username}
+                            placeholder='Enter a profile name'
+                            onChange={(e) => setUsername(e.target.value)}
+                            required
+                        />
+                    </label> 
+                </div>
                 {/* <label>
                     Month
                     <select
@@ -131,7 +137,11 @@ function SignupFormPage() {
                 <button type='submit'>Sign Up</button>
                 <button onClick={demoLogin}>Demo Login</button>
             </form>
-        </>
+            <div className='login_link'>
+                <span>Have an account? <NavLink to="/login">Log In.</NavLink></span>
+            </div>
+        </div>
+        
     )
 }
 
