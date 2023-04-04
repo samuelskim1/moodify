@@ -40,27 +40,37 @@ function SignupFormPage() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setErrors([]);
+        const currentErrors = {};
+        // setErrors([]);
 
-        if  (email !== confirmEmail) {
-            return setErrors(['Your email must be the same as your confirmed email']);
-        } else {
-            return dispatch(sessionActions.signup({email, username, password}))
-                .catch(async (res) => {
-                    let data;
-                    try {
-                        data = await res.clone().json();
-                    } catch {
-                        data = await res.text();
-                    }
-                    if (data?.errors) setErrors(data.errors);
-                    else if (data) setErrors([data]);
-                    else setErrors([res.statusText]);
-                });
+        if (email !== confirmEmail) currentErrors['ConfirmEmailError'] = 'Your email must be the same as your confirmed email';
+        return dispatch(sessionActions.signup({email, username, password}))
+            .catch(async (res) => {
+                let data;
+                try {
+                    data = await res.clone().json();
+                } catch {
+                    data = await res.text();
+                }
+                if (data?.errors) {
+                    
+                    data.errors.map(error => {
+                        if (error.includes('Email is invalid')) {
+                            currentErrors['EmailError'] = error
+                        } else if (error.includes('Password')) {
+                            currentErrors['PasswordError'] = error
+                        } else {
+                            currentErrors['UsernameError'] = error;
+                        }
+                    })
+                }
+
+                setErrors(currentErrors);
+                // else if (data) setErrors([data]);
+                // else setErrors([res.statusText]);
+            });
         }
-    }
-
-
+    
     return (
         <div className='signup_page'>
             <header>
@@ -75,11 +85,6 @@ function SignupFormPage() {
             
             <form onSubmit={handleSubmit} className="forms" id="signup_form">
                 <h1>Sign up with your email address</h1>
-                <div className="signup_errors">
-                    <ul>
-                        {errors.map(error => <li key={error}>{error}</li>)}
-                    </ul>
-                </div>
                 <div className="signup_labels">
                     <label>
                         What is your email?
@@ -88,9 +93,9 @@ function SignupFormPage() {
                             value={email}
                             placeholder='Enter your email.'
                             onChange={(e) => setEmail(e.target.value)}
-                            required
                         />
                     </label>
+                    <p className='signup-errors'>{errors['EmailError']}</p>
                     <label>
                         Confirm your email
                         <input
@@ -98,9 +103,9 @@ function SignupFormPage() {
                             value={confirmEmail}
                             placeholder='Enter your email again.'
                             onChange={(e) => setConfirmEmail(e.target.value)}
-                            required
                         />
                     </label>
+                    <p className='signup-errors'>{errors['ConfirmEmailError']}</p>
                     <label>
                         Create a password
                         <input
@@ -108,9 +113,9 @@ function SignupFormPage() {
                             value={password}
                             placeholder='Create a password.'
                             onChange={(e) => setPassword(e.target.value)}
-                            required
                         />
                     </label>
+                    <p className='signup-errors'>{errors['PasswordError']}</p>
                     <label>
                         What should we call you?
                         <input
@@ -121,6 +126,7 @@ function SignupFormPage() {
                             required
                         />
                     </label> 
+                    <p className='signup-errors'>{errors['UsernameError']}</p>
                 </div>
                 {/* <label>
                     Month

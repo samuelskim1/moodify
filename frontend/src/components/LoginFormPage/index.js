@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect, NavLink} from 'react-router-dom';
+import { Redirect, NavLink } from 'react-router-dom';
 import './LoginForm.css';
 
 function LoginFormPage() {
@@ -12,11 +12,6 @@ function LoginFormPage() {
     const [errors, setErrors] = useState([]);
 
     if (sessionUser) return <Redirect to="/" />;
-
-    // const signup = (e) => {
-    //     e.preventDefault();
-    //     return <Redirect to='/signup'/>
-    // }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -54,9 +49,14 @@ function LoginFormPage() {
             <div className='login_page'>
                 <form onSubmit={handleSubmit} className="forms" id="login_form">
                     <h2>To continue, log in to Spotify.</h2>
+                    <div className="login_errors">
+                        <ul>
+                            {errors.map(error => <li key={error}>{error}</li>)}
+                        </ul>
+                    </div>
                     <div className='login_labels'>
                         <label>
-                            Username or Email
+                            Email address or username
                             <input
                                 type='text'
                                 value={credential}
@@ -73,11 +73,6 @@ function LoginFormPage() {
                                 required
                             />
                         </label>
-                    </div>
-                    <div className="login_errors">
-                        <ul>
-                            {errors.map(error => <li key={error}>{error}</li>)}
-                        </ul>
                     </div>
                     <button type="submit">Log In</button>
                     

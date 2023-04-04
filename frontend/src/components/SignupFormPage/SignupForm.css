@@ -44,16 +44,6 @@
     font-size: 15px;
 }
 
-.signup_errors {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    color: red;
-    padding: 0px;
-    margin-top: 20px;
-}
-
-
 .signup_labels label {
     display: flex;
     flex-direction: column;
@@ -61,7 +51,7 @@
     margin-top: 20px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 
@@ -72,26 +62,41 @@
 
 .signup_labels input {
     margin-top: 10px;
-    margin-bottom: 25px;
     padding: 10px 20px 10px 10px;
 }
+
+.signup-errors {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    color: red;
+    padding: 0px;
+    margin-top: 10px;
+}
+
 
 #signup_form button {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     margin: 20px;
-    border-radius: 20px;
+    border-radius: 30px;
     border-style: none;
     padding: none;
     width: 30%;
-    height: 50px;
+    height: 60px;
     background-color: rgb(13, 208, 58);
+    cursor: pointer;
+    transition: transform .3s;
 }
 
+#signup_form button:hover {
+    transform: scale(1.2);
+}
 
 .signup_page .login_link {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     font-weight: 600;
+    margin-bottom: 10%;
 }

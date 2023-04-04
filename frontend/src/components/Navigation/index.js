@@ -1,12 +1,16 @@
 import React from 'react';
 import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import ProfileButton from './ProfileButton';
+import './Navigation.css'
 
 
 function Navigation() {
     const sessionUser = useSelector(state => state.session.user)
+    const location = useLocation();
     let sessionLinks;
+    
+
     if (sessionUser) {
         sessionLinks = (
             <ProfileButton user={sessionUser} />
@@ -14,19 +18,32 @@ function Navigation() {
     } else {
         sessionLinks = (
             <>
-                <NavLink to="/login">Log In</NavLink>
-                <NavLink to="/signup">Sign Up</NavLink>
+                <NavLink to="/signup">
+                    <button className='nav-signup-button'>Sign up</button>
+                </NavLink>
+                <NavLink to="/login">
+                    <button className='nav-login-button'>Log In</button>
+                </NavLink>
             </>
 
         )
     }
+
+    if (location.pathname === '/login' || location.pathname === '/signup') {
+        sessionLinks = null;
+    }
+
+
     return (
-        <ul>
-            <li>
-                <NavLink to='/'></NavLink>
-                {sessionLinks}
-            </li>
-        </ul>
+        <div>
+            <ul className='navigation-bar'>
+                <li>
+                    <NavLink to='/'></NavLink>
+                    {sessionLinks}
+                </li>
+            </ul>
+
+        </div>
     )
 }
 

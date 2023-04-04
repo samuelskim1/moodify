@@ -55,24 +55,34 @@
 
 .login_errors {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    color: red;
-    padding: 0px;
+    font-weight: 500;
+    font-size: 12px;
+    color: white;
+    padding: 10px 0px 10px 0px;
     margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    background-color: red;
 }
 
 
 #login_form button {
     font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
     font-weight: 700;
     margin: 20px;
-    border-radius: 20px;
+    border-radius: 30px;
     border-style: none;
     padding: none;
-    width: 30%;
-    height: 40px;
+    width: 100%;
+    height: 50px;
     background-color: rgb(13, 208, 58);
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+#login_form button:hover {
+    transform: scale(1.05);
 }
 
 .login_break {
@@ -84,22 +94,30 @@
 .signup_link p {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 700;
     
 }
 
 .login_page .signup_button {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 14px;
     margin-top: 20px;
-    border-radius: 20px;
+    margin-bottom: 30px;
+    border-radius: 30px;
     border-style: none;
     border: 1px solid var(--essential-subdued, #878787);
     padding: none;
     width: 100%;
-    height: 40px;
+    height: 50px;
     background-color: transparent;
     color: var(--text-subdued, #6a6a6a);
+    cursor: pointer;
+    transition: transform .3s;
+
+}
+
+.login_page .signup_button:hover {
+    transform: scale(1.05);
 }

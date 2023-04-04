@@ -1,0 +1,55 @@
+.profile-button {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    border-style: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: white;
+    width: 150px;
+    padding: 10px 5px 10px 5px;
+    margin: 10px;
+    border-radius: 30px;
+}
+
+.profile-button p {
+    padding-left: 10px;
+}
+
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    position: absolute;
+    z-index: 1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    color: white;
+    background-color: rgb(70, 70, 70);
+}
+
+
+.dropdown-content li{
+    padding: 12px 8px 12px 12px;
+}
+
+.dropdown-logout {
+    border-radius:2px;
+    border-style: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    text-align: left;
+    padding: 0px 8px 12px 0px;
+    color: white;
+    background-color: rgb(70, 70, 70);
+    cursor: default;
+    width: 100%;
+}
+
+.profile-dropdown li{
+    padding: 12px 0px 12px 12px;
+    max-height: 40px;
+}
