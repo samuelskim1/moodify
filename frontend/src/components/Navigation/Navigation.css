@@ -1,6 +1,5 @@
-.navigation-bar-holder {
-    display: flex;
-    justify-content: flex-end;
+.navigation-bar-container {
+    position: relative;
 }
 
 .navigation-bar {
@@ -42,6 +41,7 @@
     font-size: 14px;
     width: 100px;
     margin: 10px;
+    margin-right: 20px;
     border-radius: 30px;
     border-style: none;
     border: 1px solid var(--essential-subdued, #878787);

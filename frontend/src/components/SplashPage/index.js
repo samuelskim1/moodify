@@ -1,14 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect, NavLink, useLocation } from "react-router-dom";
-import * as sessionActions from "../../store/session";
+import { NavLink, useLocation } from "react-router-dom";
 import Navigation from "../Navigation";
+import TrackIndexItem from "../Track/TrackIndexItem";
 import './SplashPage.css'
+import { fetchAllTracks } from "../../store/track";
 
 function SplashPage() {
     const location = useLocation();
-
-
+    const dispatch = useDispatch();
+    const tracks = useSelector(state => Object.values(state.tracks));
+    
+    useEffect(() => {
+        dispatch(fetchAllTracks())
+    }, []);
+    
+    console.log(tracks);
+    
     const active = () => {
         if (location.pathname === '/') {
             return 'active'
@@ -35,8 +43,26 @@ function SplashPage() {
                     </NavLink>
                 </ul>
             </div>
+            
+
             <div className="main-container">
-                <div className=""></div>
+                <h1 className="time">Good Afternoon</h1>
+                
+                <h2 className="start-listening">Start listening</h2>
+
+                <div className="tracks-index-section">
+                    <header className="tracks-index-header">
+                        <h2 className="tracks-index-title">Tracks</h2>
+                        <NavLink to='/tracks' className='tracks-index-link'>Show all</NavLink>
+                    </header>
+                    <div className="tracks-index">
+                        <TrackIndexItem track={tracks[2]}/>
+                        <TrackIndexItem track={tracks[13]}/>
+                        <TrackIndexItem track={tracks[26]}/>
+                        <TrackIndexItem track={tracks[9]}/>
+                    </div>
+
+                </div>
             </div>
 
         </div>

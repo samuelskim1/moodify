@@ -35,7 +35,7 @@ function Navigation() {
 
 
     return (
-        <div>
+        <div className='navigation-bar-container'>
             <ul className='navigation-bar'>
                 <li>
                     <NavLink to='/'></NavLink>

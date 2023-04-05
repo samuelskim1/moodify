@@ -8,13 +8,17 @@ import App from './App';
 import configureStore from './store';
 import csrfFetch from './store/csrf';
 import * as sessionActions from './store/session';
+import {fetchAllTracks, fetchTrack} from './store/track'
 
 const store = configureStore();
+console.log(store, 'this is the store after we create it');
 
 if (process.env.NODE_ENV !== 'production') {
   window.store = store;
   window.csrfFetch = csrfFetch;
   window.sessionActions = sessionActions;
+  window.fetchAllTracks = fetchAllTracks;
+  window.fetchTrack = fetchTrack;
 }
 
 function Root() {
@@ -30,9 +34,9 @@ function Root() {
 
 const renderApp = () => {
   ReactDOM.render(
-    <React.StrictMode>
-      <Root />
-    </React.StrictMode>,
+    // <React.StrictMode>
+      <Root />,
+    // </React.StrictMode>,
     document.getElementById('root')
   )
 }
