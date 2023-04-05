@@ -57,7 +57,7 @@ function LoginFormPage() {
             <div className='login_page'>
                 <form onSubmit={handleSubmit} className="forms" id="login_form">
                     <h2>To continue, log in to Spotify.</h2>
-                    <div className={`${toggleErrors}`}>
+                    <div className={`${toggleErrors()}`}>
                         <ul>
                             {errors.map(error => <li key={error}>{error}</li>)}
                         </ul>
