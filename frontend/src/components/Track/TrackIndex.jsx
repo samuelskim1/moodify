@@ -11,10 +11,19 @@ function TrackIndex() {
     const tracks = useSelector(state => Object.values(state.tracks))
     console.log(tracks, "this is tracks");
 
+
+    //do the fetch inside of the outercomponent(maybe in our splashpage, albumsshowpage, searchpage)
+    //or have a conditional inside 
     useEffect(() => {
         dispatch(fetchAllTracks())
     },[dispatch]);
 
+    //waits for data to be in the frontend state before rendering page 
+    //react will keep on rerendering component if it doesn't return an html element
+    //That's how this works
+    if (!tracks) {
+        return null;
+    }
 
 
 

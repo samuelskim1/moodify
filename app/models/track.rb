@@ -1,5 +1,7 @@
 class Track < ApplicationRecord
   validates :title, :year, :duration, presence: true
+  
+  has_one_attached :photo
 
   belongs_to :album,
     primary_key: :id,

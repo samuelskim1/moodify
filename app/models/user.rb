@@ -19,6 +19,8 @@ class User < ApplicationRecord
   # validates :birth_date, presence: true
   # validates :gender, presence: true
   validates :session_token, uniqueness: true, presence: true
+  
+  has_one_attached :photo
 
   def self.find_by_credentials(credential, password)
     if URI::MailTo::EMAIL_REGEXP.match(credential)

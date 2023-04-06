@@ -1,5 +1,7 @@
 class Album < ApplicationRecord
   validates :title, :year, presence: true
+  
+  has_one_attached :photo
 
   belongs_to :artist,
     primary_key: :id,

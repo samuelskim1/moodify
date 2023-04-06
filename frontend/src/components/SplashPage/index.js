@@ -10,7 +10,12 @@ import { fetchAllTracks } from "../../store/track";
 function SplashPage() {
     const dispatch = useDispatch();
     const tracks = useSelector(state => Object.values(state.tracks));
-    
+    //instead of fetching all of the songs just to get a few ones,
+    //make a custom thunk action with a custom route and controller action to return only the song that you want to return
+    //the fetch could be a random fetch of your data base songs
+    //math.rand of the id's in your db to get a random assortment
+    //thunk action(fetchRandomSongsforSplash
+    //custom route that would hit along with custom action in controller
     useEffect(() => {
         dispatch(fetchAllTracks())
     }, [dispatch]);
