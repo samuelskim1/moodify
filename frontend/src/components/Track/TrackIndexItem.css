@@ -3,13 +3,28 @@
     width: 20vh;
     position: relative;
     color: white;
+    font-weight: 16px;
 }
 
 .track-image i{
+    
+
     width: 100%;
     height: auto;
 }
 
-.track-image h2 {
+.track-title {
+    font-size: 0.8rem;
+    font-weight: 700;
     width: none;
+    padding-block: 0.8rem;
+}
+
+.artist-name {
+    color: rgb(161, 161, 161);
+    font-size: 0.7rem;
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+
 }

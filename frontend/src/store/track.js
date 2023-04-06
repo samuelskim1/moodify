@@ -21,6 +21,14 @@ export const fetchAllTracks = () => async (dispatch) => {
     }
 }
 
+export const fetchSplashPageTracks = () => async (dispatch) => {
+    const res = await fetch('/api/tracks/splash');
+    if (res.ok) {
+        const tracks = await res.json();
+        return dispatch(getTracks(tracks));
+    }
+}
+
 export const fetchTrack = (trackId) => async (dispatch) => {
     const res = await fetch(`/api/tracks/${trackId}`);
     if (res.ok) { 

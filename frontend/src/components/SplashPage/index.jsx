@@ -5,7 +5,7 @@ import Navigation from "../Navigation";
 import SideBar from "../SideBar";
 import TrackIndexItem from "../Track/TrackIndexItem";
 import './SplashPage.css'
-import { fetchAllTracks } from "../../store/track";
+import { fetchSplashPageTracks } from "../../store/track";
 
 function SplashPage() {
     const dispatch = useDispatch();
@@ -17,12 +17,14 @@ function SplashPage() {
     //thunk action(fetchRandomSongsforSplash
     //custom route that would hit along with custom action in controller
     useEffect(() => {
-        dispatch(fetchAllTracks())
+        dispatch(fetchSplashPageTracks())
     }, [dispatch]);
     
     console.log(tracks);
     
-    
+    if (!tracks.length) {
+        return null;
+    }
 
 
     return (
@@ -41,10 +43,9 @@ function SplashPage() {
                         <NavLink to='/tracks' className='tracks-index-link'>Show all</NavLink>
                     </header>
                     <div className="splash-random-tracks">
-                        <TrackIndexItem track={tracks[2]}/>
-                        <TrackIndexItem track={tracks[13]}/>
-                        <TrackIndexItem track={tracks[26]}/>
-                        <TrackIndexItem track={tracks[9]}/>
+                        {tracks.map(track => (
+                            <TrackIndexItem key={track.id} track={track} />
+                        ))}
                     </div>
 
                 </div>
