@@ -15,23 +15,18 @@ const getTracks = (tracks) => ({
 export const fetchAllTracks = () => async (dispatch) => {
 
     const res = await fetch('/api/tracks');
-    if (res.ok) {
-        const tracks = await res.json();
-        console.log(tracks, 'tracks from fetchAllTracks Thunk Action!')
+    if (res.ok) { 
+        const tracks = await res.json(); 
         return dispatch(getTracks(tracks)); 
     }
 }
 
 export const fetchTrack = (trackId) => async (dispatch) => {
     const res = await fetch(`/api/tracks/${trackId}`);
-    if (res.ok) {
-        const track = await res.json();
-        console.log(track, 'tracks from fetchAllTracks Thunk Action!')
-        return dispatch(getTrack(track));
+    if (res.ok) { 
+        const track = await res.json(); 
+        return dispatch(getTrack(track)); 
     }
-    // } else {
-    //     return res.errors
-    // }
 }
 
 
@@ -41,12 +36,10 @@ const trackReducer = (state = {}, action) => {
     switch (action.type) {
         case GET_TRACK:
             nextState[action.track.id] = action.track;
-            
-            console.log(nextState, 'this is the nextState from GET TRACK')
-            return nextState
-            
+            console.log('getTrack action');
+            return nextState;
         case GET_TRACKS:
-            console.log(nextState, 'this is the nextState from GET TRACKS')
+            console.log('getTracks action');
             return {...nextState, ...action.tracks};
         default:
             return nextState;

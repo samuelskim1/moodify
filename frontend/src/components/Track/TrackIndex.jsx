@@ -1,19 +1,19 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllTracks} from "../../store/track";
-import { useLocation } from "react-router-dom";
+import Navigation from "../Navigation";
+import SideBar from "../SideBar";
 import TrackIndexItem from "./TrackIndexItem";
+import './TrackIndex.css';
 
 function TrackIndex() {
     const dispatch = useDispatch();
-    const location = useLocation();
     const tracks = useSelector(state => Object.values(state.tracks))
     console.log(tracks, "this is tracks");
-    debugger;
 
     useEffect(() => {
         dispatch(fetchAllTracks())
-    },[]);
+    },[dispatch]);
 
 
 
@@ -21,12 +21,18 @@ function TrackIndex() {
     return (
         <>
             <div className="track-index-container">
-                <h2>Tracks</h2>
-                <ul className='tracks-ul'>
-                    {tracks.map(track => (
-                        <TrackIndexItem key={track.id} track={track} />
-                    ))}
-                </ul>
+                <SideBar/>
+                <Navigation/>
+
+                <div className="main-container">
+                    <h2 className="track-index-title">Tracks</h2>
+                    <div className='track-item-index-grid'>
+                        {tracks.map(track => (
+                            <TrackIndexItem key={track.id} track={track} />
+                        ))}
+                    </div>
+                </div>
+
 
             </div>
         </>

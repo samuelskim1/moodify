@@ -1,0 +1,14 @@
+.track-item-index-grid {
+    display: grid;
+    column-width: 20px;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-areas: "....";
+    gap: 5%;
+}
+
+.track-index-title{
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+    padding: 20px 0px;
+}

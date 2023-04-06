@@ -3,62 +3,6 @@
     flex-direction: column;
 }
 
-.sidebar-container {
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-    position: fixed;
-    z-index: 100;
-    background-color: black;
-    height: 100%;
-}
-
-.banner {
-    margin-top: 20px;
-    display: flex;
-    margin-bottom: 18px;
-    padding: 0 24px;
-}
-
-.banner img{
-    max-width: 100%;
-    max-height: 100%
-}
-
-.banner h2 {
-    color: white;
-    text-align: left;
-    margin: 10px;
-    font-size: 24px;
-    font-weight: 600;
-    max-width: 100%;
-    max-width: 100%
-}
-
-.sidebar-home {
-    display: flex;
-    margin: auto;
-    padding-left: 24px;
-}
-
-.sidebar-home li {
-    display: flex;
-}
-
-.sidebar-home h3 {
-    margin-left: 24px;
-}
-
-.sidebar-nav .active{
-    text-decoration: none;
-    color: white;
-}
-
-.sidebar-nav .not-active{
-    text-decoration: none;
-    color: #b3b3b3;
-}
-
 .main-container {
     position: relative;
     left: 20%;
@@ -105,10 +49,9 @@
     font-weight: 700; 
 }
 
-.tracks-index {
-    height: 300px;
+.splash-random-tracks {
     display: grid;
-    column-width: 170px;
+    column-width: 20px;
     grid-template-columns: 20% 20% 20% 20%;
     grid-template-areas: "....";
     gap: 5%;

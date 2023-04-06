@@ -1,10 +1,8 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchTrack } from "../../store/track";
+import { useSelector } from 'react-redux';
 import './TrackIndexItem.css'
 
 function TrackIndexItem({track}) {
-    
+    const artistName = track?.artist?.name;
     return (
         <div className='track-index-item'>
             <div className='track-image'>
@@ -12,6 +10,8 @@ function TrackIndexItem({track}) {
             </div>
             <h2>This is Track {track?.id}</h2>
             <h6>{track?.title}</h6>
+            {/* <h6>{artistName}</h6> */}
+            
         </div>
     )
 }

@@ -8,7 +8,6 @@ import TrackIndex from './components/Track/TrackIndex';
 function App() {
   return (
     <>
-      
       <Switch>
         <Route path="/login">
           <LoginFormPage />
@@ -16,11 +15,11 @@ function App() {
         <Route path="/signup">
           <SignupFormPage/>
         </Route>
-        <Route path='/'>
-          <SplashPage/>
-        </Route>
         <Route path='/tracks'>
           <TrackIndex/>
+        </Route>
+        <Route exact path='/'>
+          <SplashPage/>
         </Route>
       </Switch>
     </>
