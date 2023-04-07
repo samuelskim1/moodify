@@ -1,11 +1,12 @@
 .sidebar-container {
-    display: flex;
+    grid-area: sideBar;
+    /* display: flex;
     flex-direction: column;
     width: 20%;
     position: fixed;
-    z-index: 100;
+    z-index: 100; */
     background-color: black;
-    height: 100%;
+    /* height: 100%; */
 }
 
 .banner {

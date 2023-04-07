@@ -1,0 +1,72 @@
+.track-show-grid-container {
+    display: grid;
+    grid-template-areas:
+            "sideBar navBar navBar"
+            "sideBar main main"
+            "sideBar main main"
+}
+
+.track-show-item .track-show-header {
+    display: flex;
+    align-items: flex-end;
+    padding: 0px 10px 10px;
+}
+
+
+
+.track-show-container {
+    grid-area: main;
+    background-color: #1c1c1c;
+    color: white;
+}
+
+.track-show-header-item .track-show-image {
+    margin-right: 24px;
+    display:flex;
+    height: 100%;
+    width: 20%;
+}
+
+.track-show-image i {
+    
+}
+
+
+.track-show-header-item .track-show-info {
+    display: flex;
+    
+}
+
+.track-show-info .component-type {
+    font-weight: 700;
+}
+
+
+
+.track-show-info .track-title {
+    font-size: 8vh;
+}
+
+.track-show-info .extra-info{
+    font-size: 14px;
+}
+
+.extra-info-item .artist-name {
+    color: white;
+    font-weight: 700;
+    margin-left: 5px;
+    font-size: 14px;
+    
+    
+}
+
+span.extra-info-item.track-year:before {
+    content: "•";
+    margin: 0 4px;
+}
+
+span.extra-info-item.track-duration:before {
+    content: "•";
+    margin: 0 4px;
+}
+

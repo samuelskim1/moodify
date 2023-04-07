@@ -1,4 +1,5 @@
 .navigation-bar-container {
+    grid-area: navBar;
     position: relative;
 }
 

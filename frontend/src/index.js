@@ -11,7 +11,6 @@ import * as sessionActions from './store/session';
 import {fetchAllTracks, fetchTrack} from './store/track'
 
 const store = configureStore();
-console.log(store, 'this is the store after we create it');
 
 if (process.env.NODE_ENV !== 'production') {
   window.store = store;

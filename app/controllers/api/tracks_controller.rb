@@ -10,9 +10,7 @@ class Api::TracksController < ApplicationController
 
   def show
     @track = Track.find_by(id: params[:id])
-    if @track
-      render 'api/tracks/show'
-    end
+    render 'api/tracks/show'
   end
 
   def splash

@@ -1,3 +1,16 @@
+.track-index-grid-container {
+    display: grid;
+    grid-template-areas:
+        "sideBar navBar navBar"
+        "sideBar main main"
+        "sideBar main main";
+}
+
+.track-index-container {
+    grid-area: main;
+    background-color: #1c1c1c;
+}
+
 .track-item-index-grid {
     display: grid;
     column-width: 20px;

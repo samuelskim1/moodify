@@ -1,14 +1,21 @@
-.splash_page {
-    display: flex;
-    flex-direction: column;
+.splash-page-grid-container {
+    /* display: flex;
+    flex-direction: column; */
+    display: grid;
+    grid-template-areas:
+        "sideBar navBar navBar"
+        "sideBar main main"
+        "sideBar main main" ;
 }
 
-.main-container {
-    position: relative;
+.splash-page-container {
+    grid-area: main;
+    background-color: #1c1c1c;
+    /* position: relative;
     left: 20%;
     width: 80%;
     background-color: #1c1c1c;
-    padding: 20px;
+    padding: 20px; */
 }
 
 .time {

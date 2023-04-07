@@ -44,10 +44,8 @@ const trackReducer = (state = {}, action) => {
     switch (action.type) {
         case GET_TRACK:
             nextState[action.track.id] = action.track;
-            console.log('getTrack action');
             return nextState;
         case GET_TRACKS:
-            console.log('getTracks action');
             return {...nextState, ...action.tracks};
         default:
             return nextState;

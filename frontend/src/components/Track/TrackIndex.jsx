@@ -9,8 +9,6 @@ import './TrackIndex.css';
 function TrackIndex() {
     const dispatch = useDispatch();
     const tracks = useSelector(state => Object.values(state.tracks))
-    console.log(tracks, "this is tracks");
-
 
     //do the fetch inside of the outercomponent(maybe in our splashpage, albumsshowpage, searchpage)
     //or have a conditional inside 
@@ -29,11 +27,10 @@ function TrackIndex() {
 
     return (
         <>
-            <div className="track-index-container">
+            <div className="track-index-grid-container">
                 <SideBar/>
                 <Navigation/>
-
-                <div className="main-container">
+                <div className="track-index-container">
                     <h2 className="track-index-title">Tracks</h2>
                     <div className='track-item-index-grid'>
                         {tracks.map(track => (

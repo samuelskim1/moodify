@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+require "open-uri"
+
+
 ApplicationRecord.transaction do 
   puts "Destroying tables..."
   # Unnecessary if using `rails db:seed:replant`
@@ -40,7 +43,99 @@ ApplicationRecord.transaction do
   artist3 = Artist.create!(name: 'DPR LIVE')
 
   album1 = Album.create!(title: 'GABRIEL', year: '2022', artist_id: 1)
-  track1 = Track.create!(title: 'GET IT', year: '2022', duration: '2:31', album_id: 1, artist_id: 1)
+  track1 = Track.create!(title: 'GET IT', year: '2022', duration: '2:31', album_id: 1, artist_id: 1, lyrics:"Mm-hmm, oh yeah
+
+♪
+
+It's you
+
+Loving's so easy to do
+
+Yeah, it's easy, baby
+
+Oh, ooh-ooh
+
+Think that I'm falling for you
+
+Yeah, it's easy (you got to get a hold of yourself)
+
+Another Sunday afternoon
+
+And I'm still in bed with you
+
+Nothing else I wanna do, no
+
+Order from that place you like (you like)
+
+We don't need to go outside (outside)
+
+Something 'bout you feels so right (feels so right)
+
+Can we stay like this forever?
+
+White dress or whatever
+
+I keep dreaming there's a somewhere
+
+That we grow old together
+
+It's you
+
+Loving's so easy to do
+
+Yeah, it's easy, baby
+
+Oh, ooh-ooh
+
+Think that I'm falling for you
+
+Yeah, it's easy
+
+I met you at the right time
+
+See you and I'm still excited
+
+Sittin' in that shirt of mine
+
+A little big but I like it
+
+Snacks in the late night
+
+We don't need to do fine dinin'
+
+Make love when the sunrise
+
+Pillow talk in silence
+
+Like this forever (forever)
+
+White dress or whatever
+
+I keep dreamin' there's a somewhere
+
+That we grow old together
+
+In a van or in a mansion
+
+Raining but we're dancing
+
+There's a billion people out there, I can't believe the chances
+
+It's you
+
+Loving's so easy to do (to do)
+
+Yeah, it's easy, baby (yeah)
+
+Oh, ooh-ooh (yeah-ooh, uh)
+
+Think that I'm falling for you (for you, yeah)
+
+Yeah, it's easy (ooh)
+
+Loving's so easy to do (ooh, ooh, ooh)
+
+Yeah, it's easy (it is easy)")
   track2 = Track.create!(title: 'SOMEBODY', year: '2022', duration: '2:44', album_id: 1, artist_id: 1)
   track3 = Track.create!(title: 'WESTSIDE', year: '2022', duration: '3:04', album_id: 1, artist_id: 1)
   track4 = Track.create!(title: 'TOUCH', year: '2022', duration: '3:25', album_id: 1, artist_id: 1)
@@ -78,3 +173,30 @@ ApplicationRecord.transaction do
 
   puts "Done!"
 end
+
+Artist.where(id: 1)[0].profile_picture.attach(
+    io: URI.open("https://moodify-seeds.s3.amazonaws.com/keshi-spotify-icon.jpg"),
+    filename: "keshi-spotify-icon.jpg"
+  )
+
+
+  Track.where(album_id: 1) do |track|
+    track.photo.attach(
+      io: URI.open("https://moodify-seeds.s3.amazonaws.com/keshi-gabriel-album.jpg"),
+      filename: "keshi-gabriel-album.jpg"
+    )
+  end
+
+  Track.where(album_id: 2).each do |track|
+    track.photo.attach(
+      io: URI.open("https://moodify-seeds.s3.amazonaws.com/John-OFA-Rhee-album-bleeding-in-sunset-blvd.-album.jpg"),
+      filename: "John-OFA-Rhee-album-bleeding-in-sunset-blvd.-album.jpg"
+    )
+  end
+
+  Track.where(album_id: 3).each do |track|
+    track.photo.attach(
+      io: URI.open("https://moodify-seeds.s3.amazonaws.com/John-OFA-Rhee-album-bleeding-in-sunset-blvd.-album.jpg"),
+      filename: "John-OFA-Rhee-album-bleeding-in-sunset-blvd.-album.jpg"
+    )
+  end

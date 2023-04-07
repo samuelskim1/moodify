@@ -20,23 +20,18 @@ function SplashPage() {
         dispatch(fetchSplashPageTracks())
     }, [dispatch]);
     
-    console.log(tracks);
-    
     if (!tracks.length) {
         return null;
     }
 
 
     return (
-        <div className="splash_page">
+        <div className="splash-page-grid-container">
             <SideBar/>
             <Navigation/>
-        
-            <div className="main-container">
+            <div className="splash-page-container">
                 <h1 className="time">Good Afternoon</h1>
-                
                 <h2 className="start-listening">Start listening</h2>
-
                 <div className="tracks-index-section">
                     <header className="tracks-index-header">
                         <h2 className="tracks-index-title">Tracks</h2>
@@ -47,10 +42,8 @@ function SplashPage() {
                             <TrackIndexItem key={track.id} track={track} />
                         ))}
                     </div>
-
                 </div>
             </div>
-
         </div>
     )
 }
