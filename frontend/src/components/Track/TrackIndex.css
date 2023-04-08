@@ -8,19 +8,25 @@
 
 .track-index-container {
     grid-area: main;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
     background-color: #1c1c1c;
+    
 }
 
 .track-item-index-grid {
     display: grid;
     column-width: 20px;
     min-height: 100vh;
-    max-height: 100%;
+    /* max-height: 100%; */
     margin-top: 2rem;
     grid-template-columns: 20% 20% 20% 20%;
     grid-template-areas: "....";
     gap: 5%;
-    overflow: scroll;
+    height:100%;
+    /* overflow: scroll; */
     scroll-behavior: smooth;
 
 }

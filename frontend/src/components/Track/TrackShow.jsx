@@ -23,6 +23,19 @@ function TrackShow() {
     //similar format
     //focus on that later though
 
+    
+    const lines = track.lyrics.split(/(\r|\n|\n|\r)/);
+    const formattedLines = lines.map(line => {
+        if (line) return <p>{line}</p>
+    })
+    console.log(track.lyrics);
+    console.log(lines);
+    // console.log(formattedLines);
+
+    
+    
+
+
     return (
         <>
             <div className="track-show-grid-container">
@@ -31,7 +44,8 @@ function TrackShow() {
                 <div className="track-show-container">
                     <header className="track-show-item track-show-header">
                         <div className="track-show-header-item track-show-image">
-                            <i className="fa-solid fa-image fa-xl" style={{ color: '#919cb1' }}></i>
+                            <img src={track.photoUrl} alt=""/>
+                            {/* <i className="fa-solid fa-image fa-xl" style={{ color: '#919cb1' }}></i> */}
                         </div>
                         <div className="track-show-header-item track-show-info">
                             <h4 className="track-show-info component-type">Song</h4>
@@ -47,11 +61,13 @@ function TrackShow() {
                         </div>
                     </header>
                     <div className="track-show-item track-show-play-area">
-                        <i className="fa-solid fa-circle-play" style={{color: '#2dc819'}}></i>
+                        <div className="play-button-size-setter">
+                            <i className="fa-solid fa-circle-play fa-2xl" style={{color: '#2dc819'}}></i>
+                        </div>
                     </div>
                     <div className="track-show-item track-lyrics-container">
                         <h2 className="track-lyrics-container-item track-lyrics-header">Lyrics</h2>
-                        <div className="track-lyrics-container-item track-lyrics">{track.lyrics}</div>
+                        <div className="track-lyrics-container-item track-lyrics">{formattedLines}</div>
                     </div>
                     <div className="track-show-item artist-link-container">
                         <i className="artist-link-container-item fa-solid fa-user" style={{ color: '#ffffff' }}></i>

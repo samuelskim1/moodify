@@ -4,12 +4,15 @@
             "sideBar navBar navBar"
             "sideBar main main"
             "sideBar main main"
+            ;
+    grid-template-columns: 30vh;
 }
 
-.track-show-item .track-show-header {
+.track-show-header {
     display: flex;
     align-items: flex-end;
-    padding: 0px 10px 10px;
+    position: relative;
+    padding-bottom: 2.5vh;
 }
 
 
@@ -18,40 +21,49 @@
     grid-area: main;
     background-color: #1c1c1c;
     color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
 }
 
-.track-show-header-item .track-show-image {
+.track-show-image {
     margin-right: 24px;
     display:flex;
     height: 100%;
     width: 20%;
+    min-width: 200px;
 }
 
-.track-show-image i {
-    
+.track-show-image img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 
-.track-show-header-item .track-show-info {
+.track-show-info {
     display: flex;
-    
+    flex-direction: column;
 }
 
-.track-show-info .component-type {
+.extra-info {
+    display:flex;
+    flex-direction: row;
+}
+.component-type {
     font-weight: 700;
 }
 
 
 
-.track-show-info .track-title {
+.track-show-info.track-title {
     font-size: 8vh;
 }
 
-.track-show-info .extra-info{
+.extra-info{
     font-size: 14px;
 }
 
-.extra-info-item .artist-name {
+.artist-name {
     color: white;
     font-weight: 700;
     margin-left: 5px;
@@ -60,13 +72,35 @@
     
 }
 
-span.extra-info-item.track-year:before {
+.track-year:before {
     content: "•";
     margin: 0 4px;
 }
 
-span.extra-info-item.track-duration:before {
+.track-duration:before {
     content: "•";
     margin: 0 4px;
 }
 
+.track-show-item.track-show-play-area {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    height: 10vh;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.play-button-size-setter{
+    
+}
+
+i.fa-solid.fa-circle-play.fa-2xl {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.track-lyrics {
+    white-space: pre;
+}
