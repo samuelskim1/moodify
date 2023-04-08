@@ -61,6 +61,7 @@ function TrackShow() {
                         </div>
                     </header>
                     <div className="track-show-item track-show-play-area">
+                        
                         <div className="play-button-size-setter">
                             <i className="fa-solid fa-circle-play fa-2xl" style={{color: '#2dc819'}}></i>
                         </div>
