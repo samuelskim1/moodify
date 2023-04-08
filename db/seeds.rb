@@ -88,25 +88,25 @@ Artist.where(id: 1)[0].profile_picture.attach(
 )
 
   
-  Track.where(album_id: 1).each do |track|
-    track.photo.attach(
-      io: URI.open("https://moodify-seeds.s3.amazonaws.com/keshi-gabriel-album.jpg"),
-      filename: "keshi-gabriel-album.jpg"
-    )
-  end
+Track.where(album_id: 1).each do |track|
+  track.photo.attach(
+    io: URI.open("https://moodify-seeds.s3.amazonaws.com/keshi-gabriel-album.jpg"),
+    filename: "keshi-gabriel-album.jpg"
+  )
+end
 
-  Track.where(album_id: 2).each do |track|
-    track.photo.attach(
-      io: URI.open("https://moodify-seeds.s3.amazonaws.com/John-OFA-Rhee-album-bleeding-in-sunset-blvd.-album.jpg"),
-      filename: "John-OFA-Rhee-album-bleeding-in-sunset-blvd.-album.jpg"
-    )
-  end
+Track.where(album_id: 2).each do |track|
+  track.photo.attach(
+    io: URI.open("https://moodify-seeds.s3.amazonaws.com/John-OFA-Rhee-album-bleeding-in-sunset-blvd.-album.jpg"),
+    filename: "John-OFA-Rhee-album-bleeding-in-sunset-blvd.-album.jpg"
+  )
+end
 
-  Track.where(album_id: 3).each do |track|
-    track.photo.attach(
-      io: URI.open("https://moodify-seeds.s3.amazonaws.com/DPR-LIVE-Coming-To-You-Live-album.jpg"),
-      filename: "DPR-LIVE-Coming-To-You-Live-album.jpg"
-    )
-  end
+Track.where(album_id: 3).each do |track|
+  track.photo.attach(
+    io: URI.open("https://moodify-seeds.s3.amazonaws.com/DPR-LIVE-Coming-To-You-Live-album.jpg"),
+    filename: "DPR-LIVE-Coming-To-You-Live-album.jpg"
+  )
+end
 
   puts "Seeding Track and Artist Pictures"

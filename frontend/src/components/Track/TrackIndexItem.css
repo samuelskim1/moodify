@@ -1,14 +1,18 @@
 .track-index-item {
     height: 30vh;
     width: 20vh;
+    min-width: 100px;
+    min-height: 150px;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
     position: relative;
     color: white;
     font-weight: 16px;
+    background: #252525;
 }
 
-.track-image i{
-    
-
+.track-image img{
     width: 100%;
     height: auto;
 }

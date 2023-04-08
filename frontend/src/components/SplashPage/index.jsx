@@ -26,21 +26,23 @@ function SplashPage() {
 
 
     return (
-        <div className="splash-page-grid-container">
+        <div className="splash-page-flex-container">
             <SideBar/>
-            <Navigation/>
-            <div className="splash-page-container">
-                <h1 className="time">Good Afternoon</h1>
-                <h2 className="start-listening">Start listening</h2>
-                <div className="tracks-index-section">
-                    <header className="tracks-index-header">
-                        <h2 className="tracks-index-title">Tracks</h2>
-                        <NavLink to='/tracks' className='tracks-index-link'>Show all</NavLink>
-                    </header>
-                    <div className="splash-random-tracks">
-                        {tracks.map(track => (
-                            <TrackIndexItem key={track.id} track={track} />
-                        ))}
+            <div className="nav-main-container">
+                <Navigation/>
+                <div className="splash-page-container">
+                    <h1 className="time">Good Afternoon</h1>
+                    <h2 className="start-listening">Start listening</h2>
+                    <div className="tracks-index-section">
+                        <header className="tracks-index-header">
+                            <h2 className="tracks-index-title">Tracks</h2>
+                            <NavLink to='/tracks' className='tracks-index-link'>Show all</NavLink>
+                        </header>
+                        <div className="splash-random-tracks">
+                            {tracks.map(track => (
+                                <TrackIndexItem key={track.id} track={track} />
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

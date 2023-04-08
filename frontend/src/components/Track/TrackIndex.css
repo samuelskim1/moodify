@@ -1,34 +1,41 @@
-.track-index-grid-container {
-    display: grid;
+.nav-main-container {
+    display:flex;
+    flex-direction: column;
+}
+
+.track-index-flex-container {
+    /* display: grid;
     grid-template-areas:
         "sideBar navBar navBar"
         "sideBar main main"
-        "sideBar main main";
+        "sideBar main main"; */
+        display:flex;
+        width:100%;
 }
 
 .track-index-container {
-    grid-area: main;
+    /* grid-area: main; */
     display: flex;
     flex-direction: column;
     height: 100%;
-    overflow-y: auto;
+    /* overflow-y: auto; */
     background-color: #1c1c1c;
     
 }
 
-.track-item-index-grid {
-    display: grid;
+.track-item-index-flexbox {
+    display: flex;
+    flex-wrap: wrap;
     column-width: 20px;
     min-height: 100vh;
     /* max-height: 100%; */
-    margin-top: 2rem;
-    grid-template-columns: 20% 20% 20% 20%;
-    grid-template-areas: "....";
-    gap: 5%;
+    
+    /* grid-template-columns: 20% 20% 20% 20%;
+    grid-template-areas: "...."; */
+    /* gap: 5%; */
     height:100%;
     /* overflow: scroll; */
-    scroll-behavior: smooth;
-
+    /* scroll-behavior: smooth; */
 }
 
 .track-index-title{

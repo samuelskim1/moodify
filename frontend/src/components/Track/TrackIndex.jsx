@@ -27,15 +27,17 @@ function TrackIndex() {
 
     return (
         <>
-            <div className="track-index-grid-container">
+            <div className="track-index-flex-container">
                 <SideBar/>
-                <Navigation/>
-                <div className="track-index-container">
-                    <h2 className="track-index-title">Tracks</h2>
-                    <div className='track-item-index-grid'>
-                        {tracks.map(track => (
-                            <TrackIndexItem key={track.id} track={track} />
-                        ))}
+                <div className="nav-main-container">
+                    <Navigation/>
+                    <div className="track-index-container">
+                        <h2 className="track-index-title">Tracks</h2>
+                        <div className='track-item-index-flexbox'>
+                            {tracks.map(track => (
+                                <TrackIndexItem key={track.id} track={track} />
+                            ))}
+                        </div>
                     </div>
                 </div>
 

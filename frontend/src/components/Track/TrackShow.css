@@ -1,11 +1,13 @@
-.track-show-grid-container {
-    display: grid;
+.track-show-flex-container {
+    display:flex;
+    width: 100%;
+    /* display: grid;
     grid-template-areas:
             "sideBar navBar navBar"
             "sideBar main main"
             "sideBar main main"
             ;
-    grid-template-columns: 30vh;
+    grid-template-columns: 30vh; */
 }
 
 .track-show-header {
@@ -18,7 +20,7 @@
 
 
 .track-show-container {
-    grid-area: main;
+    /* grid-area: main; */
     background-color: #1c1c1c;
     color: white;
     display: flex;
@@ -63,7 +65,7 @@
     font-size: 14px;
 }
 
-.artist-name {
+.artist-info .artist-name {
     color: white;
     font-weight: 700;
     margin-left: 5px;
