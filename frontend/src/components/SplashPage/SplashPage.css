@@ -14,6 +14,8 @@
     flex-direction: column;
     background-color: #1c1c1c;
     width: 100%;
+    padding-left: 3vw;
+    box-sizing: border-box;
     /* position: relative;
     left: 20%;
     width: 80%;
@@ -25,14 +27,14 @@
     color: white;
     font-size: 40px;
     font-weight: 700;
-    padding: 20px 0px;
+    padding: 20px 10px;
 }
 
 .start-listening {
     color: white;
     font-size: 32px;
     font-weight: 700;
-    padding: 20px 0px;
+    padding: 20px 10px;
 }
 
 .tracks-index-section {
@@ -45,7 +47,7 @@
 .tracks-index-header {
     display: flex;
     justify-content: space-between;
-    padding: 0px 110px 40px 0px;
+    padding: 40px 10px;
 }
 
 .tracks-index-title {
@@ -55,11 +57,23 @@
     padding-top: 20px;
 }
 
-.tracks-index-header a {
+.tracks-index-link {
     padding-top: 30px;
     font-size: 14px;  
-    font-weight: 700; 
+    font-weight: 700;
+    text-decoration: none;
+    color: rgb(161, 161, 161);
 }
+
+.tracks-index-link:visited, .tracks-index-link:active {
+    color: rgb(161, 161, 161);
+    text-decoration: underline;
+}
+
+.tracks-index-link:hover {
+    text-decoration: underline;
+}
+
 
 .splash-random-tracks {
     display: flex;

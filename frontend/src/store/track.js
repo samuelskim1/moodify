@@ -1,6 +1,7 @@
 
 const GET_TRACK = 'GET_TRACK'
 const GET_TRACKS = 'GET_TRACKS'
+const GET_SPLASH_TRACKS = 'GET_SPLASH_TRACKS'
 
 const getTrack = (track) => ({
     type: GET_TRACK,
@@ -11,6 +12,12 @@ const getTracks = (tracks) => ({
     type: GET_TRACKS,
     tracks
 })
+
+const getSplashTracks = (tracks) => ({
+    type: GET_SPLASH_TRACKS,
+    tracks
+})
+
 
 export const fetchAllTracks = () => async (dispatch) => {
 
@@ -25,7 +32,7 @@ export const fetchSplashPageTracks = () => async (dispatch) => {
     const res = await fetch('/api/tracks/splash');
     if (res.ok) {
         const tracks = await res.json();
-        return dispatch(getTracks(tracks));
+        return dispatch(getSplashTracks(tracks));
     }
 }
 
@@ -47,6 +54,8 @@ const trackReducer = (state = {}, action) => {
             return nextState;
         case GET_TRACKS:
             return {...nextState, ...action.tracks};
+        case GET_SPLASH_TRACKS:
+            return action.tracks;
         default:
             return nextState;
     };

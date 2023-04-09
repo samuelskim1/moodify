@@ -1,3 +1,7 @@
+.track-index-item-link {
+    text-decoration: none;
+}
+
 .track-index-item {
     height: 30vh;
     width: 20vh;
@@ -7,14 +11,57 @@
     padding: 20px;
     border-radius: 10px;
     position: relative;
+    isolation: isolate;
+    cursor: pointer;
+    transition: background-color .3s;
+    background: #252525;
     color: white;
     font-weight: 16px;
-    background: #252525;
 }
+
+
+.track-index-item:hover {
+    background:rgb(57, 56, 56);
+}
+
+.track-index-item-play-button {
+    position: absolute;
+    opacity: 0;
+    right: 22px;
+    bottom: 32px;
+    transform: translateY(12px);
+    transition: all .3s;
+}
+
+.track-index-item:hover .track-index-item-play-button {
+    opacity: 1;
+    transform: translateY(8px);
+    /* transform: translateY(0px); */
+}
+
+.track-image {
+    position: relative;
+}
+
 
 .track-image img{
     width: 100%;
     height: auto;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .5);
+}
+
+i.fa-solid.fa-circle-play.fa-2xl {
+    font-size: 50px;
+}
+
+.fa-circle-play:before, .fa-play-circle:before {
+    display: flex;
+    background-color: black;
+    height: 24px;
+    width: 24px;
+    content: "\f144";
+    align-items: center;
+    justify-content: center;
 }
 
 .track-title {
@@ -27,7 +74,6 @@
 .artist-name {
     color: rgb(161, 161, 161);
     font-size: 0.7rem;
-    
     overflow: hidden;
     text-overflow: ellipsis;
 

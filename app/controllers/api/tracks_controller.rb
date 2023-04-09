@@ -14,9 +14,8 @@ class Api::TracksController < ApplicationController
   end
 
   def splash
-    
     random_tracks = Hash.new(0)
-    while random_tracks.length < 9
+    while random_tracks.length < 10
       random_id = Random.rand(1...Track.all.length)
       if !random_tracks.keys.include?(random_id)
         random_tracks[random_id] = Track.includes(:artist).all[random_id]

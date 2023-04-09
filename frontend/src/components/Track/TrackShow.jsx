@@ -24,12 +24,12 @@ function TrackShow() {
     //focus on that later though
 
     
-    const lines = track.lyrics.split(/(\r|\n|\n|\r)/);
-    const formattedLines = lines.map(line => {
+    const lines = track?.lyrics?.split(/(\r|\n|\n|\r)/);
+    const formattedLines = lines?.map(line => {
         if (line) return <p>{line}</p>
     })
-    console.log(track.lyrics);
-    console.log(lines);
+    // console.log(track.lyrics);
+    // console.log(lines);
     // console.log(formattedLines);
 
     
