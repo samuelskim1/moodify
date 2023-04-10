@@ -1,14 +1,27 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateSong, playSong } from '../../store/audio';
 import './TrackPlayButton.css'
 
 function TrackPlayButton({track}) {
+    const dispatch = useDispatch();
+    const previousAudioValue = useRef();
+    // const audio = useSelector(state => state.audio)
+    //or
+    // const track = useSelector(state => state.track)
     const [song] = useState(new Audio(track.songUrl))
     const [playing, setPlaying] = useState(false);
     const toggle = () => setPlaying(!playing);
 
     useEffect(() => {
+        // dispatch(playSong(audio))
         playing ? song.play() : song.pause();
     }, [playing]);
+    
+    // useEffect(() => {
+    //     previousAudioValue.current = song
+    //     dispatch(updateSong(audio, previousAudioValue.current))
+    // }, [track])
 
     
 

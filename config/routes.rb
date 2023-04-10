@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     resources :tracks, only: [:index, :show, :splash] do
       get :splash, on: :collection
     end
+
+    resources :albums, only: [:index, :show, :splash] do
+      get :splash, on: :collection
+    end
   end
 
   get '*path', to: "static_pages#frontend_index"  
