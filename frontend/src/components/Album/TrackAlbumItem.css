@@ -1,0 +1,48 @@
+.track-album-item-container {
+}
+
+
+.track-album-item {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    height: 56px;
+    position: relative;
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.track-album-item:hover {
+    background-color: hsla(0, 0%, 100%, .1);
+}
+
+.track-album-item-info {
+    margin-left: 20px;
+    width: 80%;
+}
+
+.track-album-item-title {
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding-block: 0.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.track-album-item-artist {
+    color: rgb(161, 161, 161);
+    padding-block: 0.2rem;
+    font-size: 0.6rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.track-album-item-duration {
+    width:15%;
+    text-align: right;
+    color: rgb(161, 161, 161);
+    padding-block: 0.2rem;
+    font-size: 0.8rem;
+}

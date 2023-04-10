@@ -1,0 +1,132 @@
+.album-show-flex-container {
+    display: flex;
+    width: 100%;
+    /* display: grid;
+    grid-template-areas:
+            "sideBar navBar navBar"
+            "sideBar main main"
+            "sideBar main main"
+            ;
+    grid-template-columns: 30vh; */
+}
+
+.album-show-container {
+    /* grid-area: main; */
+    background-color: #1c1c1c;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.album-show-header {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    padding-bottom: 2.5vh;
+}
+
+.album-show-image {
+    margin-right: 24px;
+    display: flex;
+    height: 100%;
+    width: 20%;
+    min-width: 200px;
+}
+
+.album-show-image img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.album-show-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.extra-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.component-type {
+    font-weight: 700;
+}
+
+.album-show-info.album-title {
+    font-size: 8vh;
+}
+
+.extra-info {
+    font-size: 14px;
+}
+
+.artist-info .artist-name {
+    color: white;
+    font-weight: 700;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.album-year:before {
+    content: "•";
+    margin: 0 4px;
+}
+
+.album-track-count:before {
+    content: "•";
+    margin: 0 4px;
+}
+
+/* .album-duration:before {
+    content: "•";
+    margin: 0 4px;
+} */
+
+.album-show-item.album-show-play-area {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    height: 54px;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+.album-tracks-label-holder {
+    top: 64px;
+    border-bottom: 1px solid transparent;
+    box-sizing: content-box;
+    height: 36px;
+    margin: 0 -16px 8px;
+    padding: 0 16px;
+    position: sticky;
+    z-index: 2;
+}
+
+.album-tracks-label {
+    font-size: 13px;
+    border-bottom: 1px solid hsla(0, 0%, 100%, .1);
+    color: #b3b3b3;
+    height: 36px;
+    display: flex;
+    padding: 0px 10px;
+    align-items: center;
+}
+
+.tracks-title-indicator {
+    margin-left: 15px;
+    width: 80%;
+}
+
+.tracks-duration-icon-container {
+    display: flex;
+    width: 15%;
+    height: auto;
+    justify-content: flex-end;
+}
+
+.tracks-duration-icon-container img {
+    max-width: 10%;
+}

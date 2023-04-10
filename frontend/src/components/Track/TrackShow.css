@@ -5,7 +5,7 @@
     grid-template-areas:
             "sideBar navBar navBar"
             "sideBar main main"
-            "sideBar main main"
+            "sideBar main main"fec
             ;
     grid-template-columns: 30vh; */
 }

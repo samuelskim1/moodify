@@ -2,6 +2,7 @@
     json.set! album.id do
         json.extract! album, :id, :title, :year, :artist_id
         json.photoUrl album.photo.attached? ? album.photo.url : nil
+        json.set! :artist_name, album.artist.name
         # json.songUrl album.song.attached? ? album.song.url : nil
     end
 end

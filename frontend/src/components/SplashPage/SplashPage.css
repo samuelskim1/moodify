@@ -41,6 +41,7 @@
     display: flex;
     flex-direction: column;
     padding: 20px 0px;
+    height: 33%;
 }
 
 
@@ -76,6 +77,56 @@
 
 
 .splash-random-tracks {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    min-height: 100vh;
+    margin-top: 2rem;
+    height: 100%;
+    /* display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-areas: "....";
+    gap: 5%; */
+}
+
+.albums-index-section {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0px;
+    height: 33%;
+}
+
+.albums-index-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 10px;
+}
+
+.albums-index-title {
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+    padding-top: 20px;
+}
+
+.albums-index-link {
+    padding-top: 30px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    color: rgb(161, 161, 161);
+}
+
+.albums-index-link:visited, .albums-index-link:active {
+    color: rgb(161, 161, 161);
+    text-decoration: underline;
+}
+
+.albums-index-link:hover {
+    text-decoration: underline;
+}
+
+.splash-random-albums {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;

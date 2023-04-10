@@ -1,0 +1,49 @@
+.nav-main-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+}
+
+.album-index-flex-container {
+    /* display: grid;
+    grid-template-areas:
+        "sideBar navBar navBar"
+        "sideBar main main"
+        "sideBar main main"; */
+    display: flex;
+    width: 100%;
+}
+
+.album-index-container {
+    /* grid-area: main; */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-left: 3vw;
+    /* overflow-y: auto; */
+    background-color: #1c1c1c;
+
+}
+
+.album-item-index-flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    column-width: 20px;
+    min-height: 100vh;
+    /* max-height: 100%; */
+
+    /* grid-template-columns: 20% 20% 20% 20%;
+    grid-template-areas: "...."; */
+    /* gap: 5%; */
+    height: 100%;
+    /* overflow: scroll; */
+    /* scroll-behavior: smooth; */
+}
+
+.album-index-title {
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+    padding: 40px 10px 40px;
+}
