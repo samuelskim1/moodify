@@ -26,7 +26,7 @@ function TrackShow() {
     
     const lines = track?.lyrics?.split(/(\r|\n|\n|\r)/);
     const formattedLines = lines?.map(line => {
-        if (line) return <p>{line}</p>
+        if (line !== "\n" && line !== "") return <p>{line}</p>
     })
     // console.log(track.lyrics);
     // console.log(lines);
@@ -68,14 +68,14 @@ function TrackShow() {
                         </div>
                         <div className="track-show-item track-lyrics-container">
                             <h2 className="track-lyrics-container-item track-lyrics-header">Lyrics</h2>
-                            <div className="track-lyrics-container-item track-lyrics">{formattedLines}</div>
-                        </div>
-                        <div className="track-show-item artist-link-container">
-                            <i className="artist-link-container-item fa-solid fa-user" style={{ color: '#ffffff' }}></i>
-                            <div className="artist-link-container-item artist-and-name">
-                                <h6 className="artist-header-title">Artist</h6>
-                                <h6 className="artist-header-title">{track.artistName}</h6>
+                            <div className="track-show-item artist-link-container">
+                                <i className="artist-link-container-item fa-solid fa-user" style={{ color: '#ffffff' }}></i>
+                                <div className="artist-link-container-item artist-and-name">
+                                    <h6 className="artist-header-title">Artist</h6>
+                                    <h6 className="artist-header-title">{track.artistName}</h6>
+                                </div>
                             </div>
+                            <div className="track-lyrics-container-item track-lyrics">{formattedLines}</div>
                         </div>
                     </div>
                 </div>

@@ -88,13 +88,15 @@
     display: flex;
     width: 100%;
     flex-direction: row;
-    height: 10vh;
+    height: 6vh;
     justify-content: flex-start;
     align-items: center;
+    position: relative;
 }
 
 .play-button-size-setter{
-    
+    position: relative;
+    left: 15px;
 }
 
 i.fa-solid.fa-circle-play.fa-2xl {
@@ -103,6 +105,20 @@ i.fa-solid.fa-circle-play.fa-2xl {
 }
 
 
+.track-lyrics-header{
+    padding-top: 20px;
+    padding-bottom: 40px;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+
 .track-lyrics {
+    color: hsla(0, 0%, 100%, .7);
     white-space: pre;
+}
+
+.track-lyrics p{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

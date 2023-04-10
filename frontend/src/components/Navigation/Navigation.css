@@ -1,6 +1,8 @@
 .navigation-bar-container {
-    grid-area: navBar;
-    position: relative;
+    /* grid-area: navBar; */
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 .navigation-bar {
