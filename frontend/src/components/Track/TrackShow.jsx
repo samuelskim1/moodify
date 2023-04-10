@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { fetchTrack } from "../../store/track";
 import Navigation from "../Navigation";
 import SideBar from "../SideBar";
+import TrackPlayButton from "./TrackPlayButton";
 import './TrackShow.css'
 
 function TrackShow() {
@@ -61,10 +62,8 @@ function TrackShow() {
                                 </div>
                             </div>
                         </header>
-                        <div className="track-show-item track-show-play-area">
-                            <div className="play-button-size-setter">
-                                <i className="fa-solid fa-circle-play fa-2xl" style={{color: '#2dc819'}}></i>
-                            </div>
+                        <div className="track-show-item track-show-play-area" >
+                            <TrackPlayButton track={track}/>
                         </div>
                         <div className="track-show-item track-lyrics-container">
                             <h2 className="track-lyrics-container-item track-lyrics-header">Lyrics</h2>

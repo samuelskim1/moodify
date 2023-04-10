@@ -10,15 +10,6 @@
     grid-template-columns: 30vh; */
 }
 
-.track-show-header {
-    display: flex;
-    align-items: flex-end;
-    position: relative;
-    padding-bottom: 2.5vh;
-}
-
-
-
 .track-show-container {
     /* grid-area: main; */
     background-color: #1c1c1c;
@@ -26,6 +17,13 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
+}
+
+.track-show-header {
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    padding-bottom: 2.5vh;
 }
 
 .track-show-image {
@@ -51,11 +49,10 @@
     display:flex;
     flex-direction: row;
 }
+
 .component-type {
     font-weight: 700;
 }
-
-
 
 .track-show-info.track-title {
     font-size: 8vh;
@@ -70,8 +67,6 @@
     font-weight: 700;
     margin-left: 5px;
     font-size: 14px;
-    
-    
 }
 
 .track-year:before {
@@ -88,22 +83,11 @@
     display: flex;
     width: 100%;
     flex-direction: row;
-    height: 6vh;
+    height: 54px;
     justify-content: flex-start;
     align-items: center;
     position: relative;
 }
-
-.play-button-size-setter{
-    position: relative;
-    left: 15px;
-}
-
-i.fa-solid.fa-circle-play.fa-2xl {
-    max-width: 100%;
-    max-height: 100%;
-}
-
 
 .track-lyrics-header{
     padding-top: 20px;

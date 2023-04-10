@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from './components/SignupFormPage';
-import SplashPage from './components/SplashPage';
+import SplashPage from './components/SplashPage/SplashPage';
 import TrackIndex from './components/Track/TrackIndex';
 import TrackShow from './components/Track/TrackShow';
 

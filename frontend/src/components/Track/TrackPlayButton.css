@@ -1,0 +1,18 @@
+.play-button-container {
+        width: 54px;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+}
+
+.play-button-size-setter {
+    position: relative;
+    left: 15px;
+}
+
+i.fa-solid.fa-circle-play.fa-2xl {
+    max-width: 100%;
+    max-height: 100%;
+}
