@@ -1,6 +1,10 @@
 .track-show-flex-container {
-    display:flex;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: flex-end;
+    align-items: center;
+    position:relative;
     /* display: grid;
     grid-template-areas:
             "sideBar navBar navBar"
@@ -8,6 +12,11 @@
             "sideBar main main"fec
             ;
     grid-template-columns: 30vh; */
+}
+
+.non-play-bar-section {
+    width: 100%;
+    display: flex;
 }
 
 .track-show-container {

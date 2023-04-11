@@ -69,13 +69,13 @@ i.fa-solid.fa-circle-play.fa-2xl:hover {
 
 .fa-circle-play:before,
 .fa-play-circle:before {
-    display: flex;
+    content: "\f144";
+    /* display: flex;
     background-color: black;
     height: 24px;
     width: 24px;
-    content: "\f144";
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
 }
 
 .album-title {

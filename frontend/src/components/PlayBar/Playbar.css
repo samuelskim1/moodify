@@ -1,0 +1,69 @@
+.footer-container {
+    position: absolute;
+    z-index: 5;
+    min-width: 620px;
+    width: 100%;
+    height: 90px; 
+    border-top: 1px solid #282828;
+    background-color: #181818;
+    box-sizing: border-box;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.play-bar-track-info {
+    min-width: 180px;
+    width: 30%;
+}
+
+.now-playing-section {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.now-playing-artist-info {
+    display:flex;
+    flex-direction: column;
+    margin: 0 14px;
+}
+
+.now-playing-artist-info p {
+    width: 100%;
+}
+
+.now-playing-artist-info-name {
+    color: white;
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+}
+
+.now-playing-artist-info-artist {
+    color: hsla(0, 0%, 100%, .7);
+    font-size: 0.6rem;
+}
+
+.now-playing-image-container {
+    isolation: isolate;
+    position: relative;
+}
+
+
+.play-bar-track-info img{
+    width: 60px;
+    height: auto;
+}
+
+.play-bar-control-container {
+    width: 40%;
+}
+
+
+
+.volume-control-container {
+    width: 30%;
+}

@@ -15,7 +15,9 @@ function TrackIndexItem({track}) {
                 <div className='track-image'>
                     <img src={track.photoUrl} alt=""/>
                     <div className='track-index-item-play-button'>
-                            <i className="fa-solid fa-circle-play fa-2xl" style={{ color: '#2dc819' }}></i>
+                        <div className="play-button-black-background">
+                            <i className="fa-solid fa-circle-play fa-2xl play-button" style={{ color: '#2dc819' }}></i>
+                        </div>
                     </div>
                 </div>
                 <h6 className="track-title">{track.title}</h6>
