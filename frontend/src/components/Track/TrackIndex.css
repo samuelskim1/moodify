@@ -1,8 +1,23 @@
 .nav-main-container {
-    display:flex;
+    display: flex;
     flex-direction: column;
     width: 100%;
+    margin-left: 250px;
+    /* min-width: 800px; */
+    left: 0;
     position: relative;
+
+    /* display: flex;
+    flex-direction: column;
+    width: 80%;
+    min-width: 800px;
+    left: 20vw;
+    position: relative; */
+
+    /* display:flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative; */
 }
 
 .track-index-flex-container {
@@ -11,8 +26,8 @@
         "sideBar navBar navBar"
         "sideBar main main"
         "sideBar main main"; */
-        display:flex;
-        width:100%;
+    display:flex;
+    width:100%;
 }
 
 .track-index-container {
@@ -23,6 +38,7 @@
     padding-left: 3vw;
     /* overflow-y: auto; */
     background-color: #1c1c1c;
+    padding-bottom: 40px;
     
 }
 

@@ -4,11 +4,13 @@ import { fetchAllTracks} from "../../store/track";
 import Navigation from "../Navigation";
 import SideBar from "../SideBar";
 import TrackIndexItem from "./TrackIndexItem";
+import PlayBar from "../PlayBar/PlayBar";
 import './TrackIndex.css';
 
 function TrackIndex() {
     const dispatch = useDispatch();
-    const tracks = useSelector(state => Object.values(state.tracks))
+    const tracks = useSelector(state => Object.values(state.tracks));
+    const currentSong = useSelector(state => state.audio["currentSong"]);
 
     //do the fetch inside of the outercomponent(maybe in our splashpage, albumsshowpage, searchpage)
     //or have a conditional inside 
@@ -41,7 +43,7 @@ function TrackIndex() {
                     </div>
                 </div>
 
-
+                {/* <PlayBar/>                        */}
             </div>
         </>
         

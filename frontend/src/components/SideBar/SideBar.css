@@ -1,7 +1,22 @@
 .sidebar-container {
+
     background-color: black;
+    width: 250px;
+    min-width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+
+    /* background-color: black;
     width: 20vw;
     min-width: 200px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2; */
+
     /* max-width: 30vw; */
     /* grid-area: sideBar; */
     /* display: flex;

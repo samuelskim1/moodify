@@ -5,10 +5,12 @@ import Navigation from "../Navigation";
 import SideBar from "../SideBar";
 import AlbumIndexItem from "./AlbumIndexItem";
 import './AlbumIndex.css';
+import PlayBar from "../PlayBar/PlayBar";
 
 function AlbumIndex() {
     const dispatch = useDispatch();
-    const albums = useSelector(state => Object.values(state.albums))
+    const albums = useSelector(state => Object.values(state.albums));
+    const currentSong = useSelector(state => state.audio["currentSong"]);
 
     //do the fetch inside of the outercomponent(maybe in our splashpage, albumsshowpage, searchpage)
     //or have a conditional inside 
@@ -24,22 +26,22 @@ function AlbumIndex() {
     }
 
     return (
-        <>
-            <div className="album-index-flex-container">
-                <SideBar />
-                <div className="nav-main-container">
-                    <Navigation />
-                    <div className="album-index-container">
-                        <h2 className="album-index-title">Albums</h2>
-                        <div className='album-item-index-flexbox'>
-                            {albums.map(album => (
-                                <AlbumIndexItem key={album.id} album={album} />
-                            ))}
-                        </div>
+        
+        <div className="album-index-flex-container">
+            <SideBar />
+            <div className="nav-main-container">
+                <Navigation />
+                <div className="album-index-container">
+                    <h2 className="album-index-title">Albums</h2>
+                    <div className='album-item-index-flexbox'>
+                        {albums.map(album => (
+                            <AlbumIndexItem key={album.id} album={album} />
+                        ))}
                     </div>
                 </div>
             </div>
-        </>
+            {/* <PlayBar/> */}
+        </div>
 
     )
 }

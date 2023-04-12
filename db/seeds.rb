@@ -94,26 +94,26 @@ ApplicationRecord.transaction do
   puts "Done!"
 end
 
-Track.first.photo.attach(
-      io: URI.open("https://moodify-seeds.s3.amazonaws.com/Keshi/pictures/keshi-gabriel-album.jpg"),
-      filename: "keshi-gabriel-album.jpg"
-   )
-Track.first.song.attach(
-      io: URI.open("https://moodify-seeds.s3.amazonaws.com/Keshi/albums/gabriel/1.mp3"),
-      filename: "1.mp3"
-   )
+# Track.first.photo.attach(
+#       io: URI.open("https://moodify-seeds.s3.amazonaws.com/Keshi/pictures/keshi-gabriel-album.jpg"),
+#       filename: "keshi-gabriel-album.jpg"
+#    )
+# Track.first.song.attach(
+#       io: URI.open("https://moodify-seeds.s3.amazonaws.com/Keshi/albums/gabriel/1.mp3"),
+#       filename: "1.mp3"
+#    )
 
 
-# Track.where(album_id: 1).each_with_index do |track, index|
-#   track.photo.attach(
-#     io: URI.open("https://moodify-seeds.s3.amazonaws.com/Keshi/pictures/keshi-gabriel-album.jpg"),
-#     filename: "keshi-gabriel-album.jpg"
-#   )
-#   track.song.attach(
-#     io: URI.open("https://moodify-seeds.s3.amazonaws.com/Keshi/albums/gabriel/#{index + 1}.mp3"),
-#     filename: "#{index + 1}.mp3"
-#   )
-# end
+Track.where(album_id: 1).each_with_index do |track, index|
+  track.photo.attach(
+    io: URI.open("https://moodify-seeds.s3.amazonaws.com/Keshi/pictures/keshi-gabriel-album.jpg"),
+    filename: "keshi-gabriel-album.jpg"
+  )
+  track.song.attach(
+    io: URI.open("https://moodify-seeds.s3.amazonaws.com/Keshi/albums/gabriel/#{index + 1}.mp3"),
+    filename: "#{index + 1}.mp3"
+  )
+end
 
 # Track.where(album_id: 2).each_with_index do |track, index|
 #   track.photo.attach(
@@ -137,11 +137,11 @@ Track.first.song.attach(
 #   )
 # end
 
-puts "Seeding Tracks Media Files"
+# puts "Seeding Tracks Media Files"
 
-album1 = Album.where(id: 1)[0]
-  album1_photo = URI.open("https://moodify-seeds.s3.amazonaws.com/Keshi/pictures/keshi-gabriel-album.jpg")
-  album1.photo.attach(io: album1_photo, filename: "keshi-gabriel-album.jpg")
+# album1 = Album.where(id: 1)[0]
+#   album1_photo = URI.open("https://moodify-seeds.s3.amazonaws.com/Keshi/pictures/keshi-gabriel-album.jpg")
+#   album1.photo.attach(io: album1_photo, filename: "keshi-gabriel-album.jpg")
 
 # album2 = Album.where(id: 2)[0]
 #   album2_photo = URI.open("https://moodify-seeds.s3.amazonaws.com/John-OFA-Rhee/pictures/John-OFA-Rhee-album-bleeding-in-sunset-blvd.-album.jpg")
@@ -152,13 +152,13 @@ album1 = Album.where(id: 1)[0]
 #   album3.photo.attach(io: album3_photo, filename: "DPR-LIVE-Coming-To-You-Live-album.jpg")
 
 
-puts "Seeding Album Media Files"
+# puts "Seeding Album Media Files"
 
-artist1 = Artist.where(id: 1)[0]
-  artist1_profile_picture = URI.open("https://moodify-seeds.s3.amazonaws.com/Keshi/pictures/keshi-spotify-icon.jpg")
-  artist1.profile_picture.attach(io: artist1_profile_picture, filename: "keshi-spotify-icon.jpg")
-  artist1_background_cover_photo = URI.open("https://moodify-seeds.s3.amazonaws.com/Keshi/pictures/keshi-artist-show-background.jpg")
-  artist1.background_cover_photo.attach(io: artist1_background_cover_photo, filename: "keshi-artist-show-background.jpg")
+# artist1 = Artist.where(id: 1)[0]
+#   artist1_profile_picture = URI.open("https://moodify-seeds.s3.amazonaws.com/Keshi/pictures/keshi-spotify-icon.jpg")
+#   artist1.profile_picture.attach(io: artist1_profile_picture, filename: "keshi-spotify-icon.jpg")
+#   artist1_background_cover_photo = URI.open("https://moodify-seeds.s3.amazonaws.com/Keshi/pictures/keshi-artist-show-background.jpg")
+#   artist1.background_cover_photo.attach(io: artist1_background_cover_photo, filename: "keshi-artist-show-background.jpg")
 
 # artist2 = Artist.where(id: 2)[0]
 #   artist2_profile_picture = URI.open("https://moodify-seeds.s3.amazonaws.com/John-OFA-Rhee/pictures/John-OFA-Rhee-spotify-icon.jpg")
@@ -168,4 +168,4 @@ artist1 = Artist.where(id: 1)[0]
 #   artist3_profile_picture = URI.open("https://moodify-seeds.s3.amazonaws.com/DPR-LIVE/pictures/DPR-LIVE-spotify-icon.jpg")
 #   artist3.profile_picture.attach(io: artist3_profile_picture, filename: "DPR-LIVE-spotify-icon.jpg")
 
-puts "Seeding Artists Media Files"
+# puts "Seeding Artists Media Files"

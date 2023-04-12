@@ -12,27 +12,24 @@ function TrackShow() {
     const {trackId} = useParams();
     const dispatch = useDispatch();
     const track = useSelector(state => state.tracks[trackId]);
+    const currentSong = useSelector(state => state.audio["currentSong"]);
 
     useEffect(() => {
         dispatch(fetchTrack(trackId))
-        console.log('useEffect is mounting')
-    }, [trackId])
+    }, [dispatch, trackId])
 
     if (!track) {
         return null;
     }
+
     //could create a component for the top section of the album/track/playlist show page
     //similar format
     //focus on that later though
-
     
     const lines = track?.lyrics?.split(/(\r|\n|\n|\r)/);
     const formattedLines = lines?.map(line => {
         if (line !== "\n" && line !== "") return <p>{line}</p>
     })
-    // console.log(track.lyrics);
-    // console.log(lines);
-    // console.log(formattedLines);
 
     
     
@@ -43,7 +40,7 @@ function TrackShow() {
             <div className="track-show-flex-container">
                 <div className="non-play-bar-section">
                     <SideBar/>
-                    <div className="nav-main-container">
+                    <div className="track-show-nav-main-container">
                         <Navigation/>
                         <div className="track-show-container">
                             <header className="track-show-item track-show-header">
@@ -81,7 +78,7 @@ function TrackShow() {
                         </div>
                     </div>
                 </div>
-                <PlayBar/>
+                {/* <PlayBar/> */}
             </div>
         </>
     )

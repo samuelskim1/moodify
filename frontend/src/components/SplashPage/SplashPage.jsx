@@ -8,10 +8,12 @@ import AlbumIndexItem from "../Album/AlbumIndexItem";
 import './SplashPage.css'
 import { fetchSplashPageTracks } from "../../store/track";
 import { fetchSplashPageAlbums } from "../../store/album";
+import PlayBar from "../PlayBar/PlayBar";
 
 function SplashPage() {
     const dispatch = useDispatch();
     const tracks = useSelector(state => Object.values(state.tracks));
+    const currentSong = useSelector(state => state.audio["currentSong"]);
     const albums = useSelector(state => Object.values(state.albums));
     //instead of fetching all of the songs just to get a few ones,
     //make a custom thunk action with a custom route and controller action to return only the song that you want to return
@@ -46,10 +48,12 @@ function SplashPage() {
                             <h2 className="tracks-index-title">Tracks</h2>
                             <NavLink to='/tracks' className='tracks-index-link'>Show all</NavLink>
                         </header>
-                        <div className="splash-random-tracks">
-                            {tracks.map(track => (
-                                <TrackIndexItem key={track.id} track={track} />
-                            ))}
+                        <div className="splash-tracks-flexbox-container">
+                            <div className="splash-random-tracks">
+                                {tracks.map(track => (
+                                    <TrackIndexItem key={track.id} track={track} />
+                                ))}
+                            </div>
                         </div>
                     </div>
                     <div className="albums-index-section">
@@ -65,6 +69,7 @@ function SplashPage() {
                     </div>
                 </div>
             </div>
+            {/* <PlayBar/> */}
         </div>
     )
 }

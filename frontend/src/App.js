@@ -7,6 +7,7 @@ import TrackIndex from './components/Track/TrackIndex';
 import TrackShow from './components/Track/TrackShow';
 import AlbumShow from './components/Album/AlbumShow';
 import AlbumIndex from './components/Album/AlbumIndex';
+import PlayBar from './components/PlayBar/PlayBar';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <SplashPage/>
         </Route>
       </Switch>
+      <PlayBar/>
     </>
   );
 }
