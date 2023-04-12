@@ -60,7 +60,8 @@ export const skipToPrevSong = (payload) => ({
 
 const audioReducer = (state = {}, action ) => {
     const nextState = {...state}
-    
+    let albumTracks;
+
     switch (action.type) {
         // case PLAY_SONG:
         //     return action.track.id = action.track.songUrl
@@ -80,11 +81,37 @@ const audioReducer = (state = {}, action ) => {
             nextState["nextSong"] = action.track;
             return nextState;
         case SKIP_TO_NEXT_SONG:
-            debugger;
-            const albumTracks = Object.values(nextState["currentAlbum"])
+            // debugger;
+            albumTracks = Object.values(nextState.currentAlbum.tracks)
+            nextState.previousSong = nextState.currentSong;
+            nextState.currentSong = nextState.nextSong;
+
+            let newNextSong;
+            albumTracks.forEach((song, index) => {
+                if ((song.id === nextState.nextSong.id) && (index + 1 > albumTracks.length - 1)) {
+                    newNextSong = albumTracks[0];
+                } else if ((song.id === nextState.nextSong.id)) {
+                    newNextSong = albumTracks[index + 1]
+                }
+            })
+
+            nextState.nextSong = newNextSong;
             return nextState;
         case SKIP_TO_PREV_SONG:
+            albumTracks = Object.values(nextState.currentAlbum.tracks)
+            nextState.nextSong = nextState.currentSong;
+            nextState.currentSong = nextState.previousSong;
 
+            let newPrevSong;
+            albumTracks.forEach((song, index) => {
+                if ((song.id === nextState.previousSong.id) && (index - 1 < 0)) {
+                    newPrevSong = albumTracks[albumTracks.length - 1];
+                } else if ((song.id === nextState.previousSong.id)) {
+                    newPrevSong = albumTracks[index - 1]
+                }
+            })
+
+            nextState.previousSong = newPrevSong;
             return nextState;
         default:
             return nextState;

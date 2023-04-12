@@ -16,6 +16,7 @@ ApplicationRecord.transaction do
   Track.destroy_all
   Album.destroy_all
   Artist.destroy_all
+  Playlist.destroy_all
 
 
   puts "Resetting primary keys..."
@@ -24,11 +25,13 @@ ApplicationRecord.transaction do
   ApplicationRecord.connection.reset_pk_sequence!('tracks')
   ApplicationRecord.connection.reset_pk_sequence!('albums')
   ApplicationRecord.connection.reset_pk_sequence!('artists')
+  ApplicationRecord.connection.reset_pk_sequence!('playlists')
 
   puts "Creating users..."
   puts "Creating tracks..."
   puts "Creating albums..."
   puts "Creating artists..."
+  puts "Creating playlists..."
   # Create one user with an easy to remember username, email, and password:
   User.create!(
     username: 'Demo-lition', 
@@ -44,8 +47,7 @@ ApplicationRecord.transaction do
       password: 'password'
     }) 
   end
-
-
+  
   artist1 = Artist.create!(name: 'Keshi')
   artist2 = Artist.create!(name: 'John OFA Rhee')
   artist3 = Artist.create!(name: 'DPR LIVE')
@@ -90,6 +92,17 @@ ApplicationRecord.transaction do
   track29 = Track.create!(title: 'Please (Feat. KIM HYO EUN, G2 & DUMBFOUNDEAD)', year: '2017', duration: '3:05', album_id: album3.id, artist_id: artist3.id, lyrics: "Please, please\nComing to you live\nAnchor Messi, anchor Messi, anchor Messi\nMessi, Messi, oh, live, live, live (영원히 라이브야)\nGoal (live, he so dang good)\nI\x27ma keep it straight one hunnit (one hunnit)\n래퍼들아 다른 직업 찾어\n야 대한민국이라 하지말아줘\n야 너네 아가리가 이나라 망쳐 like please\nUh 한참 모잘러 like eh\nUh, don\x27t want collabo, no\nMm, no 안줘 전화번호\n진짜는 듣고 연락 바로 brr\n네 여친 풀어 해쳐 \x27cause I got that fancy flow\n그녀는 흔들어 내 genital, she wanna make it rain\n왜냐 flavour 100% natural\nHigh ground, underground\n주목해 \x27cause I\x27m credible\nYeah, good music 만드느라 바뻐\n밥벌이로 하기보단 do it for the passion\nLook 이건 education\n만일 누가 제일 잘나가 묻는다면\n응 might be your answer 됐어\nC\x27mon man, please\n이 자식들은 내가 부러워\n이젠 조용한 곳만 찾아가 술 먹어\n나 땜에 자존심 구겨졌네\n인사 해 웃으면서 다음에 만남 또\n니넨 믿겨져 난 진짜 말도 안 되는 삶을 산다고\n바로 또 앨범이 나온다고\n내 여친하고 시간 좀\n내려했더니 일이 바로 쌓여\nPlease 나 좀 내버려 둬\n술 기운에 가살 써 다빈이 한테 전화왔지\n난 솔직히 이런 부탁해 준\n그 친구한테 너무 진짜 고마워\n우린 제대로 너네들을 놀리지\n사진도 다가와서 못 찍지 위험하게 다 몰리지\n도덕과 비싼 고깃집 난 너가 뉘신지\n몰라 뒤에서 날 씹던 놈들 이제 아무리\n내게 연락을 해도 싹 다 걍 씹히지\nPlease\n제발 나 안다고 하지마 어디가서\n최고라 주장하는 래퍼들은 다 어디갔어\n어리석어\n함부로 까불지마 그러다\n니네들 싹다 머리 박어\n저리 가 너 거리를 둬\nOnly positive vibes in my zone\nHomie 어서 관둬\n나는 니가 좋아하는 래퍼들의 favorite 래퍼\n더 높은 level에 올라갈 때 넌 멈춰있지\n마치 broken elevator 내꺼 챙기기 바쁘니까\n당연히 없지 배려\n한번 사는 인생 이기적이야지\n그게 바로 사는 것에 매력\nOne life to live 쓸데없는 것에 집착 말고\nBe quiet, bitch (please)\nPlease, please\nWhy you always hatin\x27\nSee me on street there might be an altercation\nOnly 교포 doing features on like every compilation\n나는 dummy 너는 바보 never needed 한글학교\nI said please, please\n제발 한번 해봐\nI been payin\x27 dues for years 너가 한번 해봐\n아무 style도 해봐도 bitch I could do it better\nGet your 여자친구 wetter like we took your girl to everland\nSheesh\nI never talk to the police\nThat\x27s a little lesson y\x27all can learn out in the East\nGot homies out in Seoul servin\x27 25 for weed\n너나 잘해 나는 그냥 돈을 모으지\nDon\x27t do it, please don\x27t do it\n그냥 하지마 don\x27t pursue it\nThis is grown folk bidness\nMan we do this independent\n너와 달리 필요없어 but you bitches always beggin\x27 like")
   track30 = Track.create!(title: 'Interlude', year: '2017', duration: '0:34', album_id: album3.id, artist_id: artist3.id, lyrics: "")
   track31 = Track.create!(title: 'To Myself', year: '2017', duration: '3:33', album_id: album3.id, artist_id: artist3.id, lyrics: "DPR, we gang, gang\nRep it every day, ay\nI ain\x27t feelin\x27 them fakes\nThey don\x27t entertain, ay\nDPR, we gang, gang\nDPR, we gang, gang\nDPR, we gang, gang\nDPR, we gang, gang\nDPR, we gang, gang (okay now)\nDPR, we gang, gang (drop that sound)\nDPR, we gang, gang (tear it down)\nDPR, we gang, gang (when around)\nDPR, we gang, gang (then we out)\nDPR, we gang, gang (then we out)\nDPR, we gang, gang (hold us down, hold us down)\nDPR, we gang, gang\n오늘도 완벽한 그림을 그려\n또 꿈을 꾸며 나는 오늘을 잊어\nI look at the stars and I look in the mirror\n너는 날 믿고 나는 널 더 믿어\n알고있지 가끔가다 힘들거\n언제나 지켜 가족과 너의 신념\n행동 보다 말로 하는건 참 쉬워\n그러 니 실천으로 다음 페이지\nTill I die 에서도 내가 말했지 yeah\nI\x27ma be a legend, you just watch and see, yeah\nHater 들은 여전히 말만 많지\n괜찮아 이젠 팬들이 나의 곁에 있지 yeah\n힘이되는 응원 너가 고맙기에\n1분1초 빨리 지금 너한테\n너를 위한 음악 studio late night\n오늘 밤 에도 난\nThinking to myself\n(Who am I?) Now I know\nThinking to myself\nYeah, yeah, I don\x27t know just got me\nThinking to myself\n(Who am I?) Yeah\nThinking to my... (who am I?)\nYeah, yeah, I don\x27t know just got me\nThinking to my (self)\nDPR, we gang, gang (okay now)\nDPR, we gang, gang (drop that sound)\nDPR, we gang, gang (tear it down)\nDPR, we gang, gang (when around)\nDPR, we gang, gang (then we out)\nDPR, we gang, gang (then we out)\nDPR, we gang, gang (hold us down, hold us down)\nDPR, we gang, gang\nOkay 일단 sit down and rewind the time\n24시를 돌려 그래 먼 옛날\nSNS는 없고 Motorola 하면 당연 부자\n또 댄스음악이 유행했던 back to 1993\n엄마가 고생끝에 낳은 홍다빈\n여러 문제 많았지만 결국 극복\n했고 끝내 전설이 될 아이\nFast forward, yeah, look at me now, whoa\n지금의 위치는 무대 위야 uh\n이제서야 느낌이 와 내앞에 보여지는 여러 fan들의\n얼굴 내가 그토록 그리던 그림이고 그리고 이젠\nWith my one and only brothers 펼쳐 새 시대\nYeah, look at my team now\nYeah, shhh got me\nThinking to myself\n(Who am I?) Now I know\nThinking to myself\nYeah, yeah, I don\x27t know just got me\nThinking to myself\n(Who am I?) Yeah\nThinking to my... (who am I?)\nYeah, yeah, I don\x27t know just got me\nComing to you, live\nDPR, we gang, gang (okay now)\nDPR, we gang, gang (drop that sound)\nDPR, we gang, gang (tear it down)\nDPR, we gang, gang (when around)\nDPR, we gang, gang (then we out)\nDPR, we gang, gang (then we out)\nDPR, we gang, gang (hold us down, hold us down)\nDPR, we gang, gang\n♪\nDPR, we gang, gang\nRep it every day, ay\nI ain\x27t feelin\x27 them fakes\nThey don\x27t entertain, ay\nDPR, we gang, gang\nDPR, we gang, gang\nDPR, we gang, gang\nDPR, we gang, gang\nDPR, we gang, gang (okay now)\nDPR, we gang, gang (drop that sound)\nDPR, we gang, gang (tear it down)\nDPR, we gang, gang (when around)\nDPR, we gang, gang (then we out)\nDPR, we gang, gang (then we out)\nDPR, we gang, gang (hold us down, hold us down)\nDPR, we gang, gang")
+
+  playlist1 = Playlist.create!(title: 'PLAYLIST TIME', creator_id: 1, description: "")
+  playlist2 = Playlist.create!(title: "BAG TIME", creator_id: 1, description:"")
+
+  PlaylistTrack.create!(playlist_id: playlist1.id, track_id: track10.id)
+  PlaylistTrack.create!(playlist_id: playlist1.id, track_id: track28.id)
+  PlaylistTrack.create!(playlist_id: playlist1.id, track_id: track19.id)
+
+  PlaylistTrack.create!(playlist_id: playlist2.id, track_id: track9.id)
+  PlaylistTrack.create!(playlist_id: playlist2.id, track_id: track17.id)
+  PlaylistTrack.create!(playlist_id: playlist2.id, track_id: track24.id)
 
   puts "Done!"
 end

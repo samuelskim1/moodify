@@ -1,3 +1,5 @@
+import csrfFetch from "./csrf";
+
 const GET_ALBUM = 'GET_ALBUM'
 const GET_ALBUMS = 'GET_ALBUMS'
 const GET_SPLASH_ALBUMS = 'GET_SPLASH_ALBUMS'
@@ -20,7 +22,7 @@ const getSplashAlbums = (albums) => ({
 
 export const fetchAllAlbums = () => async (dispatch) => {
 
-    const res = await fetch('/api/albums');
+    const res = await csrfFetch('/api/albums');
     if (res.ok) {
         const albums = await res.json();
         return dispatch(getAlbums(albums));
@@ -28,7 +30,7 @@ export const fetchAllAlbums = () => async (dispatch) => {
 }
 
 export const fetchSplashPageAlbums = () => async (dispatch) => {
-    const res = await fetch('/api/albums/splash');
+    const res = await csrfFetch('/api/albums/splash');
     if (res.ok) {
         const albums = await res.json();
         return dispatch(getSplashAlbums(albums));
@@ -36,7 +38,7 @@ export const fetchSplashPageAlbums = () => async (dispatch) => {
 }
 
 export const fetchAlbum = (albumId) => async (dispatch) => {
-    const res = await fetch(`/api/albums/${albumId}`);
+    const res = await csrfFetch(`/api/albums/${albumId}`);
     if (res.ok) {
         const album = await res.json();
         return dispatch(getAlbum(album));

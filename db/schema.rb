@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_07_023119) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_12_182819) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,6 +59,25 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_07_023119) do
     t.index ["name"], name: "index_artists_on_name"
   end
 
+  create_table "playlist_tracks", force: :cascade do |t|
+    t.bigint "playlist_id", null: false
+    t.bigint "track_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["playlist_id"], name: "index_playlist_tracks_on_playlist_id"
+    t.index ["track_id"], name: "index_playlist_tracks_on_track_id"
+  end
+
+  create_table "playlists", force: :cascade do |t|
+    t.bigint "creator_id", null: false
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "description"
+    t.index ["creator_id"], name: "index_playlists_on_creator_id"
+    t.index ["title"], name: "index_playlists_on_title"
+  end
+
   create_table "tracks", force: :cascade do |t|
     t.bigint "album_id", null: false
     t.bigint "artist_id", null: false
@@ -88,6 +107,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_07_023119) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "albums", "artists"
+  add_foreign_key "playlist_tracks", "playlists"
+  add_foreign_key "playlist_tracks", "tracks"
+  add_foreign_key "playlists", "users", column: "creator_id"
   add_foreign_key "tracks", "albums"
   add_foreign_key "tracks", "artists"
 end

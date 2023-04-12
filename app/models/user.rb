@@ -1,6 +1,22 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  username        :string           not null
+#  email           :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
 class User < ApplicationRecord
   has_secure_password validations: false
   before_validation :ensure_session_token
+  has_many :playlists,
+    primary_key: :id,
+    foreign_key: :creator_id,
+    class_name: 'Playlist'
 
   validates :email, 
     uniqueness: true, 

@@ -18,6 +18,7 @@ function TrackPlayButton({track}) {
     }, [])
     
     if (!album) return null;
+    if (!album?.tracks) return null;
     const albumTracks = Object.values(album?.tracks);
     
     //logic for settingPrevSong using the album slice of state
