@@ -1,12 +1,37 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { skipToNextSong, skipToPrevSong } from "../../store/audio";
 import AudioPlayer, { RHAP_UI } from 'react-h5-audio-player'
 import 'react-h5-audio-player/lib/styles.css';
 import './Playbar.css'
 
 function PlayBar() {
-    const currentSong = useSelector(state => state.audio);
+    const dispatch = useDispatch();
+    const currentSong = useSelector(state => state.audio.currentSong);
+    const previousSong = useSelector(state => state.audio.previousSong);
+    const nextSong = useSelector(state => state.audio.nextSong);
+    const currentAlbum = useSelector(state => state.audio.currentAlbum)
     const trackSong = currentSong?.songUrl;
     const trackPic = currentSong?.photoUrl;
+
+
+    const handlePlay = (e) => {
+        
+    }
+
+    const handlePause = (e) => {
+
+    }
+
+    const handleNextSkip = (e) => {
+        e.preventDefault();
+        dispatch(skipToNextSong(currentSong, previousSong, nextSong, currentAlbum))
+    }
+
+    const handlePrevSkip = (e) => {
+        e.preventDefault();
+        dispatch(skipToPrevSong(currentSong, previousSong, nextSong, currentAlbum))
+    }
+
 
     return (
         <div className='footer-container'>
@@ -18,8 +43,8 @@ function PlayBar() {
                         }
                     </div>
                     <div className="now-playing-artist-info">
-                        <p className="now-playing-artist-info-name">{currentSong.title}</p>
-                        <p className="now-playing-artist-info-artist">{currentSong.artistName}</p>
+                        <p className="now-playing-artist-info-name">{currentSong?.title}</p>
+                        <p className="now-playing-artist-info-artist">{currentSong?.artistName}</p>
                     </div>
                 </div>
             </div>
@@ -55,7 +80,11 @@ function PlayBar() {
                                 RHAP_UI.VOLUME,
                             ]
                         }
-                        customVolumeSection={[]}      
+                        customVolumeSection={[]}
+                        // onPlay={handlePlay}
+                        // onPause={handlePause}
+                        onClickNext={handleNextSkip}
+                        onClickPrevious={handlePrevSkip}
                     />
                 }
             </div>

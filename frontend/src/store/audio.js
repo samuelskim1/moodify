@@ -17,12 +17,44 @@
 //     // track
 // })
 
-const SET_CURRENT_SONG = 'SET_CURRENT_SONG'
+const SET_CURRENT_SONG = 'SET_CURRENT_SONG';
+const SET_CURRENT_ALBUM = 'SET_CURRENT_ALBUM';
+const SET_PREV_SONG = "SET_PREV_SONG";
+const SET_NEXT_SONG = "SET_NEXT_SONG";
+const SKIP_TO_NEXT_SONG = "SKIP_TO_NEXT_SONG";
+const SKIP_TO_PREV_SONG = "SKIP_TO_PREV_SONG";
+
 
 export const setCurrentSong = (track) => ({
     type: SET_CURRENT_SONG,
     track
 })
+
+export const setCurrentAlbum = (album) => ({
+    type: SET_CURRENT_ALBUM,
+    album
+})
+
+export const setPrevSong = (track) => ({
+    type: SET_PREV_SONG,
+    track
+})
+
+export const setNextSong = (track) => ({
+    type: SET_NEXT_SONG,
+    track
+})
+
+export const skipToNextSong = (payload) => ({
+    type: SKIP_TO_NEXT_SONG,
+    payload
+})
+
+export const skipToPrevSong = (payload) => ({
+    type: SKIP_TO_PREV_SONG,
+    payload
+})
+
 
 
 
@@ -36,7 +68,24 @@ const audioReducer = (state = {}, action ) => {
         //     action.previousAudioValue.load();
         //     return action.track.id = action.track.songUrl
         case SET_CURRENT_SONG:
-            return nextState["currentSong"] = action.track;
+            nextState["currentSong"] = action.track;
+            return nextState;
+        case SET_CURRENT_ALBUM:
+            nextState["currentAlbum"] = action.album
+            return nextState;
+        case SET_PREV_SONG:
+            nextState["previousSong"] = action.track;
+            return nextState;
+        case SET_NEXT_SONG:
+            nextState["nextSong"] = action.track;
+            return nextState;
+        case SKIP_TO_NEXT_SONG:
+            debugger;
+            const albumTracks = Object.values(nextState["currentAlbum"])
+            return nextState;
+        case SKIP_TO_PREV_SONG:
+
+            return nextState;
         default:
             return nextState;
         

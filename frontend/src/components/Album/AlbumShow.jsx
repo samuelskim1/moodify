@@ -13,7 +13,7 @@ function AlbumShow() {
     const { albumId } = useParams();
     const dispatch = useDispatch();
     const album = useSelector(state => state.albums[albumId]);
-    const currentSong = useSelector(state => state.audio["currentSong"]);
+    // const currentSong = useSelector(state => state.audio["currentSong"]);
     
 
     useEffect(() => {
