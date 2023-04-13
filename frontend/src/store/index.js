@@ -5,6 +5,7 @@ import tracks from './track';
 import audio from './audio';
 import albums from './album';
 import playlists from './playlist';
+import users from './user';
 
 
 const rootReducer = combineReducers({
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
     tracks,
     audio,
     albums,
-    playlists
+    playlists,
+    users
 });
 
 let enhancer;

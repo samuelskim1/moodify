@@ -7,6 +7,7 @@ import TrackIndex from './components/Track/TrackIndex';
 import TrackShow from './components/Track/TrackShow';
 import AlbumShow from './components/Album/AlbumShow';
 import AlbumIndex from './components/Album/AlbumIndex';
+import PlaylistShow from './components/Playlist/PlaylistShow';
 import PlayBar from './components/PlayBar/PlayBar';
 
 function App() {
@@ -33,6 +34,9 @@ function App() {
         </Route>
         <Route exact path='/'>
           <SplashPage/>
+        </Route>
+        <Route path='/playlists/:playlistId'>
+          <PlaylistShow/>
         </Route>
       </Switch>
       <PlayBar/>

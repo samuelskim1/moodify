@@ -1,0 +1,32 @@
+
+.nav-link-for-playlist-item {
+    color: #b3b3b3;
+    cursor: default;
+    text-decoration: none;
+    border-bottom: none;
+    display: flex;
+    flex: 1;
+    height: 32px;
+    line-height: 32px;
+    overflow: hidden;
+    align-items: center;
+}
+
+.user-playlists-index-item {
+    width: 100%;
+    padding: 0 24px;
+    box-sizing: border-box;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+}
+
+.user-playlists-index-item-title {
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+.user-playlists-index-item:hover {
+    color: white;
+}

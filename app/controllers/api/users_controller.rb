@@ -12,9 +12,13 @@ class Api::UsersController < ApplicationController
   end
 
   def index
+    @usesr = User.includes(:playlists).all
+    render 'api/users/index'
   end
 
   def show
+    @user = User.find_by(id: params[:id])
+    render 'api/users/show'
   end
 
   private

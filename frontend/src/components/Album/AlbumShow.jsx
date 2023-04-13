@@ -79,7 +79,6 @@ function AlbumShow() {
                                         <div className="tracks-title-indicator">Title</div>
                                         <div className="tracks-duration-icon-container">
                                             <img src={require('../../assets/icons8-clock-32.png')} alt=''></img>
-                                            {/* <i class="fa-regular fa-clock-three fa-xs" style={{color: '#6a6d71'}}></i> */}
                                         </div>
                                     </div>
                                 </div>
@@ -88,20 +87,10 @@ function AlbumShow() {
                                         <TrackAlbumItem key={track.id} track={track} />
                                     ))}
                                 </div>
-                                {/* <h2 className="album-lyrics-container-item album-lyrics-header">Lyrics</h2>
-                                <div className="album-show-item artist-link-container">
-                                    <i className="artist-link-container-item fa-solid fa-user" style={{ color: '#ffffff' }}></i>
-                                    <div className="artist-link-container-item artist-and-name">
-                                        <h6 className="artist-header-title">Artist</h6>
-                                        <h6 className="artist-header-title">{album.artistName}</h6>
-                                    </div>
-                                </div> */}
-                                {/* <div className="album-lyrics-container-item album-lyrics">{formattedLines}</div> */}
                             </div>
                         </div>
                     </div>
                 </div>
-                {/* <PlayBar/> */}
             </div>
         </>
     )

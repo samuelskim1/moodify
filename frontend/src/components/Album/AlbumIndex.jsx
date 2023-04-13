@@ -10,7 +10,7 @@ import PlayBar from "../PlayBar/PlayBar";
 function AlbumIndex() {
     const dispatch = useDispatch();
     const albums = useSelector(state => Object.values(state.albums));
-    const currentSong = useSelector(state => state.audio["currentSong"]);
+   
 
     //do the fetch inside of the outercomponent(maybe in our splashpage, albumsshowpage, searchpage)
     //or have a conditional inside 

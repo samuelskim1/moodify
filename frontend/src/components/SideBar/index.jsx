@@ -36,12 +36,17 @@ function SideBar() {
                 <div className='sidebar-playlists-section-container'>
                     <div className='sidebar-playlists-create-and-likes-container'>
                         <div className='playlists-create-playlist-container'>
-                            <div className='create-playlists-button'></div>
+                            <div className='create-playlists-button'>
+                                <i className="fa-solid fa-square-plus create-playlist-button-icon" style={{color: "#d1d1d1"}}></i>
+                            </div>
                             <div className='create-playlists-label'>Create Playlist</div>
                         </div>
                         <div className='playlists-liked-songs-playlist-container'></div>
                     </div>
-                    <div className='linebreak-between-playlist-containers'></div>
+                    <div className='linebreak-between-playlist-containers'>
+                        <hr></hr>
+                        <div></div>
+                    </div>
                     <UserPlaylistsIndex/>
                 </div>
             </ul>
