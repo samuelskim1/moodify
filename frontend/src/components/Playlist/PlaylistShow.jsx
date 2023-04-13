@@ -2,8 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom";
 import { fetchPlaylist } from "../../store/playlist";
-// import { fetchUser } from "../../store/user";
-import { fetchAllTracks } from "../../store/track";
+import { fetchPlaylistTracks } from "../../store/playlist_tracks";
 import Navigation from "../Navigation";
 import SideBar from "../SideBar";
 import TrackPlaylistItem from "./TrackPlaylistItem";
@@ -14,49 +13,35 @@ function PlaylistShow() {
     const { playlistId } = useParams();
     const dispatch = useDispatch();
     const playlist = useSelector(state => state.playlists[playlistId]);
-    // const songCount = Object.values(playlist?.playlistTracks).length;
-    // const playlistTracksIds = Object.values(playlist?.playlistTracks);
-    
-    // const tracks = useSelector(state => state.tracks[])
-    // const playlistOwner = useSelector(state => state.users[playlist?.creatorId])
-
-    // useEffect(() => {
-    //     dispatch(fetchUser(playlist?.creator_id))
-    // }, [dispatch])
+    const playlistTracks = useSelector(state => Object.values(state.playlist_tracks));
 
     useEffect(() => {
         dispatch(fetchPlaylist(playlistId))
+        dispatch(fetchPlaylistTracks(playlistId))
     }, [dispatch, playlistId])
     
-    let songCount;
-    let tracks;
+    // let songCount;
+    // let tracks;
+    
 
     if (!playlist) {
         return null;
-    } else {
-        tracks = Object.values(playlist?.playlistTracks)
+    } 
+
+    if (!playlistTracks.length) {
+        return null;
     }
 
-    // if (!playlistOwner) {
-    //     return null;
-    // }
+    const songCount = playlistTracks?.length;
 
-    // const 
-    
     let playlistDuration;
     let playlistTracksIds;
+    console.log(playlist)
 
-    
-
-    if (tracks) {
-        songCount = Object.values(playlist?.playlistTracks).length;
-    }
-
-
-
-    console.log(playlist);
-    console.log(tracks);
-
+    // if (playlistTracks) {
+    //     debugger;
+    //     songCount = playlistTracks?.length;
+    // }
 
     //could create a component for the top section of the playlist/track/playlist show page
     //similar format
@@ -106,7 +91,7 @@ function PlaylistShow() {
                                     </div>
                                 </div>
                                 <div className="playlist-tracks-list-container">
-                                    {tracks.map((track, index) => (
+                                    {playlistTracks?.map((track, index) => (
                                         <TrackPlaylistItem key={track.id} track={track} trackId={index + 1}/>
                                     ))} 
                                 </div>

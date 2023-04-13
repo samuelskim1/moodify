@@ -5,6 +5,7 @@ import tracks from './track';
 import audio from './audio';
 import albums from './album';
 import playlists from './playlist';
+import playlist_tracks from './playlist_tracks';
 import users from './user';
 
 
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
     audio,
     albums,
     playlists,
+    playlist_tracks,
     users
 });
 
