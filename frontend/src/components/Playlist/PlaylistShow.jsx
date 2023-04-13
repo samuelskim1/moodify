@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom";
 import { fetchPlaylist } from "../../store/playlist";
 // import { fetchUser } from "../../store/user";
-
+import { fetchAllTracks } from "../../store/track";
 import Navigation from "../Navigation";
 import SideBar from "../SideBar";
 import TrackPlaylistItem from "./TrackPlaylistItem";
@@ -16,6 +16,7 @@ function PlaylistShow() {
     const playlist = useSelector(state => state.playlists[playlistId]);
     // const songCount = Object.values(playlist?.playlistTracks).length;
     // const playlistTracksIds = Object.values(playlist?.playlistTracks);
+    
     // const tracks = useSelector(state => state.tracks[])
     // const playlistOwner = useSelector(state => state.users[playlist?.creatorId])
 
@@ -26,9 +27,14 @@ function PlaylistShow() {
     useEffect(() => {
         dispatch(fetchPlaylist(playlistId))
     }, [dispatch, playlistId])
+    
+    let songCount;
+    let tracks;
 
     if (!playlist) {
         return null;
+    } else {
+        tracks = Object.values(playlist?.playlistTracks)
     }
 
     // if (!playlistOwner) {
@@ -36,16 +42,21 @@ function PlaylistShow() {
     // }
 
     // const 
-    let songCount;
+    
     let playlistDuration;
     let playlistTracksIds;
 
+    
 
-    if (playlist?.playlistTracks) {
+    if (tracks) {
         songCount = Object.values(playlist?.playlistTracks).length;
-        // playlistDuration = Object.values(playlist?.tracks).length
-        playlistTracksIds = Object.values(playlist?.playlistTracks);
     }
+
+
+
+    console.log(playlist);
+    console.log(tracks);
+
 
     //could create a component for the top section of the playlist/track/playlist show page
     //similar format
@@ -95,9 +106,9 @@ function PlaylistShow() {
                                     </div>
                                 </div>
                                 <div className="playlist-tracks-list-container">
-                                    {/* {tracks?.map(track => (
-                                        <TrackPlaylistItem key={track.id} track={track} />
-                                    ))} */}
+                                    {tracks.map((track, index) => (
+                                        <TrackPlaylistItem key={track.id} track={track} trackId={index + 1}/>
+                                    ))} 
                                 </div>
                             </div>
                         </div>

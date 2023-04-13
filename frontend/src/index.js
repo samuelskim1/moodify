@@ -9,6 +9,7 @@ import configureStore from './store';
 import csrfFetch from './store/csrf';
 import * as sessionActions from './store/session';
 import {fetchAllTracks, fetchTrack} from './store/track'
+import { restoreCSRF } from './store/csrf';
 
 const store = configureStore();
 
@@ -39,6 +40,11 @@ const renderApp = () => {
     document.getElementById('root')
   )
 }
+
+// if (sessionStorage.getItem('X-CSRF-Token') === null) {
+//   restoreCSRF();
+// }
+
 
 if (
   sessionStorage.getItem('X-CSRF-Token') === null ||

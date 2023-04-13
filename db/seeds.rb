@@ -95,6 +95,7 @@ ApplicationRecord.transaction do
 
   playlist1 = Playlist.create!(title: 'PLAYLIST TIME', creator_id: 1, description: "")
   playlist2 = Playlist.create!(title: "BAG TIME", creator_id: 1, description:"")
+  playlist3 = Playlist.create!(title: "BAG TIME 2", creator_id: 2, description:"")
 
   PlaylistTrack.create!(playlist_id: playlist1.id, track_id: track10.id)
   PlaylistTrack.create!(playlist_id: playlist1.id, track_id: track28.id)
@@ -103,6 +104,13 @@ ApplicationRecord.transaction do
   PlaylistTrack.create!(playlist_id: playlist2.id, track_id: track9.id)
   PlaylistTrack.create!(playlist_id: playlist2.id, track_id: track17.id)
   PlaylistTrack.create!(playlist_id: playlist2.id, track_id: track24.id)
+
+  PlaylistTrack.create!(playlist_id: playlist3.id, track_id: track10.id)
+  PlaylistTrack.create!(playlist_id: playlist3.id, track_id: track28.id)
+  PlaylistTrack.create!(playlist_id: playlist3.id, track_id: track19.id)
+  PlaylistTrack.create!(playlist_id: playlist3.id, track_id: track9.id)
+  PlaylistTrack.create!(playlist_id: playlist3.id, track_id: track17.id)
+  PlaylistTrack.create!(playlist_id: playlist3.id, track_id: track24.id)
 
   puts "Done!"
 end

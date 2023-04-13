@@ -1,3 +1,5 @@
+import { storeCSRFToken } from "./session";
+
 async function csrfFetch(url, options = {}) {
     options.method ||= 'GET'
     options.headers ||= {};
@@ -12,6 +14,11 @@ async function csrfFetch(url, options = {}) {
     return res;
    
 
+}
+
+export async function restoreCSRF() {
+    const res = await fetch("/api/session");
+    storeCSRFToken(res);
 }
 
 export default csrfFetch;

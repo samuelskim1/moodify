@@ -18,10 +18,10 @@ export const storeCSRFToken = (res) => {
 }
 
 const storeCurrentUser = (user) => {
-    sessionStorage.setItem('currentUser', JSON.stringify(user));
+    // sessionStorage.setItem('currentUser', JSON.stringify(user));
     //code from example:
-    // if (user) sessionStorage.setItem("currentUser", JSON.stringify(user));
-    // else sessionStorage.removeItem("currentUser");
+    if (user) sessionStorage.setItem("currentUser", JSON.stringify(user));
+    else sessionStorage.removeItem("currentUser");
     //NOTE: mine still works
 }
 
@@ -81,6 +81,10 @@ export const restoreSession = () => async (dispatch) => {
     return response;
 
 }
+
+// if (!sessionStorage.getItem('currentUser')) {
+//     sessionStorage.setItem('currentUser', null)
+// }
 
 const initialState = {
     user: JSON.parse(sessionStorage.getItem('currentUser'))

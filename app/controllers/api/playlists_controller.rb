@@ -13,6 +13,7 @@ class Api::PlaylistsController < ApplicationController
 
     def show
         @playlist = Playlist.includes(:creator, :playlist_tracks).find_by(id: params[:id])
+        @playlist_tracks = @playlist.playlist_tracks.includes(track: [:album, :artist])
         render 'api/playlists/show'
     end
 

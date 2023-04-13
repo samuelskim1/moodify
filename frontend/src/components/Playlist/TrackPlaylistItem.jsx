@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import './TrackPlaylistItem.css'
 
-function TrackPlaylistItem({ track }) {
+function TrackPlaylistItem({ track, trackId }) {
     const artistName = track.artistName;
 
     return (
