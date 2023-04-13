@@ -17,7 +17,7 @@
 
 .track-playlist-item-info {
     margin-left: 20px;
-    width: 80%;
+    width: 50%;
 }
 
 .track-playlist-item-title {
@@ -32,9 +32,19 @@
 .track-playlist-item-artist {
     color: rgb(161, 161, 161);
     padding-block: 0.2rem;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.track-playlist-item-album-link{
+    width: 35%;
+    color: rgb(161, 161, 161);
+    padding-block: 0.2rem;
+    font-size: 0.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
 }
 
 
@@ -44,4 +54,16 @@
     color: rgb(161, 161, 161);
     padding-block: 0.2rem;
     font-size: 0.8rem;
+}
+
+.track-playlist-item:hover .track-playlist-item-artist {
+    color: white;
+}
+
+.track-playlist-item:hover .track-playlist-item-album-link {
+    color: white;
+}
+
+.track-playlist-item-album-link:hover {
+    text-decoration: underline;
 }

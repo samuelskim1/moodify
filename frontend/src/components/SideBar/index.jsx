@@ -1,13 +1,25 @@
-import { NavLink } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useLocation, useHistory } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import UserPlaylistsIndex from './UserPlaylistsIndex';
 import './SideBar.css'
+import { createNewPlaylist, fetchCurrentUserPlaylists } from '../../store/playlist';
 
 
 
 
 function SideBar() {
+    const dispatch = useDispatch();
+    const numOfPlaylists = useSelector(state => Object.values(state.playlists).length);
+    const currentUserId = useSelector(state=> state.session.user.id);
     const location = useLocation();
+    const history = useHistory();
+
+    useEffect(() => {
+        dispatch(fetchCurrentUserPlaylists);
+    }, [])
+
     const active = () => {
         if (location.pathname === '/') {
             return 'active'
@@ -15,6 +27,19 @@ function SideBar() {
             return 'not-active'
         }
     }
+
+
+    async function createPlaylist() {
+        const newPlaylist = {
+            title: `My Playlist #${numOfPlaylists + 1}`,
+            creator_id: currentUserId,
+            description: ""
+        }
+        await dispatch(createNewPlaylist(newPlaylist));
+        const newPath = `/playlists/${numOfPlaylists - 1}`
+        history.push(newPath);
+    }
+
 
     return (
         <div className="sidebar-container">
@@ -35,11 +60,11 @@ function SideBar() {
                 </div>
                 <div className='sidebar-playlists-section-container'>
                     <div className='sidebar-playlists-create-and-likes-container'>
-                        <div className='playlists-create-playlist-container'>
-                            <div className='create-playlists-button'>
-                                <i className="fa-solid fa-square-plus create-playlist-button-icon" style={{color: "#d1d1d1"}}></i>
-                            </div>
-                            <div className='create-playlists-label'>Create Playlist</div>
+                        <div className='playlists-create-playlist-container' onClick={createPlaylist}>
+                                <div className='create-playlists-button'>
+                                    <i className="fa-solid fa-square-plus create-playlist-button-icon" style={{color: "#d1d1d1"}}></i>
+                                </div>
+                                <div className='create-playlists-label'>Create Playlist</div>
                         </div>
                         <div className='playlists-liked-songs-playlist-container'></div>
                     </div>

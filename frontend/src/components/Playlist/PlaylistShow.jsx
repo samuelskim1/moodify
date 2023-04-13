@@ -10,13 +10,14 @@ import TrackPlaylistItem from "./TrackPlaylistItem";
 import './PlaylistShow.css'
 
 function PlaylistShow() {
+    // debugger;
     const { playlistId } = useParams();
     const dispatch = useDispatch();
     const playlist = useSelector(state => state.playlists[playlistId]);
     const playlistTracks = useSelector(state => Object.values(state.playlist_tracks));
 
     useEffect(() => {
-        dispatch(fetchPlaylist(playlistId))
+        // dispatch(fetchPlaylist(playlistId))
         dispatch(fetchPlaylistTracks(playlistId))
     }, [dispatch, playlistId])
     
@@ -24,24 +25,19 @@ function PlaylistShow() {
     // let tracks;
     
 
-    if (!playlist) {
-        return null;
-    } 
+    // if (!playlist) {
+    //     return null;
+    // } 
 
-    if (!playlistTracks.length) {
-        return null;
-    }
+    // if (!playlistTracks?.length || !playlistTracks) {
+    //     return null;
+    // }
 
     const songCount = playlistTracks?.length;
-
+    const username = playlist?.playlistCreator;
     let playlistDuration;
     let playlistTracksIds;
-    console.log(playlist)
-
-    // if (playlistTracks) {
-    //     debugger;
-    //     songCount = playlistTracks?.length;
-    // }
+    
 
     //could create a component for the top section of the playlist/track/playlist show page
     //similar format
@@ -67,7 +63,7 @@ function PlaylistShow() {
                                     <div className="playlist-show-info extra-info">
                                         <div className="extra-info-item artist-info">
                                             <i className="artist-picture fa-solid fa-user fa-xs" style={{ color: '#ffffff' }}></i>
-                                            <span className="playlist-creator-name">Username</span>
+                                            <span className="playlist-creator-name">{username}</span>
                                         </div>
                                         <span className="extra-info-item playlist-year">{playlist?.year}</span>
                                         <span className="extra-info-item playlist-track-count">{songCount} songs</span>

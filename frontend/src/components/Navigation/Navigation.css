@@ -3,11 +3,13 @@
     position: sticky;
     top: 0;
     z-index: 1;
+    display: flex;
 }
 
 .navigation-bar {
     display: flex;
-    justify-content: flex-end;
+
+    justify-content: space-between;
     align-items: center;
     position: sticky;
     background-color: #1c1c1c;

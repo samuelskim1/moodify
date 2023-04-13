@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from "react-redux";
 import { NavLink, useLocation } from "react-router-dom";
 import ProfileButton from './ProfileButton';
+import SearchBar from './Searchbar';
 import './Navigation.css'
 
 
@@ -37,6 +38,7 @@ function Navigation() {
     return (
         <div className='navigation-bar-container'>
             <ul className='navigation-bar'>
+                <SearchBar/>
                 <li>
                     <NavLink to='/'></NavLink>
                     {sessionLinks}

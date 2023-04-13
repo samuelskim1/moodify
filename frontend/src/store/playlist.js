@@ -2,7 +2,7 @@ import csrfFetch from "./csrf";
 
 const GET_PLAYLIST = 'GET_PLAYLIST';
 const GET_CURRENT_USER_PLAYLISTS = 'GET_PLAYLISTS';
-const CREATE_PLAYLIST = 'CREATE_PLAYLIST';
+// const CREATE_PLAYLIST = 'CREATE_PLAYLIST';
 
 const getPlaylist = (playlist) => ({
     type: GET_PLAYLIST,
@@ -41,15 +41,15 @@ export const createNewPlaylist = (playlist) => async (dispatch) => {
         })
     });
 
-    const data = await res.json();
-    dispatch(getPlaylist(data.playlist));
-    return res;
+    const playlistData = await res.json();
+    return dispatch(getPlaylist(playlistData));
 }
 
 const playlistReducer = (state = {}, action) => {
     const nextState = { ...state }
     switch (action.type) {
         case GET_PLAYLIST:
+            debugger;
             nextState[action.playlist.id] = action.playlist;
             return nextState;
         case GET_CURRENT_USER_PLAYLISTS:
