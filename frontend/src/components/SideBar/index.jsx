@@ -12,9 +12,11 @@ import { createNewPlaylist, fetchCurrentUserPlaylists } from '../../store/playli
 function SideBar() {
     const dispatch = useDispatch();
     const numOfPlaylists = useSelector(state => Object.values(state.playlists).length);
-    const currentUserId = useSelector(state=> state.session.user.id);
+    const currentUserId = useSelector(state=> state.session?.user?.id);
     const location = useLocation();
     const history = useHistory();
+
+    let playlistButton;
 
     useEffect(() => {
         dispatch(fetchCurrentUserPlaylists);
@@ -40,6 +42,14 @@ function SideBar() {
         history.push(newPath);
     }
 
+    if (currentUserId) {
+        playlistButton = <div className='playlists-create-playlist-container' onClick={createPlaylist}>
+                <div className='create-playlists-button'>
+                    <i className="fa-solid fa-square-plus create-playlist-button-icon" style={{ color: "#d1d1d1" }}></i>
+                </div>
+                <div className='create-playlists-label'>Create Playlist</div>
+            </div>
+    }
 
     return (
         <div className="sidebar-container">

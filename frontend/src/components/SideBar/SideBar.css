@@ -166,3 +166,8 @@
     min-height: 1px;
 }
 
+
+.hide-playlists-create-playlist-container {
+    display: flex;
+        padding: 0 24px;
+}

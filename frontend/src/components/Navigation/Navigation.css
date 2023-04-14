@@ -18,6 +18,61 @@
     width: 100%
 }
 
+.nav-bar-right-section {
+    display: flex;
+    align-items: center;
+}
+
+
+
+.about-me-icons {
+    display: flex;
+    height: 64px;
+    padding: 0 24px;
+    align-items: center;
+}
+
+
+.github-link {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    margin-right: 24px;
+    color: #b3b3b3;
+    transition-duration: .2s;
+    transition-property: color;
+    text-decoration: none;
+}
+
+a.github-link:hover {
+    color: white;
+}
+
+.github-link i {
+    margin-right: 18px;
+}
+
+
+.linkedin-link {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    margin-right: 24px;
+    color: #b3b3b3;
+    transition-duration: .2s;
+    transition-property: color;
+    text-decoration: none;
+}
+
+a.linkedin-link:hover {
+    color: white;
+}
+
+.linkedin-link i {
+    margin-right: 18px;
+}
+
+
 .nav-signup-button {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
