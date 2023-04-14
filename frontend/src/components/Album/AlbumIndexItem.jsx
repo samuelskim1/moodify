@@ -13,9 +13,9 @@ function AlbumIndexItem({album}) {
             >
                 <div className='album-image'>
                     <img src={album.photoUrl} alt="" />
-                    <div className='album-index-item-play-button'>
+                    {/* <div className='album-index-item-play-button'>
                         <i className="fa-solid fa-circle-play fa-2xl" style={{ color: '#2dc819' }}></i>
-                    </div>
+                    </div> */}
                 </div>
                 <h6 className="album-title">{album.title}</h6>
                 <span className="album-index-album-year">{album.year}</span>

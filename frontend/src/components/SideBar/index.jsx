@@ -30,15 +30,17 @@ function SideBar() {
         }
     }
 
+    console.log(numOfPlaylists);
 
     async function createPlaylist() {
+        debugger;
         const newPlaylist = {
             title: `My Playlist #${numOfPlaylists + 1}`,
             creator_id: currentUserId,
             description: ""
         }
         await dispatch(createNewPlaylist(newPlaylist));
-        const newPath = `/playlists/${numOfPlaylists - 1}`
+        const newPath = `/playlists/${numOfPlaylists + 2}`
         history.push(newPath);
     }
 
@@ -82,7 +84,9 @@ function SideBar() {
                         <hr></hr>
                         <div></div>
                     </div>
-                    <UserPlaylistsIndex/>
+                    {currentUserId &&
+                        <UserPlaylistsIndex/>
+                    }
                 </div>
             </ul>
         </div>

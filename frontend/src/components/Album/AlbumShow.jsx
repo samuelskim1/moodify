@@ -18,7 +18,7 @@ function AlbumShow() {
 
     useEffect(() => {
         dispatch(fetchAlbum(albumId))
-        console.log('useEffect is mounting')
+        // console.log('useEffect is mounting')
     }, [dispatch, albumId])
 
     if (!album) {

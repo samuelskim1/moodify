@@ -8,7 +8,7 @@ const getPlaylistTracks = (playlistTracks) => ({
 })
 
 export const fetchPlaylistTracks = (playlistId) => async (dispatch) => {
-    debugger;
+    // debugger;
     const res = await csrfFetch(`/api/playlists/${playlistId}`);
     if (res.ok) {
         const playlist = await res.json();

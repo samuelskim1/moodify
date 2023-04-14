@@ -5,7 +5,7 @@ import './TrackPlayButton.css'
 import { useEffect } from 'react';
 
 function TrackPlayButton({track}) {
-    console.log(track);
+    // console.log(track);
     const trackId = track?.id;
     const albumId = track?.albumId;
     const dispatch = useDispatch();

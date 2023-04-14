@@ -43,7 +43,7 @@ const SearchBar = ()  => {
             <div className="search-bar-container">
                 <input className="search-bar-input-field" onChange={handleSearch}type="text" placeholder="What do you want to listen to?"></input>
                 <div className="search-bar-icon-holder">
-                    <i class="fa-solid fa-magnifying-glass search-bar-icon" style={{color: '#000000'}}></i>
+                    <i className="fa-solid fa-magnifying-glass search-bar-icon" style={{color: '#000000'}}></i>
                 </div>
                 <button onClick={handleSearchSubmit}>search</button>
             </div>

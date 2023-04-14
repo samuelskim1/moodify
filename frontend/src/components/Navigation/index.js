@@ -37,11 +37,11 @@ function Navigation() {
     return (
         <div className='navigation-bar-container'>
             <ul className='navigation-bar'>
-                <SearchBar/>
+                {/* <SearchBar/> */}
                 <div className="nav-bar-right-section">
                     <div className='about-me-icons'>
-                        <a href="https://github.com/samuelskim1" className='github-link'><i class="fa-brands fa-github fa-lg" style={{ color: '#ffffff' }}></i> Github</a>
-                        <a href="https://www.linkedin.com/in/samuel-kim-3b4935206/" className='linkedin-link'><i class="fa-brands fa-linkedin fa-lg" style={{ color: '#ffffff' }}></i> LinkedIn</a>
+                        <a href="https://github.com/samuelskim1" className='github-link'><i className="fa-brands fa-github fa-lg" style={{ color: '#ffffff' }}></i> Github</a>
+                        <a href="https://www.linkedin.com/in/samuel-kim-3b4935206/" className='linkedin-link'><i className="fa-brands fa-linkedin fa-lg" style={{ color: '#ffffff' }}></i> LinkedIn</a>
                     </div>
                     <li>
                         <NavLink to='/'></NavLink>

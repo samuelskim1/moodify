@@ -49,7 +49,7 @@ const playlistReducer = (state = {}, action) => {
     const nextState = { ...state }
     switch (action.type) {
         case GET_PLAYLIST:
-            debugger;
+            // debugger;
             nextState[action.playlist.id] = action.playlist;
             return nextState;
         case GET_CURRENT_USER_PLAYLISTS:
