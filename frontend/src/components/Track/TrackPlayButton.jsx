@@ -24,7 +24,6 @@ function TrackPlayButton({track}) {
     //logic for settingPrevSong using the album slice of state
 
     const getPrevSong = () => {
-        // debugger;
         let previousSong;
         //at this point each song is an object with all the information of the songs in it
         albumTracks?.forEach((song, index) => {
@@ -39,7 +38,6 @@ function TrackPlayButton({track}) {
     }
 
     const getNextSong = () => {
-        // debugger;
         let nextSong;
         albumTracks?.forEach((song, index) => {
             if ((song.id === trackId) && (index + 1 > albumTracks.length - 1)) {

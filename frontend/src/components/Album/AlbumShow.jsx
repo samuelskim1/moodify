@@ -76,15 +76,15 @@ function AlbumShow() {
                                     <div className="album-tracks-label">
                                         
                                         <div className="tracks-id-indicator">#</div>
-                                        <div className="tracks-title-indicator">Title</div>
+                                        <div className="album-tracks-title-indicator">Title</div>
                                         <div className="tracks-duration-icon-container">
                                             <img src={require('../../assets/icons8-clock-32.png')} alt=''></img>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="album-tracks-list-container">
-                                    {tracks?.map(track => (
-                                        <TrackAlbumItem key={track.id} track={track} />
+                                    {tracks?.map((track, index) => (
+                                        <TrackAlbumItem key={track.id} track={track} albumId={index + 1}/>
                                     ))}
                                 </div>
                             </div>

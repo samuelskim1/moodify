@@ -18,7 +18,7 @@ class Api::PlaylistsController < ApplicationController
     end
 
     def create
-        @playlist = Playlist.new(creator_id: current_user.id, title: params[:title], description: "")
+        @playlist = Playlist.new(creator_id: current_user.id, title: params[:title], description: params[:description])
         if @playlist.save
             render :show
         else

@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from "react-redux";
 import { NavLink, useLocation } from "react-router-dom";
 import ProfileButton from './ProfileButton';
+import SearchBar from './Searchbar';
 import './Navigation.css'
 
 
@@ -25,7 +26,6 @@ function Navigation() {
                     <button className='nav-login-button'>Log In</button>
                 </NavLink>
             </>
-
         )
     }
 
@@ -37,10 +37,18 @@ function Navigation() {
     return (
         <div className='navigation-bar-container'>
             <ul className='navigation-bar'>
-                <li>
-                    <NavLink to='/'></NavLink>
-                    {sessionLinks}
-                </li>
+                <SearchBar/>
+                <div className="nav-bar-right-section">
+                    <div className='about-me-icons'>
+                        <a href="https://github.com/samuelskim1" className='github-link'><i class="fa-brands fa-github fa-lg" style={{ color: '#ffffff' }}></i> Github</a>
+                        <a href="https://www.linkedin.com/in/samuel-kim-3b4935206/" className='linkedin-link'><i class="fa-brands fa-linkedin fa-lg" style={{ color: '#ffffff' }}></i> LinkedIn</a>
+                    </div>
+                    <li>
+                        <NavLink to='/'></NavLink>
+                        {sessionLinks}
+                    </li>
+
+                </div>
             </ul>
 
         </div>

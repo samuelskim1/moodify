@@ -9,6 +9,7 @@ import AlbumShow from './components/Album/AlbumShow';
 import AlbumIndex from './components/Album/AlbumIndex';
 import PlaylistShow from './components/Playlist/PlaylistShow';
 import PlayBar from './components/PlayBar/PlayBar';
+import Search from './components/SearchShow/SearchShowPage';
 
 function App() {
   return (
@@ -37,6 +38,9 @@ function App() {
         </Route>
         <Route path='/playlists/:playlistId'>
           <PlaylistShow/>
+        </Route>
+        <Route path="/search">
+          <Search/>
         </Route>
       </Switch>
       <PlayBar/>

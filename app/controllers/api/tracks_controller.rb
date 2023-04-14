@@ -29,8 +29,13 @@ class Api::TracksController < ApplicationController
     #GEt indexes of Track.All
     # within that range, use .rand 
     # shove the rand value into new holder array
-  
   end
+
+  def search  
+    @tracks = Track.where("lower(title) LIKE ?", "%#{params[:q]}%")
+    render :search
+  end
+
 
 end
 

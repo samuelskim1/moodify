@@ -8,15 +8,14 @@
 
 require "open-uri"
 
-
-ApplicationRecord.transaction do 
   puts "Destroying tables..."
   # Unnecessary if using `rails db:seed:replant`
-  User.destroy_all
+  PlaylistTrack.destroy_all
   Track.destroy_all
+  Playlist.destroy_all
   Album.destroy_all
   Artist.destroy_all
-  Playlist.destroy_all
+  User.destroy_all
 
 
   puts "Resetting primary keys..."
@@ -26,12 +25,14 @@ ApplicationRecord.transaction do
   ApplicationRecord.connection.reset_pk_sequence!('albums')
   ApplicationRecord.connection.reset_pk_sequence!('artists')
   ApplicationRecord.connection.reset_pk_sequence!('playlists')
+  ApplicationRecord.connection.reset_pk_sequence!('playlists_tracks')
 
   puts "Creating users..."
   puts "Creating tracks..."
   puts "Creating albums..."
   puts "Creating artists..."
   puts "Creating playlists..."
+  puts "Creating playlists_tracks..."
   # Create one user with an easy to remember username, email, and password:
   User.create!(
     username: 'Demo-lition', 
@@ -113,7 +114,7 @@ ApplicationRecord.transaction do
   PlaylistTrack.create!(playlist_id: playlist3.id, track_id: track24.id)
 
   puts "Done!"
-end
+
 
 # Track.first.photo.attach(
 #       io: URI.open("https://moodify-seeds.s3.amazonaws.com/Keshi/pictures/keshi-gabriel-album.jpg"),

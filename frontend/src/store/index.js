@@ -7,6 +7,7 @@ import albums from './album';
 import playlists from './playlist';
 import playlist_tracks from './playlist_tracks';
 import users from './user';
+import search from './search';
 
 
 const rootReducer = combineReducers({
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
     albums,
     playlists,
     playlist_tracks,
-    users
+    users,
+    search
 });
 
 let enhancer;

@@ -21,6 +21,20 @@
     width: 80%;
 }
 
+.track-album-item-link {
+    width: 100%;
+    color: white;
+    padding-block: 0.2rem;
+    font-size: 0.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
+}
+
+.track-album-item-link:hover {
+    text-decoration: underline;
+}
+
 .track-album-item-title {
     font-size: 0.8rem;
     font-weight: 500;

@@ -1,7 +1,7 @@
 .album-show-flex-container {
     display: flex;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     /* display: grid;
     grid-template-areas:
             "sideBar navBar navBar"
@@ -19,7 +19,7 @@
     /* min-width: 800px; */
     left: 0;
     position: relative;
-    margin-bottom: 80px;
+    /* margin-bottom: 80px; */
 }
 
 
@@ -108,6 +108,10 @@
     position: relative;
 }
 
+.album-show-item.album-tracks-container {
+    padding-bottom: 80px;
+}
+
 .album-tracks-label-holder {
     top: 64px;
     border-bottom: 1px solid transparent;
@@ -115,7 +119,7 @@
     height: 36px;
     margin: 0 -16px 8px;
     padding: 0 16px;
-    position: sticky;
+    /* position: sticky; */
     z-index: 2;
 }
 
@@ -129,8 +133,8 @@
     align-items: center;
 }
 
-.tracks-title-indicator {
-    margin-left: 15px;
+.album-tracks-title-indicator {
+    margin-left: 25px;
     width: 80%;
 }
 
