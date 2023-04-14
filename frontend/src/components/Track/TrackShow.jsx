@@ -31,10 +31,6 @@ function TrackShow() {
         if (line !== "\n" && line !== "") return <p>{line}</p>
     })
 
-    
-    
-
-
     return (
         <>
             <div className="track-show-flex-container">
@@ -46,18 +42,16 @@ function TrackShow() {
                             <header className="track-show-item track-show-header">
                                 <div className="track-show-header-item track-show-image">
                                     <img src={track.photoUrl} alt=""/>
-                                    {/* <i className="fa-solid fa-image fa-xl" style={{ color: '#919cb1' }}></i> */}
                                 </div>
                                 <div className="track-show-header-item track-show-info">
                                     <h4 className="track-show-info component-type">Song</h4>
-                                    <h1 className="track-show-info track-title">{track.title}</h1>
+                                    <h1 className="track-show-info track-title">{track?.title}</h1>
                                     <div className="track-show-info extra-info">
                                         <div className="extra-info-item artist-info">
-                                            <i className="artist-picture fa-solid fa-user fa-xs" style={{ color: '#ffffff'}}></i>
-                                            <span className="artist-name">{track.artistName}</span>
+                                            <span className="artist-name">{track?.artistName}</span>
                                         </div>
-                                        <span className="extra-info-item track-year">{track.year}</span>
-                                        <span className="extra-info-item track-duration">{track.duration}</span>
+                                        <span className="extra-info-item track-year">{track?.year}</span>
+                                        <span className="extra-info-item track-duration">{track?.duration}</span>
                                     </div>
                                 </div>
                             </header>
@@ -67,10 +61,12 @@ function TrackShow() {
                             <div className="track-show-item track-lyrics-container">
                                 <h2 className="track-lyrics-container-item track-lyrics-header">Lyrics</h2>
                                 <div className="track-show-item artist-link-container">
-                                    <i className="artist-link-container-item fa-solid fa-user" style={{ color: '#ffffff' }}></i>
+                                    <div className="artist-link-container-item artist-icon">
+                                        <img src={track?.profilePicture} alt="" />
+                                    </div>
                                     <div className="artist-link-container-item artist-and-name">
                                         <h6 className="artist-header-title">Artist</h6>
-                                        <h6 className="artist-header-title">{track.artistName}</h6>
+                                        <h6 className="artist-header-title">{track?.artistName}</h6>
                                     </div>
                                 </div>
                                 <div className="track-lyrics-container-item track-lyrics">{formattedLines}</div>
@@ -78,7 +74,6 @@ function TrackShow() {
                         </div>
                     </div>
                 </div>
-                {/* <PlayBar/> */}
             </div>
         </>
     )

@@ -63,11 +63,6 @@ const audioReducer = (state = {}, action ) => {
     let albumTracks;
 
     switch (action.type) {
-        // case PLAY_SONG:
-        //     return action.track.id = action.track.songUrl
-        // case UPDATE_SONG:
-        //     action.previousAudioValue.load();
-        //     return action.track.id = action.track.songUrl
         case SET_CURRENT_SONG:
             nextState["currentSong"] = action.track;
             return nextState;

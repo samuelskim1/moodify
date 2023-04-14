@@ -6,44 +6,21 @@ import { fetchPlaylistTracks } from "../../store/playlist_tracks";
 import Navigation from "../Navigation";
 import SideBar from "../SideBar";
 import TrackPlaylistItem from "./TrackPlaylistItem";
-// import TrackPlayButton from "./TrackPlayButton";
 import './PlaylistShow.css'
 
 function PlaylistShow() {
-    // debugger;
     const { playlistId } = useParams();
     const dispatch = useDispatch();
     const playlist = useSelector(state => state.playlists[playlistId]);
     const playlistTracks = useSelector(state => Object.values(state.playlist_tracks));
 
     useEffect(() => {
-        // dispatch(fetchPlaylist(playlistId))
         dispatch(fetchPlaylistTracks(playlistId))
     }, [dispatch, playlistId])
-    
-    
-    // let songCount;
-    // let tracks;
-    
-
-    // if (!playlist) {
-    //     return null;
-    // } 
-
-    // if (!playlistTracks?.length || !playlistTracks) {
-    //     return null;
-    // }
 
     const songCount = playlistTracks?.length;
     const username = playlist?.playlistCreator;
-    let playlistDuration;
-    let playlistTracksIds;
     
-
-    //could create a component for the top section of the playlist/track/playlist show page
-    //similar format
-    //focus on that later though
-
     return (
         <>
             <div className="playlist-show-flex-container">
@@ -56,7 +33,6 @@ function PlaylistShow() {
                             <header className="playlist-show-item playlist-show-header">
                                 <div className="playlist-show-header-item playlist-show-image">
                                     <img src={playlist?.photoUrl} alt="" />
-                                    {/* <i className="fa-solid fa-image fa-xl" style={{ color: '#919cb1' }}></i> */}
                                 </div>
                                 <div className="playlist-show-header-item playlist-show-info">
                                     <h4 className="playlist-show-info component-type">Playlist</h4>
@@ -64,16 +40,13 @@ function PlaylistShow() {
                                     <div className="playlist-show-info extra-info">
                                         <div className="extra-info-item artist-info">
                                             <i className="artist-picture fa-solid fa-user fa-xs" style={{ color: '#ffffff' }}></i>
-                                            <span className="playlist-creator-name">{username}</span>
                                         </div>
                                         <span className="extra-info-item playlist-year">{playlist?.year}</span>
                                         <span className="extra-info-item playlist-track-count">{songCount} songs</span>
-                                        {/* <span className="extra-info-item playlist-duration">{playlist.duration}</span> */}
                                     </div>
                                 </div>
                             </header>
                             <div className="playlist-show-item playlist-show-play-area" >
-                                {/* <TrackPlayButton track={track} /> */}
                             </div>
                             <div className="playlist-show-item playlist-tracks-container">
                                 <div className="playlist-tracks-label-holder">

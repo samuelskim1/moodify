@@ -13,22 +13,25 @@ class Api::TracksController < ApplicationController
     render 'api/tracks/show'
   end
 
-  def splash
-    # random_tracks = Hash.new(0)
-    # while random_tracks.length < 10
-    #   random_id = Random.rand(0...Track.all.length)
-    #   if !random_tracks.keys.include?(random_id + 1)
-    #     random_tracks[random_id + 1] = Track.includes(:artist).all[random_id]
-    #   end
-    # end
-    # @tracks = random_tracks.values
-    @tracks = Track.includes(:artist).all.limit(10)
-    render 'api/tracks/splash'
+  # @tracks = Track.includes(:artist).all.limit(10)
     # logic
     # []
     #GEt indexes of Track.All
     # within that range, use .rand 
     # shove the rand value into new holder array
+
+
+  def splash
+    random_tracks = Hash.new(0)
+    # debugger
+    while random_tracks.length < 10
+      random_id = Random.rand(0...Track.all.length)
+      if !random_tracks.keys.include?(random_id + 1)
+        random_tracks[random_id + 1] = Track.includes(:artist).all[random_id]
+      end
+    end
+    @tracks = random_tracks.values
+    render 'api/tracks/splash'
   end
 
   def search  

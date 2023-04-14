@@ -125,7 +125,7 @@
     height: 36px;
     margin: 0 -16px 8px;
     padding: 0 16px;
-    position: sticky;
+    /* position: sticky; */
     z-index: 2;
 }
 

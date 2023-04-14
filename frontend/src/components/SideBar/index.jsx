@@ -30,7 +30,7 @@ function SideBar() {
         }
     }
 
-    console.log(numOfPlaylists);
+    // console.log(numOfPlaylists);
 
     async function createPlaylist() {
         debugger;

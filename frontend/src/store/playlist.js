@@ -2,7 +2,6 @@ import csrfFetch from "./csrf";
 
 const GET_PLAYLIST = 'GET_PLAYLIST';
 const GET_CURRENT_USER_PLAYLISTS = 'GET_PLAYLISTS';
-// const CREATE_PLAYLIST = 'CREATE_PLAYLIST';
 
 const getPlaylist = (playlist) => ({
     type: GET_PLAYLIST,
@@ -49,7 +48,6 @@ const playlistReducer = (state = {}, action) => {
     const nextState = { ...state }
     switch (action.type) {
         case GET_PLAYLIST:
-            // debugger;
             nextState[action.playlist.id] = action.playlist;
             return nextState;
         case GET_CURRENT_USER_PLAYLISTS:

@@ -122,16 +122,33 @@
 }
 
 .track-lyrics-header{
+    display: flex;
+    align-items:center;
     padding: 20px 0px;
     font-size: 26px;
     font-weight: 700;
-    width: 60%
+    width: 60%;
+    height: 100px;
 }
 
 
 .artist-link-container {
     width: 40%;
     display: flex;
+    align-items: center;
+}
+
+.artist-link-container-item.artist-icon {
+    /* width: 50%; */
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.artist-icon img {
+    border-radius: 50px;
+    width: 84px;
+    height: 84px;
 }
 
 .artist-link-container i {

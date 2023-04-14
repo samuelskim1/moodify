@@ -13,24 +13,28 @@ class Api::AlbumsController < ApplicationController
     render 'api/albums/show'
   end
 
-  def splash
-    # random_albums = Hash.new(0)
-    # while random_albums.length < 3
-    #   random_id = Random.rand(0...Album.all.length)
-    #   if !random_albums.keys.include?(random_id + 1)
-    #     random_albums[random_id + 1] = Album.includes(:artist, :tracks).all[random_id]
-    #   end
-    # end
-    # @albums = random_albums.values
-    @albums = Album.includes(:artist, :tracks).all.limit(10)
-    render 'api/albums/splash'
-    # logic
+   # logic
     # []
     #GEt indexes of Album.All
     # within that range, use .rand 
     # shove the rand value into new holder array
+
+  
+  def splash
+    random_albums = Hash.new(0)
+    # debugger;
+    while random_albums.length < 3
+      random_id = Random.rand(0...Album.all.length)
+      if !random_albums.keys.include?(random_id + 1)
+        random_albums[random_id + 1] = Album.includes(:artist, :tracks).all[random_id]
+      end
+    end
+    @albums = random_albums.values
+    render 'api/albums/splash'
+ 
   
   end
+
 
 
 end
