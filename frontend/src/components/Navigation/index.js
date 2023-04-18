@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from "react-redux";
 import { NavLink, useLocation } from "react-router-dom";
 import ProfileButton from './ProfileButton';
-import SearchBar from './Searchbar';
+// import SearchBar from './Searchbar';
 import './Navigation.css'
 
 
