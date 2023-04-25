@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from "react-redux";
 import { NavLink, useLocation } from "react-router-dom";
 import ProfileButton from './ProfileButton';
-// import SearchBar from './Searchbar';
+import SearchBar from './Searchbar';
 import './Navigation.css'
 
 
@@ -37,7 +37,7 @@ function Navigation() {
     return (
         <div className='navigation-bar-container'>
             <ul className='navigation-bar'>
-                {/* <SearchBar/> */}
+                <SearchBar/>
                 <div className="nav-bar-right-section">
                     <div className='about-me-icons'>
                         <a href="https://github.com/samuelskim1" className='github-link'><i className="fa-brands fa-github fa-lg" style={{ color: '#ffffff' }}></i> Github</a>
