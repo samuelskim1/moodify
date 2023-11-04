@@ -13,6 +13,11 @@ function LoginFormPage() {
 
     if (sessionUser) return <Redirect to="/" />;
 
+    const demoLogin = (e) => {
+        e.preventDefault();
+        return dispatch(sessionActions.login({ credential: 'demo@user.io', password: 'password' }))
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         setErrors([]);
@@ -83,6 +88,7 @@ function LoginFormPage() {
                         </label>
                     </div>
                     <button type="submit">Log In</button>
+                    <button onClick={demoLogin}>Demo Login</button>
                     
                 </form>
                 <hr className='login_break'/>
