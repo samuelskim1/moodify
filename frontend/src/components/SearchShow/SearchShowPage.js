@@ -29,9 +29,11 @@ const Search = () => {
                 <Navigation/>
                 <div className="search-show-container">
                     <div className="search-show-flexbox-container">
-                        {searchedTracks.map(track => (
-                            <TrackIndexItem key={track.id} track={track} />
-                        ))}
+                        <div className="search-show-tracks">
+                            {searchedTracks.map(track => (
+                                <TrackIndexItem key={track.id} track={track} />
+                            ))}
+                        </div>
                     </div>
                 
                 {/* {Object.values(search).map((ele) => {
