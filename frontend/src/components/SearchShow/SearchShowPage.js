@@ -7,6 +7,7 @@ import SideBar from '../SideBar';
 import Navigation from '../Navigation';
 import TrackIndexItem from "../Track/TrackIndexItem";
 import TrackShow from '../Track/TrackShow';
+import './SearchShowPage.css';
 const Search = () => {
     // this component takes all of our search results and displays them;
     const dispatch = useDispatch();
@@ -18,7 +19,7 @@ const Search = () => {
         // this prefills our state bc when we refresh we have nothing in our state
         const query = history.location.search.split("=")[1];
         dispatch(fetchSearchResults(query))
-    }, []);
+    }, [history.location.search]);
     //make sure to make whatever we named it inside of the reducer in line 15
     // const search = useSelector((state) => state.search);
     // console.log(search);
@@ -28,6 +29,7 @@ const Search = () => {
             <div className="nav-main-container">
                 <Navigation/>
                 <div className="search-show-container">
+                    <h1 className="search-results">Search Results</h1>
                     <div className="search-show-flexbox-container">
                         <div className="search-show-tracks">
                             {searchedTracks.map(track => (

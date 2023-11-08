@@ -1,0 +1,31 @@
+/* .search-show-flex-container {
+    display: flex;
+    width:100%
+} */
+
+.search-results {
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+    padding: 20px 10px;
+}
+
+.search-show-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #1c1c1c;
+    width: 100%;
+    height:100%;
+    padding-left:3vw;
+    padding-bottom: 80px;
+    box-sizing:border-box;
+}
+
+.search-show-tracks {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        min-height: 100vh;
+        height: 100%;
+        margin-top: 2rem;
+}
