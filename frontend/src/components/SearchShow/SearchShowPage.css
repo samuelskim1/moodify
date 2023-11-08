@@ -15,6 +15,7 @@
     flex-direction: column;
     background-color: #1c1c1c;
     width: 100%;
+    min-height: 100vh;
     height:100%;
     padding-left:3vw;
     padding-bottom: 80px;
@@ -28,4 +29,21 @@
         min-height: 100vh;
         height: 100%;
         margin-top: 2rem;
+}
+
+.no-search-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    padding-top: 80px;
+}
+
+.no-results-found {
+    font-weight: 700;
+}
+
+.correct-input {
+    font-weight: 500;
 }

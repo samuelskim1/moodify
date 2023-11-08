@@ -13,31 +13,60 @@ const Search = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const searchedTracks = useSelector(state => Object.values(state.search));
-    console.log(searchedTracks);
+    // console.log(searchedTracks);
+    // console.log(history.location);
+    // const test = history.location.search;
+    // console.log(test);
+    const searchPhrase = history.location.search.split("=")[1]
+    console.log(searchPhrase);
+    const filteredSearchPhrase = searchPhrase.split("%20").join(" ");
+    console.log(filteredSearchPhrase);
+    // console.log(search);
     // debugger;
     useEffect(() => {
         // this prefills our state bc when we refresh we have nothing in our state
         const query = history.location.search.split("=")[1];
         dispatch(fetchSearchResults(query))
-    }, [history.location.search]);
+    }, []);
     //make sure to make whatever we named it inside of the reducer in line 15
     // const search = useSelector((state) => state.search);
     // console.log(search);
+
+    let searchResults;
+
+    if (Object.keys(searchedTracks).length > 0) {
+        searchResults = (
+            <>
+                <h1 className="search-results">Search Results</h1>
+                <div className="search-show-flexbox-container">
+                    <div className="search-show-tracks">
+                        {searchedTracks.map(track => (
+                            <TrackIndexItem key={track.id} track={track} />
+                        ))}
+                    </div>
+                </div>
+            </>
+        );
+    } else {
+        searchResults = (
+            <>
+                <div className="no-search-results">
+                    <h1 className="no-results-found">No results found for "{filteredSearchPhrase}"</h1>
+                    <h1 className="correct-input">Please make sure that your words are spelled correctly, or use fewer or different keywords</h1>
+                </div>
+            </>
+
+        )
+    }
+
+
     return (
         <div className="search-show-flex-container">
             <SideBar/>
             <div className="nav-main-container">
                 <Navigation/>
                 <div className="search-show-container">
-                    <h1 className="search-results">Search Results</h1>
-                    <div className="search-show-flexbox-container">
-                        <div className="search-show-tracks">
-                            {searchedTracks.map(track => (
-                                <TrackIndexItem key={track.id} track={track} />
-                            ))}
-                        </div>
-                    </div>
-                
+                    {searchResults}
                 {/* {Object.values(search).map((ele) => {
                     return <div>{ele.title}</div>
                 })} */}
