@@ -18,9 +18,9 @@ const Search = () => {
     // const test = history.location.search;
     // console.log(test);
     const searchPhrase = history.location.search.split("=")[1]
-    console.log(searchPhrase);
+    // console.log(searchPhrase);
     const filteredSearchPhrase = searchPhrase.split("%20").join(" ");
-    console.log(filteredSearchPhrase);
+    // console.log(filteredSearchPhrase);
     // console.log(search);
     // debugger;
     useEffect(() => {
