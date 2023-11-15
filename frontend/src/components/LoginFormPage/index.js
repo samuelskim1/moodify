@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect, NavLink } from 'react-router-dom';
+import { Navigate, NavLink } from 'react-router-dom';
 import './LoginForm.css';
 
 function LoginFormPage() {
@@ -11,7 +11,7 @@ function LoginFormPage() {
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]);
 
-    if (sessionUser) return <Redirect to="/" />;
+    if (sessionUser) return <Navigate to="/" />;
 
     const demoLogin = (e) => {
         e.preventDefault();

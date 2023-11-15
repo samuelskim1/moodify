@@ -1,6 +1,6 @@
 import { NavLink, Redirect } from 'react-router-dom';
 import { useEffect } from 'react';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import UserPlaylistsIndex from './UserPlaylistsIndex';
 import './SideBar.css'
@@ -14,7 +14,8 @@ function SideBar() {
     const numOfPlaylists = useSelector(state => Object.values(state.playlists).length);
     const currentUserId = useSelector(state=> state.session?.user?.id);
     const location = useLocation();
-    const history = useHistory();
+    // const history = useHistory();
+    const navigate = useNavigate();
 
     let playlistButton;
 
@@ -41,7 +42,8 @@ function SideBar() {
         }
         await dispatch(createNewPlaylist(newPlaylist));
         const newPath = `/playlists/${numOfPlaylists + 2}`
-        history.push(newPath);
+        // history.push(newPath);
+        navigate(newPath);
     }
 
     if (currentUserId) {
