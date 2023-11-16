@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect, NavLink } from "react-router-dom";
+import { Navigate, NavLink } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
 
@@ -14,7 +14,7 @@ function SignupFormPage() {
     const [errors, setErrors] = useState([]);
     
 
-    if (sessionUser) return <Redirect to="/" />;
+    if (sessionUser) return <Navigate to="/" />;
 
     const demoLogin = (e) => {
         e.preventDefault();
