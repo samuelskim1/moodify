@@ -23,7 +23,7 @@ function App() {
         <Route path='/albums/:albumId' element={<AlbumShow />} />
         <Route exact path='/' element={<SplashPage />} />
         <Route path='/playlists/:playlistId' element={<PlaylistShow />}/>
-        <Route path="/search" element={<Search/>}/>
+        {/* <Route path="/search" element={<Search/>}/> */}
       </Routes>
       <PlayBar/>
     </>
