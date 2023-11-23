@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { fetchSearchResults } from "../../store/search";
 import './Searchbar.css';
 
 const SearchBar = ()  => {
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    const history = useHistory();
     //handleSearch
 
     //we want to have a local state because as the user is typing in handleSearch,
@@ -37,14 +37,11 @@ const SearchBar = ()  => {
 
     function handleSearchSubmit(e) {
         e.preventDefault();
-        // if (searchText.length > 0) {
-        //     //this redirects it to that path
-        //     history.push(`/search?tracks=${searchText}`);
-        // }
         if (searchText.length > 0) {
-            navigate(`/search?tracks=${searchText}`)
+            //this redirects it to that path
+            history.push(`/search?tracks=${searchText}`);
         }
-
+        
     }
 
 

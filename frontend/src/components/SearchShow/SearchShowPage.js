@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { fetchSearchResults } from "../../store/search";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import SideBar from '../SideBar';
@@ -11,13 +11,13 @@ import './SearchShowPage.css';
 const Search = () => {
     // this component takes all of our search results and displays them;
     const dispatch = useDispatch();
-    const navigate = useNavigate();
+    const history = useHistory();
     const searchedTracks = useSelector(state => Object.values(state.search));
     // console.log(searchedTracks);
     // console.log(history.location);
     // const test = history.location.search;
     // console.log(test);
-    const searchPhrase = navigate.location.search.split("=")[1]
+    const searchPhrase = history.location.search.split("=")[1]
     // console.log(searchPhrase);
     const filteredSearchPhrase = searchPhrase.split("%20").join(" ");
     // console.log(filteredSearchPhrase);
@@ -25,7 +25,7 @@ const Search = () => {
     // debugger;
     useEffect(() => {
         // this prefills our state bc when we refresh we have nothing in our state
-        const query = navigate.location.search.split("=")[1];
+        const query = history.location.search.split("=")[1];
         dispatch(fetchSearchResults(query.toLowerCase()))
         //toLowerCase is used because the backend checks for whether or not whatever is in the query is = to the lowercase version of any track
     }, []);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from './components/SignupFormPage';
 import SplashPage from './components/SplashPage/SplashPage';
@@ -14,7 +14,7 @@ import Search from './components/SearchShow/SearchShowPage';
 function App() {
   return (
     <>
-      <Routes>
+      <Switch>
         <Route path="/login">
           <LoginFormPage />
         </Route>
@@ -42,7 +42,7 @@ function App() {
         <Route path="/search">
           <Search/>
         </Route>
-      </Routes>
+      </Switch>
       <PlayBar/>
     </>
   );
