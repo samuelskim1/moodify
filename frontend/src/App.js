@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from './components/SignupFormPage';
 import SplashPage from './components/SplashPage/SplashPage';
@@ -14,17 +14,35 @@ import Search from './components/SearchShow/SearchShowPage';
 function App() {
   return (
     <>
-      <Routes>
-        <Route path="/login" element={<LoginFormPage/>} />
-        <Route path="/signup" element={<SignupFormPage />} />
-        <Route exact path='/tracks' element={<TrackIndex />} />
-        <Route path='/tracks/:trackId' element ={<TrackShow/>} />
-        <Route exact path='/albums' element={<AlbumIndex />} />
-        <Route path='/albums/:albumId' element={<AlbumShow />} />
-        <Route exact path='/' element={<SplashPage />} />
-        <Route path='/playlists/:playlistId' element={<PlaylistShow />}/>
-        <Route path="/search" element={<Search/>}/>
-      </Routes>
+      <Switch>
+        <Route path="/login">
+          <LoginFormPage />
+        </Route>
+        <Route path="/signup">
+          <SignupFormPage/>
+        </Route>
+        <Route exact path='/tracks'>
+          <TrackIndex/>
+        </Route>
+        <Route path='/tracks/:trackId'>
+          <TrackShow/>
+        </Route>
+        <Route exact path='/albums'>
+          <AlbumIndex />
+        </Route>
+        <Route path='/albums/:albumId'>
+          <AlbumShow />
+        </Route>
+        <Route exact path='/'>
+          <SplashPage/>
+        </Route>
+        <Route path='/playlists/:playlistId'>
+          <PlaylistShow/>
+        </Route>
+        <Route path="/search">
+          <Search/>
+        </Route>
+      </Switch>
       <PlayBar/>
     </>
   );
