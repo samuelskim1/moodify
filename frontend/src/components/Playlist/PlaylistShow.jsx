@@ -6,6 +6,7 @@ import { fetchPlaylistTracks } from "../../store/playlist_tracks";
 import Navigation from "../Navigation";
 import SideBar from "../SideBar";
 import TrackPlaylistItem from "./TrackPlaylistItem";
+import PlaylistDeleteButton from "./PlaylistDeleteButton";
 import './PlaylistShow.css'
 
 function PlaylistShow() {
@@ -47,6 +48,7 @@ function PlaylistShow() {
                                 </div>
                             </header>
                             <div className="playlist-show-item playlist-show-play-area" >
+                                <PlaylistDeleteButton playlist={playlist}/>
                             </div>
                             <div className="playlist-show-item playlist-tracks-container">
                                 <div className="playlist-tracks-label-holder">

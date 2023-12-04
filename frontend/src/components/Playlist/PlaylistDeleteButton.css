@@ -1,0 +1,8 @@
+.delete-button-container {
+    width: 54px;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
