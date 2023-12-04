@@ -34,24 +34,33 @@ function SideBar() {
 
     async function createPlaylist() {
         debugger;
-        const newPlaylist = {
-            title: `My Playlist #${numOfPlaylists + 1}`,
-            creator_id: currentUserId,
-            description: ""
+
+        if (currentUserId) {
+            const newPlaylist = {
+                title: `My Playlist #${numOfPlaylists + 1}`,
+                creator_id: currentUserId,
+                description: ""
+            }
+            await dispatch(createNewPlaylist(newPlaylist));
+            const newPath = `/playlists/${numOfPlaylists + 2}`
+            history.push(newPath);
+            console.log("currentUserId = truthy");
+        } else {
+            console.log("currentUserId = falsy");
+            // return <Redirect to="/login" />;
+            history.push("/login");
+            debugger;
         }
-        await dispatch(createNewPlaylist(newPlaylist));
-        const newPath = `/playlists/${numOfPlaylists + 2}`
-        history.push(newPath);
     }
 
-    if (currentUserId) {
-        playlistButton = <div className='playlists-create-playlist-container' onClick={createPlaylist}>
-                <div className='create-playlists-button'>
-                    <i className="fa-solid fa-square-plus create-playlist-button-icon" style={{ color: "#d1d1d1" }}></i>
-                </div>
-                <div className='create-playlists-label'>Create Playlist</div>
-            </div>
-    }
+    // if (currentUserId) {
+    //     playlistButton = <div className='playlists-create-playlist-container' onClick={createPlaylist}>
+    //             <div className='create-playlists-button'>
+    //                 <i className="fa-solid fa-square-plus create-playlist-button-icon" style={{ color: "#d1d1d1" }}></i>
+    //             </div>
+    //             <div className='create-playlists-label'>Create Playlist</div>
+    //         </div>
+    // }
 
     return (
         <div className="sidebar-container">
