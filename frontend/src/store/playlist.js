@@ -2,6 +2,7 @@ import csrfFetch from "./csrf";
 
 const GET_PLAYLIST = 'GET_PLAYLIST';
 const GET_CURRENT_USER_PLAYLISTS = 'GET_PLAYLISTS';
+const REMOVE_PLAYLIST = 'REMOVE_PLAYLIST';
 
 const getPlaylist = (playlist) => ({
     type: GET_PLAYLIST,
@@ -11,6 +12,11 @@ const getPlaylist = (playlist) => ({
 const getCurrentUserPlaylists = (playlists) => ({
     type: GET_CURRENT_USER_PLAYLISTS,
     playlists
+})
+
+const removePlaylist = (playlistId) => ({
+    type: REMOVE_PLAYLIST,
+    playlistId
 })
 
 export const fetchPlaylist = (playlistId) => async (dispatch) => {
@@ -44,6 +50,15 @@ export const createNewPlaylist = (playlist) => async (dispatch) => {
     return dispatch(getPlaylist(playlistData));
 }
 
+export const deletePlaylist = (playlistId) => async (dispatch) => {
+    const res = await csrfFetch(`/api/playlists/${playlistId}`, {
+        method: 'DELETE'
+    })
+    if (res.ok) {
+        return dispatch(removePlaylist(playlistId));
+    }
+}
+
 const playlistReducer = (state = {}, action) => {
     const nextState = { ...state }
     switch (action.type) {
@@ -52,6 +67,9 @@ const playlistReducer = (state = {}, action) => {
             return nextState;
         case GET_CURRENT_USER_PLAYLISTS:
             return action.playlists;
+        case REMOVE_PLAYLIST:
+            delete nextState[action.playlistId];
+            return nextState;
         default:
             return nextState;
     }
