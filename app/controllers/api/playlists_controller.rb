@@ -27,17 +27,16 @@ class Api::PlaylistsController < ApplicationController
     end
 
     def update
-        @playlist = Playlist.find_by(:id, params[:id])
-
+        @playlist = Playlist.find_by(id: params[:id])
         render 'api/playlists/update'
     end
 
     def destroy
-        @playlist = Playlist.find_by(:id, params[:id])
-        render 'api/playlist/destroy'
+        @playlist = Playlist.find_by(id: params[:id])
+        puts @playlist;
+        @playlist.destroy
+        render json: {}, status: :no_content;
     end
-
-
 
 
 end
