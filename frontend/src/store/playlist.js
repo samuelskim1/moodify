@@ -47,7 +47,8 @@ export const createNewPlaylist = (playlist) => async (dispatch) => {
     });
 
     const playlistData = await res.json();
-    return dispatch(getPlaylist(playlistData));
+    dispatch(getPlaylist(playlistData));
+    return playlistData;
 }
 
 export const deletePlaylist = (playlistId) => async (dispatch) => {

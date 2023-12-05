@@ -41,8 +41,9 @@ function SideBar() {
                 creator_id: currentUserId,
                 description: ""
             }
-            await dispatch(createNewPlaylist(newPlaylist));
-            const newPath = `/playlists/${numOfPlaylists + 2}`
+            const createdPlaylist = await dispatch(createNewPlaylist(newPlaylist));
+            console.log(createdPlaylist);
+            const newPath = `/playlists/${createdPlaylist?.id}`
             history.push(newPath);
             console.log("currentUserId = truthy");
         } else {

@@ -15,6 +15,8 @@ export const fetchPlaylistTracks = (playlistId) => async (dispatch) => {
         //res doesnt have the key of playlistTracks when i ran through the debugger
         //
         return dispatch(getPlaylistTracks(playlist.playlistTracks));
+    } else {
+        return {};
     }
 }
 
