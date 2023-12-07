@@ -6,6 +6,7 @@ import SideBar from "../SideBar";
 import TrackIndexItem from "./TrackIndexItem";
 import PlayBar from "../PlayBar/PlayBar";
 import './TrackIndex.css';
+import { fetchCurrentUserPlaylists } from "../../store/playlist";
 
 function TrackIndex() {
     const dispatch = useDispatch();
@@ -15,7 +16,8 @@ function TrackIndex() {
     //do the fetch inside of the outercomponent(maybe in our splashpage, albumsshowpage, searchpage)
     //or have a conditional inside 
     useEffect(() => {
-        dispatch(fetchAllTracks())
+        dispatch(fetchAllTracks());
+        dispatch(fetchCurrentUserPlaylists());
     },[dispatch]);
 
     //waits for data to be in the frontend state before rendering page 

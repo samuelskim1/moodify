@@ -1,0 +1,7 @@
+.playlist-menu-button {
+    color: #ffffff;
+}
+
+.playlist-menu-button:hover {
+    color: rgb(45, 200, 25);
+}

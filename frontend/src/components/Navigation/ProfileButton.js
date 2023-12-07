@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react"
+import React, { useState, useEffect} from "react";
 import { useDispatch} from 'react-redux';
 import * as sessionActions from '../../store/session'
 import './ProfileButton.css'
@@ -31,7 +31,7 @@ function ProfileButton({user}) {
     };
 
 
-    //line 30 checks first if showMenu is truthy:
+    //line 44 checks first if showMenu is truthy:
     //if it is, we run the code after the &&
     //if it isnt, we dont run it
     return (

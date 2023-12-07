@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import './TrackIndexItem.css'
+import AddToPlaylistButton from './AddToPlaylistButton';
+import './AddToPlaylistButton.css';
 
 function TrackIndexItem({track}) {
     // const [showButton, setShowButton] = useState(false);
@@ -22,9 +24,7 @@ function TrackIndexItem({track}) {
                 </div>
                 <h6 className="track-title">{track.title}</h6>
                 <h6 className="artist-name">{artistName}</h6>
-                <div className="add-to-playlist-area">
-                    <i class="fa-solid fa-circle-plus" style={{color: '#ffffff'}}></i>
-                </div>
+                <AddToPlaylistButton track={track}/>
                 
             </div>
         </NavLink>
