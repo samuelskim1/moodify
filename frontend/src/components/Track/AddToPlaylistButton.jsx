@@ -2,7 +2,7 @@ import { useDispatch, useSelector} from 'react-redux';
 import { useState, useEffect} from "react";
 function AddToPlaylistButton({track}) {
     const dispatch = useDispatch();
-    const currentUserId = useSelector(state => state.session?.user?.id);
+    
     const [showPlaylistsMenu, setShowPlaylistsMenu] = useState(false);
 
     const openPlaylistMenu = (e) => {
@@ -41,18 +41,8 @@ function AddToPlaylistButton({track}) {
                 <i onClick={(e) => openPlaylistMenu(e)} class="fa-solid fa-circle-plus playlist-menu-button"></i>
             </div>
 
-            {showPlaylistsMenu && currentUserId && (
-                <div className="playlist-dropdown">
-                    <p>Please select a playlist you would like to add this track to</p>
-                    <ul className="playlist-dropdown-content">
-                        <li>test playlist dropdown #1</li>
-                        <li>test playlist dropdown #2</li>
-                        <li>test playlist dropdown #3</li>
-                        <li>test playlist dropdown #4</li>
-                        <li>test playlist dropdown #5</li>
-                        <li>test playlist dropdown #6</li>
-                    </ul>
-                </div>
+            {showPlaylistsMenu && (
+                <PlaylistsDropdownIndex track={track}/>
             )
             }
         </>
