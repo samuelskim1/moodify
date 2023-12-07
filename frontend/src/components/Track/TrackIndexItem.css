@@ -96,3 +96,8 @@ i.fa-solid.fa-circle-play.fa-2xl:hover{
     text-overflow: ellipsis;
 
 }
+
+.add-to-playlist-area {
+    display: flex;
+    flex-direction: row-reverse;
+}

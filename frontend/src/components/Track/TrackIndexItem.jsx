@@ -22,6 +22,9 @@ function TrackIndexItem({track}) {
                 </div>
                 <h6 className="track-title">{track.title}</h6>
                 <h6 className="artist-name">{artistName}</h6>
+                <div className="add-to-playlist-area">
+                    <i class="fa-solid fa-circle-plus" style={{color: '#ffffff'}}></i>
+                </div>
                 
             </div>
         </NavLink>
