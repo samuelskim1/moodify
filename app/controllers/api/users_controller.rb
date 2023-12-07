@@ -12,7 +12,7 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @usesr = User.includes(:playlists).all
+    @user = User.includes(:playlists).all
     render 'api/users/index'
   end
 

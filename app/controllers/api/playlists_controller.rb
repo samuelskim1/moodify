@@ -26,10 +26,12 @@ class Api::PlaylistsController < ApplicationController
         end
     end
 
-    def update
-        @playlist = Playlist.find_by(id: params[:id])
-        render 'api/playlists/update'
-    end
+    # def update
+    #     @playlist = Playlist.includes(:creator, :playlist_tracks).find_by(id: params[:id])
+    #     @playlist_tracks = @playlist.playlist_tracks.includes(track: [:album, :artist])
+
+    #     # render 'api/playlists/update'
+    # end
 
     def destroy
         @playlist = Playlist.find_by(id: params[:id])

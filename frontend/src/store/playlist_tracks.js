@@ -1,10 +1,16 @@
 import csrfFetch from "./csrf";
 
 const GET_PLAYLIST_TRACKS = 'GET_PLAYLIST_TRACKS';
+const ADD_PLAYLIST_TRACK_TO_PLAYLIST = 'ADD_PLAYLIST_TRACK_TO_PLAYLIST';
 
 const getPlaylistTracks = (playlistTracks) => ({
     type: GET_PLAYLIST_TRACKS,
     playlistTracks
+})
+
+const addPlaylistTrackToPlaylist = (newPlaylistTrack) => ({
+    type: ADD_PLAYLIST_TRACK_TO_PLAYLIST,
+    newPlaylistTrack
 })
 
 export const fetchPlaylistTracks = (playlistId) => async (dispatch) => {
@@ -20,6 +26,23 @@ export const fetchPlaylistTracks = (playlistId) => async (dispatch) => {
     }
 }
 
+export const createPlaylistTrack = (playlistId, trackId) => async (dispatch) => {
+    // const {playlistId, trackId} = playlist_track;
+    console.log(playlistId, trackId);
+    const res = await csrfFetch(`/api/playlist_tracks`, {
+        method: 'POST',
+        body: JSON.stringify({
+            playlistId,
+            trackId
+        })
+        // body: JSON.stringify(playlist_track)
+    })
+    const newPlaylistTrackData = await res.json();
+    console.log(newPlaylistTrackData);
+    dispatch(addPlaylistTrackToPlaylist(newPlaylistTrackData))
+    return newPlaylistTrackData;
+}
+
 const playlistTracksReducer = (state = {}, action ) => {
     const nextState = { ...state }
     switch (action.type) {
@@ -29,6 +52,8 @@ const playlistTracksReducer = (state = {}, action ) => {
             } else {
                 return {};
             }
+        case ADD_PLAYLIST_TRACK_TO_PLAYLIST: 
+            return { ...state, [action.newPlaylistTrack.id ]: action.newPlaylistTrack };
         default:
             return nextState;
     }

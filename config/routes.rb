@@ -23,6 +23,8 @@ Rails.application.routes.draw do
       get :splash, on: :collection
     end
 
+    resources :playlist_tracks, only: [:create, :destroy]
+
     # resourece :playlists_tracks, only: [:index]
     # dont need this since we're grabbing the ids of playlist tracks in playlist show
 
