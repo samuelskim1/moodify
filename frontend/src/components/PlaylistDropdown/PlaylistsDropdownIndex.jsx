@@ -24,7 +24,6 @@ function PlaylistsDropdownIndex({track}) {
                             {currentUserPlaylists.map(playlist => (
                                 <PlaylistsDropDownIndexItem key={playlist.id} playlist={playlist} track={track}/>
                             ))
-
                             }
         
                         </ul>
