@@ -5,9 +5,7 @@ function PlaylistsDropDownIndexItem({playlist, track}) {
 
 
     return (
-            <>
-            <li>test playlist dropdown!!</li>
-            </>
+            <div className="playlist-title">{playlist.title}</div>
     );
 }
 

@@ -1,0 +1,8 @@
+.playlist-title {
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.playlist-title:hover {
+    background-color: hsla(0, 0%, 100%, .1);
+}

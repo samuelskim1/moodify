@@ -4,14 +4,41 @@
     background-color: #514c4c;
     transform: translate(135px, 10px);
     border-radius:5px;
+    min-width: 180px;
+    max-width: 300px;
+    padding: 5px;
+}
+
+.playlist-dropdown-content {
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+}
+.playlist-dropdown-content p{
+    padding: 5px;
+}
+
+.user-playlists-dropdown-index-list {
     display: flex;
     flex-direction: column;
 }
 
-.playlist-dropdown-content {
-    
+
+.user-playlists-dropdown-index-list li{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
 }
 
-.user-playlists-dropdown-index-list {
-    
+.linebreak-between-playlist-containers {
+    position: relative;
+}
+
+.linebreak-between-playlist-containers hr {
+    background-color: #7f7f7f;
+    border: none;
+    height: 1px;
+    margin: 8px 0px;
+    min-height: 1px;
 }

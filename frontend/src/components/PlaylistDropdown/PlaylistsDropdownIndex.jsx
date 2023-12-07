@@ -18,8 +18,11 @@ function PlaylistsDropdownIndex({track}) {
             } */}
             {currentUserId ? (
                 <div className="playlist-dropdown">
-                    <p>Please select a playlist you would like to add this track to</p>
                     <ul className="playlist-dropdown-content">
+                        <p>Add to Playlist</p>
+                        <div className='linebreak-between-playlist-containers'>
+                            <hr></hr>
+                        </div>
                         <ul className="user-playlists-dropdown-index-list">
                             {currentUserPlaylists.map(playlist => (
                                 <PlaylistsDropDownIndexItem key={playlist.id} playlist={playlist} track={track}/>
