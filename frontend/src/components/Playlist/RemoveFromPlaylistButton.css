@@ -1,0 +1,9 @@
+.remove-track-button {
+    color: #ffffff;
+    width: 50%;
+}
+
+.remove-track-button:hover {
+    color: rgb(45, 200, 25);
+}
+

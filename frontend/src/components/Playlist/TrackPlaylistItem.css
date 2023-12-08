@@ -68,3 +68,8 @@
 .track-playlist-item-album-link:hover {
     text-decoration: underline;
 }
+
+.playlist-track-update-container {
+    width: 10%;
+    display: flex;
+}

@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from "react";
 import PlaylistsDropdownIndex from '../PlaylistDropdown/PlaylistsDropdownIndex';
+import './AddToPlaylistButtonPlaylistShow.css';
 function AddToPlaylistButtonPlaylistShow({ track }) {
     const dispatch = useDispatch();
     const [showPlaylistsMenu, setShowPlaylistsMenu] = useState(false);
@@ -38,7 +39,7 @@ function AddToPlaylistButtonPlaylistShow({ track }) {
     return (
         <>
             <div className="add-to-playlist-area">
-                <i onClick={(e) => openPlaylistMenu(e)} class="fa-solid fa-circle-plus playlist-menu-button"></i>
+                <i onClick={(e) => openPlaylistMenu(e)} class="fa-solid fa-circle-plus playlist-menu-button-playlist-show"></i>
             </div>
 
             {showPlaylistsMenu && (
