@@ -5,7 +5,9 @@ function RemoveFromPlaylistButton({track}) {
 
     return (
         <>
-            <i class="fa-solid fa-circle-minus remove-track-button"></i>
+            <div className="remove-track-area">
+                <i class="fa-solid fa-circle-minus remove-track-button"></i>
+            </div>      
         </>
     )
 }

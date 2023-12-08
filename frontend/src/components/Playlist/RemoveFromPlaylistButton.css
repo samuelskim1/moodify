@@ -1,6 +1,11 @@
+.remove-track-area {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
 .remove-track-button {
     color: #ffffff;
-    width: 50%;
 }
 
 .remove-track-button:hover {
