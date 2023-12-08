@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
-import PlaylistsDropDownIndexItem from "./PlaylistsDropDownIndexItem";
-import "./PlaylistsDropdownIndexPlaylistShow.css"
+import PlaylistsDropDownIndexItem from "../PlaylistDropdown/PlaylistsDropDownIndexItem";
+import "./PlaylistDropdownIndexPlaylistShow.css"
 
 
-function PlaylistsDropdownIndexPlaylistShow({ track }) {
+function PlaylistDropdownIndexPlaylistShow({ track }) {
     const currentUserId = useSelector(state => state.session?.user?.id);
     const currentUserPlaylists = useSelector(state => Object.values(state.playlists));
 
@@ -50,4 +50,4 @@ function PlaylistsDropdownIndexPlaylistShow({ track }) {
 
 }
 
-export default PlaylistsDropdownIndexPlaylistShow;
+export default PlaylistDropdownIndexPlaylistShow;

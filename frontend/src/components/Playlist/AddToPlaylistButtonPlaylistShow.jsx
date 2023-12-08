@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from "react";
-import PlaylistsDropdownIndex from '../PlaylistDropdown/PlaylistsDropdownIndex';
+import PlaylistDropdownIndexPlaylistShow from './PlaylistDropdownIndexPlaylistShow';
 import './AddToPlaylistButtonPlaylistShow.css';
 function AddToPlaylistButtonPlaylistShow({ track }) {
     const dispatch = useDispatch();
@@ -43,7 +43,7 @@ function AddToPlaylistButtonPlaylistShow({ track }) {
             </div>
 
             {showPlaylistsMenu && (
-                <PlaylistsDropdownIndex track={track} />
+                <PlaylistDropdownIndexPlaylistShow track={track} />
             )
             }
         </>
