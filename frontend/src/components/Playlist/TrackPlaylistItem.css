@@ -39,7 +39,7 @@
 }
 
 .track-playlist-item-album-link{
-    width: 35%;
+    width: 30%;
     color: rgb(161, 161, 161);
     padding-block: 0.2rem;
     font-size: 0.8rem;
@@ -50,7 +50,7 @@
 
 
 .track-playlist-item-duration {
-    width: 15%;
+    width: 10%;
     text-align: right;
     color: rgb(161, 161, 161);
     padding-block: 0.2rem;

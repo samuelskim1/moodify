@@ -1,0 +1,10 @@
+.playlist-dropdown-playlist-show {
+    position: absolute;
+    z-index: 9999;
+    background-color: #514c4c;
+    transform: translate(-175px,-160px);
+    border-radius: 5px;
+    min-width: 180px;
+    max-width: 300px;
+    padding: 5px;
+}

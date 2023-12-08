@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import './TrackPlaylistItem.css'
+import AddToPlaylistButtonPlaylistShow from '../Track/AddToPlaylistButton';
 
 function TrackPlaylistItem({ track, trackId }) {
     const artist = track.artistName;
@@ -20,6 +21,9 @@ function TrackPlaylistItem({ track, trackId }) {
                     <div className="track-playlist-item-album">{album}</div>
                 </NavLink>
                 <div className="track-playlist-item-duration">{track.duration}</div>
+                <div className="playlist-track-update-container">
+                    <AddToPlaylistButtonPlaylistShow track={track} />
+                </div>
             </div>
         </div>
     )

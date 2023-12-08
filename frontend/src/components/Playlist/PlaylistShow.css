@@ -145,12 +145,12 @@
 }
 
 .tracks-album-indicator {
-    width: 35%;
+    width: 30%;
 }
 
 .tracks-duration-icon-container {
     display: flex;
-    width: 15%;
+    width: 10%;
     height: auto;
     justify-content: flex-end;
 }
