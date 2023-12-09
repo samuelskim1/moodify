@@ -3,8 +3,8 @@
  json.set! :playlistTracks do
     if @playlist_tracks 
         @playlist_tracks.each_with_index do |playlist_track, index|
-            json.set! (index + 1) do 
-                json.extract! playlist_track, :id
+            json.set! playlist_track.id do
+                json.set! :id, playlist_track.id
                 json.set! :track_id, playlist_track.track.id
                 json.extract! playlist_track.track, :album_id, :title, :duration
                 json.photoUrl playlist_track.track.photo.attached? ? playlist_track.track.photo.url : nil

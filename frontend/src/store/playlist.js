@@ -70,7 +70,9 @@ const playlistReducer = (state = {}, action) => {
         case GET_CURRENT_USER_PLAYLISTS:
             return action.playlists;
         case REMOVE_PLAYLIST:
+            console.log(nextState[action.playlistId])
             delete nextState[action.playlistId];
+            console.log(nextState);
             return nextState;
         default:
             return nextState;
