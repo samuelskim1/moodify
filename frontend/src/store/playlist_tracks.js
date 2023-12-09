@@ -2,6 +2,7 @@ import csrfFetch from "./csrf";
 
 const GET_PLAYLIST_TRACKS = 'GET_PLAYLIST_TRACKS';
 const ADD_PLAYLIST_TRACK_TO_PLAYLIST = 'ADD_PLAYLIST_TRACK_TO_PLAYLIST';
+const REMOVE_PLAYLIST_TRACK = 'REMOVE_PLAYLIST_TRACK';
 
 const getPlaylistTracks = (playlistTracks) => ({
     type: GET_PLAYLIST_TRACKS,
@@ -11,6 +12,11 @@ const getPlaylistTracks = (playlistTracks) => ({
 const addPlaylistTrackToPlaylist = (newPlaylistTrack) => ({
     type: ADD_PLAYLIST_TRACK_TO_PLAYLIST,
     newPlaylistTrack
+})
+
+const removePlaylistTrack = (PlaylistTrackId) => ({
+    type: REMOVE_PLAYLIST_TRACK,
+    PlaylistTrackId
 })
 
 export const fetchPlaylistTracks = (playlistId) => async (dispatch) => {
@@ -43,6 +49,17 @@ export const createPlaylistTrack = (playlistId, trackId) => async (dispatch) => 
     return newPlaylistTrackData;
 }
 
+export const deletePlaylistTrack(playlistTrackId) => async (dispatch) => {
+    console.log(playlistTrackId);
+    const res = await csrfFetch(`/api/playlists_tracks/${playlistTrackId}`, {
+        method: 'DELETE'
+    })
+
+    if (res.ok) {
+        dispatch(removePlaylistTrack(playlistTrackId));
+    }
+}
+
 const playlistTracksReducer = (state = {}, action ) => {
     const nextState = { ...state }
     switch (action.type) {
@@ -54,6 +71,9 @@ const playlistTracksReducer = (state = {}, action ) => {
             }
         case ADD_PLAYLIST_TRACK_TO_PLAYLIST: 
             return { ...state, [action.newPlaylistTrack.id ]: action.newPlaylistTrack };
+        case REMOVE_PLAYLIST_TRACK:
+            delete nextState[action.playlistTrackId];
+            return nextState;
         default:
             return nextState;
     }
