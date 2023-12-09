@@ -25,7 +25,7 @@ function RemoveFromPlaylistButton({track}) {
     return (
         <>
             <div className="remove-track-area">
-                <i onClick={removePlaylistTrack} class="fa-solid fa-circle-minus remove-track-button"></i>
+                <i onClick={removePlaylistTrack} className="fa-solid fa-circle-minus remove-track-button"></i>
             </div>      
         </>
     )

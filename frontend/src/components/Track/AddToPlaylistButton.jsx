@@ -38,7 +38,7 @@ function AddToPlaylistButton({track}) {
     return (
         <>
             <div className="add-to-playlist-area">
-                <i onClick={(e) => openPlaylistMenu(e)} class="fa-solid fa-circle-plus playlist-menu-button"></i>
+                <i onClick={(e) => openPlaylistMenu(e)} className="fa-solid fa-circle-plus playlist-menu-button"></i>
             </div>
 
             {showPlaylistsMenu && (

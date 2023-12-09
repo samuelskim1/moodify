@@ -27,7 +27,7 @@ function PlaylistDeleteButton({playlist}) {
 
     return (
         <div className="delete-button-container" onClick={removePlaylist}>
-            <i class="fa-regular fa-trash-can"></i>
+            <i className="fa-regular fa-trash-can"></i>
         </div>
     )
 }

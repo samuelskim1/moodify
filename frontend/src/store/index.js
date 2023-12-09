@@ -8,6 +8,7 @@ import playlists from './playlist';
 import playlist_tracks from './playlist_tracks';
 import users from './user';
 import search from './search';
+// import modal from './modal';
 
 
 const rootReducer = combineReducers({
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
     playlist_tracks,
     users,
     search
+    // modal
 });
 
 let enhancer;
