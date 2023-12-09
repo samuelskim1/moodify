@@ -49,7 +49,7 @@ export const createPlaylistTrack = (playlistId, trackId) => async (dispatch) => 
     return newPlaylistTrackData;
 }
 
-export const deletePlaylistTrack(playlistTrackId) => async (dispatch) => {
+export const deletePlaylistTrack = (playlistTrackId) => async (dispatch) => {
     console.log(playlistTrackId);
     const res = await csrfFetch(`/api/playlists_tracks/${playlistTrackId}`, {
         method: 'DELETE'
