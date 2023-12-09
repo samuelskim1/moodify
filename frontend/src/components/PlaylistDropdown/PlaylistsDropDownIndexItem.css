@@ -1,8 +1,8 @@
-.playlist-title {
+.playlist-title-playlist-dropdown {
     padding: 5px;
     border-radius: 3px;
 }
 
-.playlist-title:hover {
+.playlist-title-playlist-dropdown:hover {
     background-color: hsla(0, 0%, 100%, .1);
 }

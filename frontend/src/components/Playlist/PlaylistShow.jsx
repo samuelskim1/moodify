@@ -65,7 +65,7 @@ function PlaylistShow() {
                                 </div>
                                 <div className="playlist-tracks-list-container">
                                     {playlistTracks?.map((track, index) => (
-                                        <TrackPlaylistItem key={track.id} track={track} trackId={index + 1}/>
+                                        <TrackPlaylistItem key={index} track={track} trackId={index + 1}/>
                                     ))} 
                                 </div>
                             </div>
