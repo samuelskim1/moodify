@@ -6,6 +6,13 @@ import './RemoveFromPlaylistButton.css'
 
 function RemoveFromPlaylistButton({track}) {
     const dispatch = useDispatch();
+    const history = useHistory();
+    
+
+    async function removePlaylistTrack() {
+        const playlistTrackId = track.playlistTrackId;
+    }
+
     return (
         <>
             <div className="remove-track-area">
