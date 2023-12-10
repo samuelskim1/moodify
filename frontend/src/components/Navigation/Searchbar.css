@@ -42,3 +42,7 @@
     position: absolute;
     left: 16px;
 }
+
+.search-bar-container button{
+    border-radius: 45px; 
+}
