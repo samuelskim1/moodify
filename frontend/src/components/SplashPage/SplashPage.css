@@ -40,7 +40,7 @@
 .tracks-index-section {
     display: flex;
     flex-direction: column;
-    padding: 20px 0px;
+    /* padding: 20px 0px; */
     /* height: 33%; */
 }
 
@@ -48,6 +48,7 @@
 .tracks-index-header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 40px 30px 40px 10px;
 }
 
@@ -55,11 +56,11 @@
     color: white;
     font-size: 28px;
     font-weight: 700;
-    padding-top: 20px;
+    /* padding-top: 20px; */
 }
 
 .tracks-index-link {
-    padding-top: 30px;
+    /* padding-top: 30px; */
     font-size: 14px;  
     font-weight: 700;
     text-decoration: none;
@@ -79,10 +80,10 @@
 .splash-random-tracks {
     display: flex;
     flex-wrap: wrap;
-    align-content: flex-start;
-    min-height: 100vh;
-    margin-top: 2rem;
     height: 100%;
+    /* align-content: flex-start;
+    min-height: 100vh; */
+    /* margin-top: 2rem; */
     /* display: grid;
     grid-template-columns: 20% 20% 20% 20%;
     grid-template-areas: "....";
@@ -92,14 +93,14 @@
 .albums-index-section {
     display: flex;
     flex-direction: column;
-    padding: 20px 0px;
+    padding-bottom: 20px;
     height: 33%;
 }
 
 .albums-index-header {
     display: flex;
     justify-content: space-between;
-    padding: 40px 10px;
+    padding: 40px 30px 40px 10px;
 }
 
 .albums-index-title {
@@ -130,9 +131,10 @@
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    min-height: 100vh;
-    margin-top: 2rem;
+    margin-bottom: 2rem;
     height: 100%;
+    /* min-height: 100vh;
+    margin-top: 2rem; */
     /* display: grid;
     grid-template-columns: 20% 20% 20% 20%;
     grid-template-areas: "....";

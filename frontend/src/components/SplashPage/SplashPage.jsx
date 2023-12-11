@@ -41,7 +41,7 @@ function SplashPage() {
             <div className="nav-main-container">
                 <Navigation/>
                 <div className="splash-page-container">
-                    <h1 className="time">Good Morning</h1>
+                    {/* <h1 className="time">Good Morning</h1> */}
                     <h2 className="start-listening">Start listening</h2>
                     <div className="tracks-index-section">
                         <header className="tracks-index-header">
