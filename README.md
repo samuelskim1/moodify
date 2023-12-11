@@ -187,7 +187,7 @@ This is a code snippet of my reducer where I implement that logic for looping in
 
 ## Playlists ##
 
-A user must be logged in to view their own playlists. If a user is not logged in, no playlists will be displayed in the sidebar. Currently, I only have two CRUD functionalities for Playlists: Read and Create. A user can view their playlists by clicking on their playlist in the sidebar. It will then render a show page similar to the format of the album show page. The tracks for that playlist will be rendered in a list. A user will be able to create a new playlist through the create playlist button. This will redirect the user to the show page of the playlist that was just created. I plan on implementing the ability to update and destroy playlists. 
+A user must be logged in to view their own playlists. If a user is not logged in, no playlists will be displayed in the sidebar. This feature has full CRUD functionalities: Read, Create, Update, and Delete. A user can view their playlists by clicking on their playlist in the sidebar. It will then render a show page similar to the format of the album show page. The tracks for that playlist will be rendered in a list. A user can create a new playlist through the create playlist button on the sidebar. This will redirect the user to the show page of the playlist that was just created. A user is able to add a track to a playlist by clicking on the plus button of a track and selecting a playlist to add that track to. Another way in which the user can add songs to a playlist is by going to a playlist show page and clicking on the plus to add a song to another playlist. If you wanted to remove a song from a playlist, you can click the minus button next to the track in the playlist show page to remove it. I eventually plan on adding the functionality of adding the plus and minus buttons to tracks on the albums show page as well as enabling the user to also add the entire album to a playlist of their choice. As of right now the user has no way to rename their playlist but I plan on adding that functionality as well soon.
 
 This is an image of a playlist show page: 
 
@@ -249,6 +249,57 @@ return (
                 </div>
             </div>
         </>
+    )
+```
+
+## Search ##
+
+A user can search for a track by writing what they're looking for in the search bar and clicking the search button. After clicking, they will be lead to a search show page. If they decide that they would like to search for another track, they can do write in the search bar again and the search results will dynamically render according to what the input is in the search bar. This feature still needs to be fleshed out with some error handling but I also do plan on implementing the ability to search for playlists and albums in the future.
+
+This is an image of a playlist show page: 
+
+![search-show](frontend/src/assets/search-show.png)
+
+This is a code snippet of my code for my search show page: 
+
+```jsx
+if (Object.keys(searchedTracks).length > 0) {
+        searchResults = (
+            <>
+                <h1 className="search-results">Search Results</h1>
+                <div className="search-show-flexbox-container">
+                    <div className="search-show-tracks">
+                        {searchedTracks.map(track => (
+                            <TrackIndexItem key={track.id} track={track} />
+                        ))}
+                    </div>
+                </div>
+            </>
+        );
+    } else {
+        searchResults = (
+            <>
+                <div className="no-search-results">
+                    <h1 className="no-results-found">No results found for "{filteredSearchPhrase}"</h1>
+                    <h1 className="correct-input">Please make sure that your words are spelled correctly, or use fewer or different keywords</h1>
+                </div>
+            </>
+
+        )
+    }
+
+
+    return (
+        <div className="search-show-flex-container">
+            <SideBar/>
+            <div className="nav-main-container">
+                <Navigation/>
+                <div className="search-show-container">
+                    {searchResults}
+                </div>
+            </div>
+
+        </div>
     )
 ```
 
