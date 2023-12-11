@@ -15,12 +15,10 @@ function PlaylistDeleteButton({playlist}) {
 
     async function removePlaylist() {
         const playlistId = playlist.id
-        console.log(playlistId);
         
         if (currentUserId === playlist.creatorId) {
             await dispatch(deletePlaylist(playlistId));
             history.push("/");
-            console.log("playlist deleted!");
         }
         
     }

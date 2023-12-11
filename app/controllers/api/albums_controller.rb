@@ -22,7 +22,6 @@ class Api::AlbumsController < ApplicationController
   
   def splash
     random_albums = Hash.new(0)
-    # debugger;
     while random_albums.length < 3
       random_id = Random.rand(0...Album.all.length)
       if !random_albums.keys.include?(random_id + 1)

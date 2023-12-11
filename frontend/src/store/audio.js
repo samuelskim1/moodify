@@ -76,7 +76,6 @@ const audioReducer = (state = {}, action ) => {
             nextState["nextSong"] = action.track;
             return nextState;
         case SKIP_TO_NEXT_SONG:
-            // debugger;
             albumTracks = Object.values(nextState.currentAlbum.tracks)
             nextState.previousSong = nextState.currentSong;
             nextState.currentSong = nextState.nextSong;

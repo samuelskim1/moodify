@@ -25,11 +25,7 @@ const SearchBar = ()  => {
         
         await setSearchText(query);
         //we are constantly dispatching fetch requests 
-        // console.log(searchParams);
-        
-        
         dispatch(fetchSearchResults(query));
-        
         // history.push(`/search?tracks=${searchText}`);
         
 

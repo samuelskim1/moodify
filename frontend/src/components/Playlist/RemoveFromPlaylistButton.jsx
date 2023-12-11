@@ -10,16 +10,11 @@ function RemoveFromPlaylistButton({track}) {
     
 
     async function removePlaylistTrack() {
-        console.log(track);
         const playlistTrackId = track.id;
         //this track.id is actually playlistTrack.id
         //what we're passing into the params of this component is actually a playlistTrack that we get when looping through playlistTracks
-        console.log(playlistTrackId);
 
         await dispatch(deletePlaylistTrack(playlistTrackId));
-        console.log("playlist track deleted!")
-
-
     }
 
     return (

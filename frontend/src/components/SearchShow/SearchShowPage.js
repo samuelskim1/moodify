@@ -13,16 +13,8 @@ const Search = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const searchedTracks = useSelector(state => Object.values(state.search));
-    // console.log(searchedTracks);
-    // console.log(history.location);
-    // const test = history.location.search;
-    // console.log(test);
     const searchPhrase = history.location.search.split("=")[1]
-    // console.log(searchPhrase);
     const filteredSearchPhrase = searchPhrase.split("%20").join(" ");
-    // console.log(filteredSearchPhrase);
-    // console.log(search);
-    // debugger;
     useEffect(() => {
         // this prefills our state bc when we refresh we have nothing in our state
         const query = history.location.search.split("=")[1];
@@ -31,7 +23,6 @@ const Search = () => {
     }, []);
     //make sure to make whatever we named it inside of the reducer in line 15
     // const search = useSelector((state) => state.search);
-    // console.log(search);
 
     let searchResults;
 

@@ -20,7 +20,6 @@ const removePlaylistTrack = (playlistTrackId) => ({
 })
 
 export const fetchPlaylistTracks = (playlistId) => async (dispatch) => {
-    // debugger;
     const res = await csrfFetch(`/api/playlists/${playlistId}`);
     if (res.ok) {
         const playlist = await res.json();
@@ -34,7 +33,6 @@ export const fetchPlaylistTracks = (playlistId) => async (dispatch) => {
 
 export const createPlaylistTrack = (playlistId, trackId) => async (dispatch) => {
     // const {playlistId, trackId} = playlist_track;
-    console.log(playlistId, trackId);
     const res = await csrfFetch(`/api/playlist_tracks`, {
         method: 'POST',
         body: JSON.stringify({
@@ -44,13 +42,11 @@ export const createPlaylistTrack = (playlistId, trackId) => async (dispatch) => 
         // body: JSON.stringify(playlist_track)
     })
     const newPlaylistTrackData = await res.json();
-    console.log(newPlaylistTrackData);
     dispatch(addPlaylistTrackToPlaylist(newPlaylistTrackData))
     return newPlaylistTrackData;
 }
 
 export const deletePlaylistTrack = (playlistTrackId) => async (dispatch) => {
-    console.log(playlistTrackId);
     const res = await csrfFetch(`/api/playlist_tracks/${playlistTrackId}`, {
         method: 'DELETE'
     })
@@ -72,9 +68,7 @@ const playlistTracksReducer = (state = {}, action ) => {
         case ADD_PLAYLIST_TRACK_TO_PLAYLIST: 
             return { ...state, [action.newPlaylistTrack.id ]: action.newPlaylistTrack };
         case REMOVE_PLAYLIST_TRACK:
-            console.log(nextState[action.playlistTrackId]);
             delete nextState[action.playlistTrackId];
-            console.log(nextState);
             return nextState;
         default:
             return nextState;

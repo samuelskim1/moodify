@@ -23,7 +23,6 @@ function PlaylistsDropDownIndexItem({playlist, track}) {
 
     async function handleClick(e) {
         e.preventDefault();
-        console.log(playlistId, trackId);
         const creatingPlaylistTrack = await dispatch(createPlaylistTrack(playlistId, trackId));
         dispatch(fetchPlaylistTracks(playlistId));
         //create a new playlist track

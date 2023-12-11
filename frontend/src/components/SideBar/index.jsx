@@ -30,11 +30,7 @@ function SideBar() {
         }
     }
 
-    // console.log(numOfPlaylists);
-
     async function createPlaylist() {
-        debugger;
-
         if (currentUserId) {
             const newPlaylist = {
                 title: `My Playlist #${numOfPlaylists + 1}`,
@@ -42,15 +38,12 @@ function SideBar() {
                 description: ""
             }
             const createdPlaylist = await dispatch(createNewPlaylist(newPlaylist));
-            console.log(createdPlaylist);
+
             const newPath = `/playlists/${createdPlaylist?.id}`
             history.push(newPath);
-            console.log("currentUserId = truthy");
         } else {
-            console.log("currentUserId = falsy");
             // return <Redirect to="/login" />;
             history.push("/login");
-            debugger;
         }
     }
 
