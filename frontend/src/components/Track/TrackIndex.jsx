@@ -10,16 +10,16 @@ import { fetchCurrentUserPlaylists } from "../../store/playlist";
 
 function TrackIndex() {
     const dispatch = useDispatch();
-    const tracks = useSelector(state => Object.values(state.tracks));
     const currentSong = useSelector(state => state.audio["currentSong"]);
-
+    
     //do the fetch inside of the outercomponent(maybe in our splashpage, albumsshowpage, searchpage)
     //or have a conditional inside 
     useEffect(() => {
         dispatch(fetchAllTracks());
         dispatch(fetchCurrentUserPlaylists());
     },[dispatch]);
-
+    
+    const tracks = useSelector(state => Object.values(state.tracks));
     //waits for data to be in the frontend state before rendering page 
     //react will keep on rerendering component if it doesn't return an html element
     //That's how this works
