@@ -14,15 +14,15 @@ function TrackShow() {
     const track = useSelector(state => state.tracks[trackId]);
     const currentSong = useSelector(state => state.audio["currentSong"]);
 
-    useEffect(() => {
-        dispatch(fetchTrack(trackId))
-    }, [dispatch, trackId])
     
-
     const lines = track?.lyrics?.split(/(\r|\n|\n|\r)/);
     const formattedLines = lines?.map(line => {
         if (line !== "\n" && line !== "") return <p>{line}</p>
     })
+    
+    useEffect(() => {
+        dispatch(fetchTrack(trackId))
+    }, [dispatch, trackId])
     
     if (!track) {
         return null;

@@ -15,6 +15,15 @@ function AlbumShow() {
     const album = useSelector(state => state.albums[albumId]);
     // const currentSong = useSelector(state => state.audio["currentSong"]);
     
+    let songCount;
+    let albumDuration;
+    let tracks;
+    
+    if (album?.tracks) {
+        songCount = Object.values(album?.tracks).length;
+        // albumDuration = Object.values(album?.tracks).length
+        tracks = Object.values(album?.tracks);
+    }
 
     useEffect(() => {
         dispatch(fetchAlbum(albumId))
@@ -24,16 +33,8 @@ function AlbumShow() {
         return null;
     }
 
-    let songCount;
-    let albumDuration;
-    let tracks;
     
 
-    if (album?.tracks) {
-        songCount = Object.values(album?.tracks).length;
-        // albumDuration = Object.values(album?.tracks).length
-        tracks = Object.values(album?.tracks);
-    }
 
     //could create a component for the top section of the album/track/playlist show page
     //similar format
