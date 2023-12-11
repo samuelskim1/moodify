@@ -23,7 +23,6 @@ class Api::TracksController < ApplicationController
 
   def splash
     random_tracks = Hash.new(0)
-    # debugger
     while random_tracks.length < 10
       random_id = Random.rand(0...Track.all.length)
       if !random_tracks.keys.include?(random_id + 1)

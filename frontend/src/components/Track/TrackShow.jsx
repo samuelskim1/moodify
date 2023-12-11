@@ -17,7 +17,13 @@ function TrackShow() {
     useEffect(() => {
         dispatch(fetchTrack(trackId))
     }, [dispatch, trackId])
+    
 
+    const lines = track?.lyrics?.split(/(\r|\n|\n|\r)/);
+    const formattedLines = lines?.map(line => {
+        if (line !== "\n" && line !== "") return <p>{line}</p>
+    })
+    
     if (!track) {
         return null;
     }
@@ -26,10 +32,6 @@ function TrackShow() {
     //similar format
     //focus on that later though
     
-    const lines = track?.lyrics?.split(/(\r|\n|\n|\r)/);
-    const formattedLines = lines?.map(line => {
-        if (line !== "\n" && line !== "") return <p>{line}</p>
-    })
 
     return (
         <>

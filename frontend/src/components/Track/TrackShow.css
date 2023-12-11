@@ -44,6 +44,7 @@
     padding-bottom: 80px;
     height: 100%;
     min-height: 100vh;
+    /* box-sizing: border-box; */
 }
 
 .track-show-header {
@@ -71,6 +72,10 @@
 .track-show-info {
     display: flex;
     flex-direction: column;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
 }
 
 .extra-info {
@@ -171,8 +176,13 @@
 
 
 .track-lyrics {
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
     color: hsla(0, 0%, 100%, .7);
-    white-space: pre;
 }
 
 .track-lyrics p{
