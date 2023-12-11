@@ -191,7 +191,7 @@ A user must be logged in to view their own playlists. If a user is not logged in
 
 This is an image of a playlist show page: 
 
-![playlist-show](frontend/src/assets/Playlist-show.png)
+![playlist-show](frontend/src/assets/Playlist-Show.png)
 
 This is an image of a newly created playlist show page:
 
