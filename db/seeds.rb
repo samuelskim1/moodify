@@ -186,6 +186,19 @@ Track.where(album_id: 3).each_with_index do |track, index|
   )
 end
 
+Track.where(album_id: 4).each_with_index do |track, index|
+  track.photo.attach(
+    io: URI.open("https://moodify-seeds.s3.amazonaws.com/Giveon/pictures/Giveon-When+It's+All+Said+And+Done...+Take+Time.jpg"),
+    filename: "When+It's+All+Said+And+Done...+Take+Time.jpg"
+  )
+  track.song.attach(
+    io: URI.open("https://moodify-seeds.s3.amazonaws.com/Giveon/albums/When+It's+All+Said+And+Done...+Take+Time/#{index + 1}.mp3"),
+    filename: "#{index + 1}.mp3"
+  )
+end
+
+
+
 puts "Seeding Tracks Media Files"
 
 album1 = Album.where(id: 1)[0]
@@ -199,6 +212,10 @@ album2.photo.attach(io: album2_photo, filename: "John-OFA-Rhee-album-bleeding-in
 album3 = Album.where(id: 3)[0]
 album3_photo = URI.open("https://moodify-seeds.s3.amazonaws.com/DPR-LIVE/pictures/DPR-LIVE-Coming-To-You-Live-album.jpg")
 album3.photo.attach(io: album3_photo, filename: "DPR-LIVE-Coming-To-You-Live-album.jpg")
+
+album4 = Album.where(id: 4)[0]
+album4_photo = URI.open("https://moodify-seeds.s3.amazonaws.com/Giveon/pictures/Giveon-When+It's+All+Said+And+Done...+Take+Time.jpg")
+album4.photo.attach(io: album4_photo, filename: "Giveon-When+It's+All+Said+And+Done...+Take+Time.jpg")
 
 
 puts "Seeding Album Media Files"
@@ -216,6 +233,10 @@ artist2.profile_picture.attach(io: artist2_profile_picture, filename: "John-OFA-
 artist3 = Artist.where(id: 3)[0]  
 artist3_profile_picture = URI.open("https://moodify-seeds.s3.amazonaws.com/DPR-LIVE/pictures/DPR-LIVE-spotify-icon.jpg")
 artist3.profile_picture.attach(io: artist3_profile_picture, filename: "DPR-LIVE-spotify-icon.jpg")
+
+artist4 = Artist.where(id: 4)[0]  
+artist4_profile_picture = URI.open("https://moodify-seeds.s3.amazonaws.com/Giveon/pictures/Giveon-spotify-icon.jpg")
+artist4.profile_picture.attach(io: artist4_profile_picture, filename: "Giveon-spotify-icon.jpg")
 
 puts "Seeding Artists Media Files"
 
