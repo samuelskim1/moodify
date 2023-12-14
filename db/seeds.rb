@@ -211,6 +211,17 @@ Track.where(album_id: 4).each_with_index do |track, index|
   )
 end
 
+Track.where(album_id: 5).each_with_index do |track, index|
+  track.photo.attach(
+    io: URI.open("https://moodify-seeds.s3.amazonaws.com/Mac-Ayres/pictures/Mac-Ayres-Juicebox-Album.jpg"),
+    filename: "Mac-Ayres-Juicebox-Album.jpg"
+  )
+  track.song.attach(
+    io: URI.open("https://moodify-seeds.s3.amazonaws.com/Mac-Ayres/albums/Juicebox/#{index + 1}.mp3"),
+    filename: "#{index + 1}.mp3"
+  )
+end
+
 
 
 puts "Seeding Tracks Media Files"
@@ -230,6 +241,10 @@ album3.photo.attach(io: album3_photo, filename: "DPR-LIVE-Coming-To-You-Live-alb
 album4 = Album.where(id: 4)[0]
 album4_photo = URI.open("https://moodify-seeds.s3.amazonaws.com/Giveon/pictures/Giveon-When+It's+All+Said+And+Done...+Take+Time.jpg")
 album4.photo.attach(io: album4_photo, filename: "Giveon-When+It's+All+Said+And+Done...+Take+Time.jpg")
+
+album5 = Album.where(id: 5)[0]
+album5_photo = URI.open("https://moodify-seeds.s3.amazonaws.com/Mac-Ayres/pictures/Mac-Ayres-Juicebox-Album.jpg")
+album5.photo.attach(io: album5_photo, filename: "Mac-Ayres-Juicebox-Album.jpg")
 
 
 puts "Seeding Album Media Files"
@@ -251,6 +266,10 @@ artist3.profile_picture.attach(io: artist3_profile_picture, filename: "DPR-LIVE-
 artist4 = Artist.where(id: 4)[0]  
 artist4_profile_picture = URI.open("https://moodify-seeds.s3.amazonaws.com/Giveon/pictures/Giveon-spotify-icon.jpg")
 artist4.profile_picture.attach(io: artist4_profile_picture, filename: "Giveon-spotify-icon.jpg")
+
+artist5 = Artist.where(id: 5)[0]  
+artist5_profile_picture = URI.open("https://moodify-seeds.s3.amazonaws.com/Mac-Ayres/pictures/Mac-Ayres-Spotify-Icon.jpg")
+artist5.profile_picture.attach(io: artist5_profile_picture, filename: "Mac-Ayres-Spotify-Icon.jpg")
 
 puts "Seeding Artists Media Files"
 
