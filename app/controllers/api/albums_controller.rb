@@ -22,7 +22,7 @@ class Api::AlbumsController < ApplicationController
   
   def splash
     random_albums = Hash.new(0)
-    while random_albums.length < 10
+    while random_albums.length < 4
       random_id = Random.rand(0...Album.all.length)
       if !random_albums.keys.include?(random_id + 1)
         random_albums[random_id + 1] = Album.includes(:artist, :tracks).all[random_id]

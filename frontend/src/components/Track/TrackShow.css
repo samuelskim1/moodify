@@ -72,10 +72,10 @@
 .track-show-info {
     display: flex;
     flex-direction: column;
-    white-space: nowrap;
-    overflow: hidden;
+    white-space: normal;
+    /* overflow: hidden;
     text-overflow: ellipsis;
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 1; */
 }
 
 .extra-info {

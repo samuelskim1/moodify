@@ -77,7 +77,7 @@ function AlbumShow() {
                                         
                                         <div className="tracks-id-indicator">#</div>
                                         <div className="album-tracks-title-indicator">Title</div>
-                                        <div className="tracks-duration-icon-container">
+                                        <div className="album-tracks-duration-icon-container">
                                             <img src={require('../../assets/icons8-clock-32.png')} alt=''></img>
                                         </div>
                                     </div>

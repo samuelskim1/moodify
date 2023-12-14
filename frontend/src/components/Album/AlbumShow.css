@@ -58,6 +58,11 @@
 .album-show-info {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    white-space: normal;
+    /* overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1; */
 }
 
 .extra-info {
@@ -139,13 +144,13 @@
     width: 80%;
 }
 
-.tracks-duration-icon-container {
+.album-tracks-duration-icon-container {
     display: flex;
     width: 15%;
     height: auto;
     justify-content: flex-end;
 }
 
-.tracks-duration-icon-container img {
+.album-tracks-duration-icon-container img {
     max-width: 10%;
 }
