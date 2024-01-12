@@ -22,6 +22,11 @@
     align-items: center;
 }
 
+.nav-bar-right-section li{
+    display: flex;
+    height: 64px;
+}
+
 
 
 .about-me-icons {
