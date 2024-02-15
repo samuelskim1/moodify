@@ -13,6 +13,10 @@
     border-radius: 30px;
 }
 
+.profile-button i {
+    padding-left: 10px;
+}
+
 .profile-button p {
     padding-left: 10px;
 }
@@ -51,6 +55,9 @@
 }
 
 .profile-dropdown li{
-    padding: 12px 0px 12px 12px;
+    padding: 12px;
     max-height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

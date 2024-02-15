@@ -24,6 +24,7 @@
 
 .nav-bar-right-section li{
     display: flex;
+    flex-direction: column;
     height: 64px;
 }
 
