@@ -8,7 +8,7 @@
 
 .navigation-bar {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     position: sticky;
     background-color: #1c1c1c;
@@ -25,7 +25,7 @@
 .nav-bar-right-section li{
     display: flex;
     flex-direction: column;
-    height: 64px;
+    /* height: 64px; */
 }
 
 
