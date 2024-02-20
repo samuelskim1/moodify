@@ -1,3 +1,9 @@
+.profile-button-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .profile-button {
     display: flex;
     align-items: center;

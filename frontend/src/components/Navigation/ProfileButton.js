@@ -36,25 +36,27 @@ function ProfileButton({user}) {
     //if it isnt, we dont run it
     return (
         <>
-            <button onClick={openMenu} className="profile-button">
-                <i className="fa-regular fa-user"></i>
-                <p>{user.username}</p>
-            </button>
-            
-            {showMenu && (
-                <div className="profile-dropdown">
-                    <ul className="dropdown-content">
-                        <li>{user.username}</li>
-                        <li>{user.email}</li>
-                        <li>
-                            <button className="dropdown-logout"onClick={logout}>Log Out</button>
-                        </li>
-                    </ul>
-                </div>
-
-            )
+            <div className="profile-button-section">
+                <button onClick={openMenu} className="profile-button">
+                    <i className="fa-regular fa-user"></i>
+                    <p>{user.username}</p>
+                </button>
                 
-            }
+                {showMenu && (
+                    <div className="profile-dropdown">
+                        <ul className="dropdown-content">
+                            <li>{user.username}</li>
+                            <li>{user.email}</li>
+                            <li>
+                                <button className="dropdown-logout"onClick={logout}>Log Out</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                )
+                    
+                }
+            </div>
         </>
     )
 
