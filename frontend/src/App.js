@@ -10,10 +10,12 @@ import AlbumIndex from './components/Album/AlbumIndex';
 import PlaylistShow from './components/Playlist/PlaylistShow';
 import PlayBar from './components/PlayBar/PlayBar';
 import Search from './components/SearchShow/SearchShowPage';
+import Modal from './components/Modal/Modal'
 
 function App() {
   return (
     <>
+      <Modal />
       <Switch>
         <Route path="/login">
           <LoginFormPage />
