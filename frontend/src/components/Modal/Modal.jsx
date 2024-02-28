@@ -1,42 +1,28 @@
 import React from 'react';
 import { closeModal } from '../../store/modal';
 import { connect } from 'react-redux';
-import { useSelector } from 'react-redux';
-import SignupPrompt from './SignupPrompt';
-import LoginPrompt from './LoginPrompt';
+import { NavLink } from "react-router-dom";
 
-function Modal({ modal, closeModal }) {
-    const sessionUser = useSelector(state => state.session.user);
+function Modal({ closeModal }) {
 
-
-    if (!modal) {
-        return null;
-    }
-    let component;
-    switch (modal) {
-        case 'login-signup':
-            component = <LoginPrompt />;
-            break;
-        // case 'signup':
-        //     component = <SignupPrompt />;
-        //     break;
-        default:
-            return null;
-    }
     return (
         <div className="modal-background" onClick={closeModal}>
             <div className="modal-child" onClick={e => e.stopPropagation()}>
-                {component}
+                <div>
+                    <h2>You can't use this feature unless you're logged in!</h2>
+                    <NavLink to="/login">
+                        <button className='modal-login-button'>Log In</button>
+                    </NavLink>
+
+                    <p>Don't have an account? Create a free Moodify account today!</p>
+                    <NavLink to="/signup">
+                        <button className='modal-signup-button'>Sign up</button>
+                    </NavLink>
+                </div>
             </div>
         </div>
     );
 }
-
-const mapStateToProps = state => {
-    return {
-        modal: state.modal
-    };
-};
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -44,4 +30,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+export default connect(null, mapDispatchToProps)(Modal);
