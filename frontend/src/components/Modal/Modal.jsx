@@ -1,21 +1,25 @@
 import React from 'react';
 import { closeModal } from '../../store/modal';
 import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import SignupPrompt from './SignupPrompt';
 import LoginPrompt from './LoginPrompt';
 
 function Modal({ modal, closeModal }) {
+    const sessionUser = useSelector(state => state.session.user);
+
+
     if (!modal) {
         return null;
     }
     let component;
     switch (modal) {
-        case 'login':
+        case 'login-signup':
             component = <LoginPrompt />;
             break;
-        case 'signup':
-            component = <SignupPrompt />;
-            break;
+        // case 'signup':
+        //     component = <SignupPrompt />;
+        //     break;
         default:
             return null;
     }
