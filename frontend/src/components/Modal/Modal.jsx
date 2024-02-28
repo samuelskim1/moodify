@@ -1,7 +1,8 @@
 import React from 'react';
 import { closeModal } from '../../store/modal';
 import { connect } from 'react-redux';
-import 
+import SignupPrompt from './SignupPrompt';
+import LoginPrompt from './LoginPrompt';
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -10,10 +11,10 @@ function Modal({ modal, closeModal }) {
     let component;
     switch (modal) {
         case 'login':
-            component = <LoginFormContainer />;
+            component = <LoginPrompt />;
             break;
         case 'signup':
-            component = <SignupFormContainer />;
+            component = <SignupPrompt />;
             break;
         default:
             return null;
@@ -29,7 +30,7 @@ function Modal({ modal, closeModal }) {
 
 const mapStateToProps = state => {
     return {
-        modal: state.ui.modal
+        modal: state.modal
     };
 };
 
