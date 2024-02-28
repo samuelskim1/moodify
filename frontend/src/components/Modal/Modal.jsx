@@ -4,7 +4,11 @@ import { connect } from 'react-redux';
 import { NavLink } from "react-router-dom";
 import './Modal.css';
 
-function Modal({ closeModal }) {
+function Modal({ modal, closeModal }) {
+    if (!modal) {
+        return null;
+    }
+
 
     return (
         <div className="modal-background" onClick={closeModal}>
