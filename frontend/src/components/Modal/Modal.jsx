@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../store/modal';
 import { connect } from 'react-redux';
 import { NavLink } from "react-router-dom";
+import './Modal.css';
 
 function Modal({ closeModal }) {
 

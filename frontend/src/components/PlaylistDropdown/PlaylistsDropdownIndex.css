@@ -1,6 +1,6 @@
 .playlist-dropdown {
     position: absolute;
-    z-index: 9999;
+    z-index: 100;
     background-color: #514c4c;
     transform: translate(135px, 10px);
     border-radius:5px;
