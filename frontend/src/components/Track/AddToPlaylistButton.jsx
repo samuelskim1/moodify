@@ -1,9 +1,21 @@
-import { useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector, connect} from 'react-redux';
 import { useState, useEffect} from "react";
 import PlaylistsDropdownIndex from '../PlaylistDropdown/PlaylistsDropdownIndex';
+import { openModal } from '../../store/modal';
 function AddToPlaylistButton({track}) {
     const dispatch = useDispatch();
     const [showPlaylistsMenu, setShowPlaylistsMenu] = useState(false);
+    const currentUser = useSelector(state => state.session.user);
+
+    const loggedIn = (e) => {
+        e.preventDefault();
+        if (currentUser) {
+            openPlaylistMenu(e);
+        } else {
+            openModal()
+        }
+    }
+
 
     const openPlaylistMenu = (e) => {
         e.preventDefault();
@@ -38,7 +50,7 @@ function AddToPlaylistButton({track}) {
     return (
         <>
             <div className="add-to-playlist-area">
-                <i onClick={(e) => openPlaylistMenu(e)} className="fa-solid fa-circle-plus playlist-menu-button"></i>
+                <i onClick={(e) => loggedIn(e)} className="fa-solid fa-circle-plus playlist-menu-button"></i>
             </div>
 
             {showPlaylistsMenu && (
@@ -48,8 +60,13 @@ function AddToPlaylistButton({track}) {
         </>
 
     )
-
     
 }
 
-export default AddToPlaylistButton;
+const mapDispatchToProps = dispatch => {
+    return {
+        openModal: () => dispatch(openModal())
+    };
+};
+
+export default connect(null, mapDispatchToProps)(AddToPlaylistButton);
