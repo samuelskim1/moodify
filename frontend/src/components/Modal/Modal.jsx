@@ -16,12 +16,12 @@ function Modal({ modal, closeModal }) {
                 <div>
                     <h2>You can't use this feature unless you're logged in!</h2>
                     <NavLink to="/login">
-                        <button className='modal-login-button'>Log In</button>
+                        <button onClick={closeModal} className='modal-login-button'>Log In</button>
                     </NavLink>
 
                     <p>Don't have an account? Create a free Moodify account today!</p>
                     <NavLink to="/signup">
-                        <button className='modal-signup-button'>Sign up</button>
+                        <button onClick={closeModal} className='modal-signup-button'>Sign up</button>
                     </NavLink>
                 </div>
             </div>
@@ -29,10 +29,16 @@ function Modal({ modal, closeModal }) {
     );
 }
 
+const mapStateToProps = state => {
+    return {
+        modal: state.modal
+    };
+};
+
 const mapDispatchToProps = dispatch => {
     return {
         closeModal: () => dispatch(closeModal())
     };
 };
 
-export default connect(null, mapDispatchToProps)(Modal);
+export default connect(mapStateToProps, mapDispatchToProps)(Modal);

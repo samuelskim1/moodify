@@ -1,20 +1,29 @@
-import { useDispatch, useSelector, connect} from 'react-redux';
+import { useSelector, connect} from 'react-redux';
 import { useState, useEffect} from "react";
+import Modal from '../Modal/Modal';
 import PlaylistsDropdownIndex from '../PlaylistDropdown/PlaylistsDropdownIndex';
-import { openModal } from '../../store/modal';
-function AddToPlaylistButton({track}) {
-    const dispatch = useDispatch();
+import { openModal, closeModal } from '../../store/modal';
+function AddToPlaylistButton({modal, openModal, closeModal, track}) {
+    // const dispatch = useDispatch();
     const [showPlaylistsMenu, setShowPlaylistsMenu] = useState(false);
     const currentUser = useSelector(state => state.session.user);
+    console.log(currentUser);
 
     const loggedIn = (e) => {
+        console.log(loggedIn);
         e.preventDefault();
         if (currentUser) {
+            console.log("yeah the user's logged in")
             openPlaylistMenu(e);
         } else {
-            openModal()
+            console.log("nope the user is not logged in")
+            openModal();
         }
     }
+
+    const handleCloseModal = () => {
+        closeModal();
+    };
 
 
     const openPlaylistMenu = (e) => {
@@ -51,6 +60,7 @@ function AddToPlaylistButton({track}) {
         <>
             <div className="add-to-playlist-area">
                 <i onClick={(e) => loggedIn(e)} className="fa-solid fa-circle-plus playlist-menu-button"></i>
+                {modal && <Modal closeModal={handleCloseModal} />}
             </div>
 
             {showPlaylistsMenu && (
@@ -63,10 +73,18 @@ function AddToPlaylistButton({track}) {
     
 }
 
-const mapDispatchToProps = dispatch => {
+const mapStateToProps = state => {
     return {
-        openModal: () => dispatch(openModal())
+        modal: state.modal
     };
 };
 
-export default connect(null, mapDispatchToProps)(AddToPlaylistButton);
+const mapDispatchToProps = dispatch => {
+    console.log("we're mapping dispatch to props!");
+    return {
+        openModal: () => dispatch(openModal('login/signup')),
+        closeModal: () => dispatch(closeModal())
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddToPlaylistButton);
