@@ -7,10 +7,9 @@ function AddToPlaylistButton({modal, openModal, closeModal, track}) {
     // const dispatch = useDispatch();
     const [showPlaylistsMenu, setShowPlaylistsMenu] = useState(false);
     const currentUser = useSelector(state => state.session.user);
-    console.log(currentUser);
+    console.log(modal);
 
     const loggedIn = (e) => {
-        console.log(loggedIn);
         e.preventDefault();
         if (currentUser) {
             console.log("yeah the user's logged in")
@@ -21,9 +20,10 @@ function AddToPlaylistButton({modal, openModal, closeModal, track}) {
         }
     }
 
-    const handleCloseModal = () => {
-        closeModal();
-    };
+    // const handleCloseModal = () => {
+    //     // e.stopPropagation();
+    //     closeModal();
+    // };
 
 
     const openPlaylistMenu = (e) => {
@@ -60,7 +60,7 @@ function AddToPlaylistButton({modal, openModal, closeModal, track}) {
         <>
             <div className="add-to-playlist-area">
                 <i onClick={(e) => loggedIn(e)} className="fa-solid fa-circle-plus playlist-menu-button"></i>
-                {modal && <Modal closeModal={handleCloseModal} />}
+                {/* {modal && <Modal closeModal={handleCloseModal} />} */}
             </div>
 
             {showPlaylistsMenu && (

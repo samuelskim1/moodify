@@ -6,8 +6,10 @@ import './Modal.css';
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
+        console.log("modal is null");
         return null;
     }
+    console.log(closeModal);
 
 
     return (
@@ -15,14 +17,14 @@ function Modal({ modal, closeModal }) {
             <div className="modal-child" onClick={e => e.stopPropagation()}>
                 <div>
                     <h2>You can't use this feature unless you're logged in!</h2>
-                    <NavLink to="/login">
+                    <NavLink to="/login" onClick={e => e.stopPropagation()}>
                         <button onClick={closeModal} className='modal-login-button'>Log In</button>
                     </NavLink>
 
                     <p>Don't have an account? Create a free Moodify account today!</p>
-                    <NavLink to="/signup">
+                    <NavLink to="/signup" onClick={e => e.stopPropagation()}>
                         <button onClick={closeModal} className='modal-signup-button'>Sign up</button>
-                    </NavLink>
+                    // </NavLink>
                 </div>
             </div>
         </div>
