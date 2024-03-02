@@ -15,16 +15,20 @@ function Modal({ modal, closeModal }) {
     return (
         <div className="modal-background" onClick={closeModal}>
             <div className="modal-child" onClick={e => e.stopPropagation()}>
-                <div>
-                    <h2>You can't use this feature unless you're logged in!</h2>
-                    <NavLink to="/login" onClick={e => e.stopPropagation()}>
-                        <button onClick={closeModal} className='modal-login-button'>Log In</button>
-                    </NavLink>
-
-                    <p>Don't have an account? Create a free Moodify account today!</p>
-                    <NavLink to="/signup" onClick={e => e.stopPropagation()}>
-                        <button onClick={closeModal} className='modal-signup-button'>Sign up</button>
-                    // </NavLink>
+                <i className="fa-regular fa-circle-xmark" onClick={closeModal}></i>
+                <div className="modal-content">
+                    <div className="modal-login-section">
+                        <h2 className="">You can't use this feature unless you're logged in!</h2>
+                        <NavLink to="/login">
+                            <button onClick={closeModal} className='modal-login-button'>Log In</button>
+                        </NavLink>
+                    </div>
+                    <div className="modal-signup-section">
+                        <p>Don't have an account? Create a free Moodify account today!</p>
+                        <NavLink to="/signup">
+                            <button onClick={closeModal} className='modal-signup-button'>Sign up</button>
+                        </NavLink>
+                    </div>
                 </div>
             </div>
         </div>

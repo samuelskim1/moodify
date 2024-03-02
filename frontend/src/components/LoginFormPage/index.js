@@ -61,7 +61,7 @@ function LoginFormPage() {
             </div>
             <div className='login_page'>
                 <form onSubmit={handleSubmit} className="forms" id="login_form">
-                    <h2>To continue, log in to Spotify.</h2>
+                    <h2>To continue, log in to Moodify.</h2>
                     <div className={`${toggleErrors()}`}>
                         <ul>
                             {errors.map(error => <li key={error}>{error}</li>)}
@@ -95,7 +95,7 @@ function LoginFormPage() {
                 <div className='signup_link'>
                     <p>Don't have an account?</p>
                     <NavLink to='/signup'>
-                        <button className='signup_button'>SIGN UP FOR SPOTIFY</button>
+                        <button className='signup_button'>SIGN UP FOR MOODIFY</button>
                     </NavLink>
                 </div>
             </div>
