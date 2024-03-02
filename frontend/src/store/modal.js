@@ -10,7 +10,7 @@ export const closeModal = () => ({
     type: CLOSE_MODAL
 });
 
-const modalReducer = (state = {}, action) => {
+const modalReducer = (state = null, action) => {
     switch (action.type) {
         case OPEN_MODAL:
             return action.modal;
