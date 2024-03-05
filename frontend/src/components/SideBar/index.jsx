@@ -1,7 +1,8 @@
 import { NavLink, Redirect } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useLocation, useHistory } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch, connect } from 'react-redux';
+import { openModal, closeModal } from '../../store/modal';
 import UserPlaylistsIndex from './UserPlaylistsIndex';
 import './SideBar.css'
 import { createNewPlaylist, fetchCurrentUserPlaylists } from '../../store/playlist';
@@ -9,7 +10,7 @@ import { createNewPlaylist, fetchCurrentUserPlaylists } from '../../store/playli
 
 
 
-function SideBar() {
+function SideBar(openModal) {
     const dispatch = useDispatch();
     const numOfPlaylists = useSelector(state => Object.values(state.playlists).length);
     const currentUserId = useSelector(state=> state.session?.user?.id);
@@ -94,6 +95,21 @@ function SideBar() {
             </ul>
         </div>
     )
-}
+};
 
-export default SideBar;
+const mapStateToProps = state => {
+    return {
+        modal: state.modal
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    console.log("we're mapping dispatch to props!");
+    return {
+        openModal: () => dispatch(openModal('login/signup')),
+        closeModal: () => dispatch(closeModal())
+    };
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(SideBar);
