@@ -10,10 +10,11 @@ import { createNewPlaylist, fetchCurrentUserPlaylists } from '../../store/playli
 
 
 
-function SideBar(openModal) {
+function SideBar({openModal}) {
     const dispatch = useDispatch();
     const numOfPlaylists = useSelector(state => Object.values(state.playlists).length);
-    const currentUserId = useSelector(state=> state.session?.user?.id);
+    const currentUserId = useSelector(state => state.session?.user?.id);
+    const currentUser = useSelector(state => state.session?.user)
     const location = useLocation();
     const history = useHistory();
 
@@ -22,6 +23,17 @@ function SideBar(openModal) {
     useEffect(() => {
         dispatch(fetchCurrentUserPlaylists);
     }, [])
+
+    const loggedIn = (e) => {
+        e.preventDefault();
+        if (currentUser) {
+            console.log("yeah the user's logged in")
+            createPlaylist();
+        } else {
+            console.log("nope the user is not logged in")
+            openModal();
+        }
+    }
 
     const active = () => {
         if (location.pathname === '/') {
@@ -76,7 +88,7 @@ function SideBar(openModal) {
                 </div>
                 <div className='sidebar-playlists-section-container'>
                     <div className='sidebar-playlists-create-and-likes-container'>
-                        <div className='playlists-create-playlist-container' onClick={createPlaylist}>
+                        <div className='playlists-create-playlist-container' onClick={(e) => loggedIn(e)}>
                                 <div className='create-playlists-button'>
                                     <i className="fa-solid fa-square-plus create-playlist-button-icon" style={{color: "#d1d1d1"}}></i>
                                 </div>
