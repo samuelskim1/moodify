@@ -1,14 +1,29 @@
-import { useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector, connect} from 'react-redux';
 import { setCurrentSong, setCurrentAlbum, setPrevSong, setNextSong } from '../../store/audio';
 import { fetchAlbum } from '../../store/album';
+import { openModal, closeModal } from '../../store/modal';
 import './TrackPlayButton.css'
 import { useEffect } from 'react';
 
-function TrackPlayButton({track}) {
+function TrackPlayButton({track, openModal}) {
     const trackId = track?.id;
     const albumId = track?.albumId;
     const dispatch = useDispatch();
     const album = useSelector(state => state.albums[albumId]);
+    const currentUser = useSelector(state => state.session.user);
+
+    const loggedIn = (e) => {
+        e.preventDefault();
+        if (currentUser) {
+            console.log("yeah the user's logged in")
+            connectToPlaybar();
+        } else {
+            console.log("nope the user is not logged in")
+            openModal();
+        }
+    }
+
+
     
     //fetchAlbum action populates album slice of state with tracks of the album
     //fetch at the beginning so that we can then populate our "currentAlbum" key in audio slice of state with the tracks of the album 
@@ -93,12 +108,26 @@ function TrackPlayButton({track}) {
 
 
     return (
-        <div className="play-button-container" onClick={connectToPlaybar}>
+        <div className="play-button-container" onClick={(e) => loggedIn(e)}>
             <i className="fa-solid fa-circle-play fa-2xl" style={{ color: '#2dc819' }}>
                 <div className="play-button-size-setter"></div>
             </i>
         </div>
     )
-}
+};
 
-export default TrackPlayButton;
+const mapStateToProps = state => {
+    return {
+        modal: state.modal
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    console.log("we're mapping dispatch to props!");
+    return {
+        openModal: () => dispatch(openModal('login/signup')),
+        closeModal: () => dispatch(closeModal())
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TrackPlayButton);
