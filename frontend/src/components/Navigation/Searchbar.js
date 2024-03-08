@@ -54,7 +54,15 @@ const SearchBar = ()  => {
     return (
         <> 
             <div className="search-bar-container">
-                <input className="search-bar-input-field" ononChange={handleSearch}type="text" placeholder="What do you want to listen to?"></input>
+                <input className="search-bar-input-field" 
+                    onChange={handleSearch}
+                    onKeyDown={(e) => {
+                        if (e.key === "Enter") 
+                        handleSearchSubmit(e)
+                    }}
+                    type="text" placeholder="What do you want to listen to?"
+                    
+                />
                 <div className="search-bar-icon-holder">
                     <i className="fa-solid fa-magnifying-glass search-bar-icon" style={{color: '#000000'}}></i>
                 </div>
