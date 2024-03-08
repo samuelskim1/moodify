@@ -40,18 +40,30 @@ const SearchBar = ()  => {
         
     }
 
+    
+    // let search = document.getElementById("search-bar-input-field");
+    // search.addEventListener("keypress", function (event) {
+    //     if (event.key === "Enter") {
+    //         event.preventDefault();
+    //         document.getElementById("search-bar-button").click();
+    //     }
+    // });
+    
+
 
     return (
         <> 
             <div className="search-bar-container">
-                <input className="search-bar-input-field" onChange={handleSearch}type="text" placeholder="What do you want to listen to?"></input>
+                <input className="search-bar-input-field" ononChange={handleSearch}type="text" placeholder="What do you want to listen to?"></input>
                 <div className="search-bar-icon-holder">
                     <i className="fa-solid fa-magnifying-glass search-bar-icon" style={{color: '#000000'}}></i>
                 </div>
-                <button onClick={handleSearchSubmit}>search</button>
+                <button className="search-bar-button" onClick={handleSearchSubmit}>search</button>
             </div>
         </>
     )
+
+    
 }
 
 export default SearchBar;
