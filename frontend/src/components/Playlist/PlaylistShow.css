@@ -118,6 +118,10 @@
     position: relative;
 }
 
+.delete-playlist-text {
+    padding-left: 10px;
+}
+
 .playlist-tracks-label-holder {
     top: 64px;
     border-bottom: 1px solid transparent;
@@ -140,17 +144,20 @@
 }
 
 .tracks-title-indicator {
-    margin-left: 15px;
+    padding-left: 15px;
     width: 50%;
+    box-sizing: border-box;
 }
 
 .tracks-album-indicator {
+    padding-left: 5px;
     width: 30%;
+    box-sizing: border-box;
 }
 
 .tracks-duration-icon-container {
     display: flex;
-    width: 10%;
+    width: 9.65%;
     height: auto;
     justify-content: flex-end;
 }
