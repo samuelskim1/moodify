@@ -48,7 +48,7 @@ function PlaylistShow() {
                                 </div>
                             </header>
                             <div className="playlist-show-item playlist-show-play-area" >
-                                <div className="delete-playlist-text">Delete Playlist</div>
+                                <div className="delete-playlist-text">Delete</div>
                                 <PlaylistDeleteButton playlist={playlist}/>
                             </div>
                             <div className="playlist-show-item playlist-tracks-container">
