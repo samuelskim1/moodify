@@ -11,6 +11,19 @@ function Modal({ modal, closeModal }) {
     }
     console.log(closeModal);
 
+    // let component;
+    // switch (modal) {
+    //     case 'login':
+    //         component = <LoginAndSignupContainer />;
+    //         break;
+    //     case 'signup':
+    //         component = <DeletePlaylist/>;
+    //         break;
+    //     default:
+    //         return null;
+    // }
+
+
 
     return (
         <div className="modal-background" onClick={closeModal}>
