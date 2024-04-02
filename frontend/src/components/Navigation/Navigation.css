@@ -96,7 +96,7 @@ a.linkedin-link:hover {
 }
 
 .navigation-bar .nav-signup-button:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     color: white;
 }
 
@@ -119,7 +119,7 @@ a.linkedin-link:hover {
 }
 
 .navigation-bar .nav-login-button:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     background-color: rgb(228, 228, 228);
 }
 

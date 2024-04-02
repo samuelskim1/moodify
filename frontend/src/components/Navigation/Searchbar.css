@@ -58,6 +58,6 @@
 }
 
 .search-bar-button:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     background-color: rgb(228, 228, 228);
 }

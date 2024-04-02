@@ -90,7 +90,7 @@
 }
 
 #signup_form button:hover {
-    transform: scale(1.2);
+    transform: scale(1.02);
 }
 
 .signup_page .login_link {

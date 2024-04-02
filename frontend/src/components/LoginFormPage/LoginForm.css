@@ -86,7 +86,7 @@
 }
 
 #login_form button:hover {
-    transform: scale(1.05);
+    transform: scale(1.01);
 }
 
 .login_break {
@@ -123,5 +123,5 @@
 }
 
 .login_page .signup_button:hover {
-    transform: scale(1.05);
+    transform: scale(1.01);
 }
