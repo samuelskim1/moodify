@@ -42,4 +42,4 @@ function PlaylistCreationLoginPrompt() {
     
 }
 
-export default LoginPrompt;
+export default LoginAndSignupPrompt;

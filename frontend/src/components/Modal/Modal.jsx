@@ -3,6 +3,8 @@ import { closeModal } from '../../store/modal';
 import { connect } from 'react-redux';
 import { NavLink } from "react-router-dom";
 import './Modal.css';
+import DeletePlaylistModal from './deletePlaylistModal';
+
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -13,11 +15,11 @@ function Modal({ modal, closeModal }) {
 
     // let component;
     // switch (modal) {
-    //     case 'login':
-    //         component = <LoginAndSignupContainer />;
+    //     case '"Login/Signup-Prompt"':
+    //         component = <LoginAndSignupPrompt />;
     //         break;
-    //     case 'signup':
-    //         component = <DeletePlaylist/>;
+    //     case 'Delete-Playlist':
+    //         component = <DeletePlaylistModal/>;
     //         break;
     //     default:
     //         return null;
