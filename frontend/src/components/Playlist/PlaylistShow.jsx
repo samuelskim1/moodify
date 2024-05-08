@@ -7,6 +7,7 @@ import Navigation from "../Navigation";
 import SideBar from "../SideBar";
 import TrackPlaylistItem from "./TrackPlaylistItem";
 import PlaylistDeleteButton from "./PlaylistDeleteButton";
+import EditPlaylistModal from "../Modal/EditPlaylistModal";
 import './PlaylistShow.css'
 
 function PlaylistShow() {
@@ -48,6 +49,8 @@ function PlaylistShow() {
                                 </div>
                             </header>
                             <div className="playlist-show-item playlist-show-play-area" >
+                                <div className="edit-playlist-text">Edit Playlist</div>
+                                <EditPlaylistButton playlist={playlist}/>
                                 <div className="delete-playlist-text">Delete Playlist</div>
                                 <PlaylistDeleteButton playlist={playlist}/>
                             </div>
