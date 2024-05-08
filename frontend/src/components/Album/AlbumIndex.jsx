@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllAlbums } from "../../store/album";
 import Navigation from "../Navigation";
-import SideBar from "../SideBar";
+import SideBar from "../SideBar/Sidebar";
 import AlbumIndexItem from "./AlbumIndexItem";
 import './AlbumIndex.css';
 import PlayBar from "../PlayBar/PlayBar";

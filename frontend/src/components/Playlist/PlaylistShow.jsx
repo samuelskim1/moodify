@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { fetchPlaylist } from "../../store/playlist";
 import { fetchPlaylistTracks } from "../../store/playlist_tracks";
 import Navigation from "../Navigation";
-import SideBar from "../SideBar";
+import SideBar from "../SideBar/Sidebar";
 import TrackPlaylistItem from "./TrackPlaylistItem";
 import PlaylistDeleteButton from "./PlaylistDeleteButton";
 import EditPlaylistModal from "../Modal/EditPlaylistModal";

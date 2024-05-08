@@ -1,8 +1,10 @@
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import React from 'react';
 import { openModal, closeModal } from '../../store/modal';
+import './LoginAndSignupPrompt';
 
-function PlaylistCreationLoginPrompt() {
+function LoginAndSignupPrompt() {
 
 
     <div className="modal-content">

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllTracks} from "../../store/track";
 import Navigation from "../Navigation";
-import SideBar from "../SideBar";
+import SideBar from "../SideBar/Sidebar";
 import TrackIndexItem from "./TrackIndexItem";
 import PlayBar from "../PlayBar/PlayBar";
 import './TrackIndex.css';

@@ -1,0 +1,69 @@
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+}
+
+.modal-content a {
+    width: 30%;
+    margin: 40px 20px 20px;
+}
+
+.modal-login-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+
+.modal-login-button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 30px;
+    border-style: none;
+    padding: none;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(13, 208, 58);
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+.modal-login-button:hover {
+    transform: scale(1.05);
+}
+
+.modal-signup-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding: 0px 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+
+.modal-signup-button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 30px;
+    border-style: none;
+    padding: none;
+    width: 100%;
+    height: 50px;
+    background-color: #fdfdfd;
+    color: black;
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+.modal-signup-button:hover {
+    transform: scale(1.05);
+}

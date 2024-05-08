@@ -1,19 +1,19 @@
 import { useSelector, connect } from 'react-redux';
 import { useState, useEffect } from "react";
-import { useHistory } from 'react-router-dom';
+import { useHistory, NavLink } from 'react-router-dom';
 import { openModal, closeModal } from '../../store/modal';
 
 function editPlaylistModal() {
 
-    async function removePlaylist() {
-        const playlistId = playlist.id;
+    // async function removePlaylist() {
+    //     const playlistId = playlist.id;
 
-        if (currentUserId === playlist.creatorId) {
-            await dispatch(deletePlaylist(playlistId));
-            history.push("/");
-        }
-        closeModal();
-    }
+    //     if (currentUserId === playlist.creatorId) {
+    //         await dispatch(deletePlaylist(playlistId));
+    //         history.push("/");
+    //     }
+    //     closeModal();
+    // }
 
 
     return (
@@ -29,7 +29,7 @@ function editPlaylistModal() {
                     <p>Don't have an account? Create a free Moodify account today!</p>
                     <button onClick={closeModal} className='modal-cancel-button'>Cancel</button>
                     <NavLink to="/">
-                        <button onClick={removePlaylist} className='modal-playlist-delete-button'>Delete</button>
+                        <button className='modal-playlist-delete-button'>Delete</button>
                     </NavLink>
                 </div>
             </div>

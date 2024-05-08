@@ -31,7 +31,8 @@ function SideBar({openModal}) {
             createPlaylist();
         } else {
             console.log("nope the user is not logged in")
-            openModal("Login/Signup-Prompt");
+            openModal('Create-Playlist-Login/Signup-Prompt');
+            console.log("modal is open");
         }
     }
 

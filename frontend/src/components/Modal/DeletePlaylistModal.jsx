@@ -1,13 +1,18 @@
-import { useSelector, connect } from 'react-redux';
+import { useDispatch, useSelector, connect } from 'react-redux';
 import { useState, useEffect } from "react";
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams, NavLink } from 'react-router-dom';
 import { openModal, closeModal } from '../../store/modal';
+import { deletePlaylist } from '../../store/playlist';
 
-function deletePlaylistModal() {
+function DeletePlaylistModal() {
+    const dispatch = useDispatch();
+    const { playlistId } = useParams();
+    const playlist = useSelector(state => state.playlists[playlistId]);
+    const currentUserId = useSelector(state => state.session?.user?.id);
+    const history = useHistory();
 
-    async function removePlaylist() {
-        const playlistId = playlist.id;
 
+    async function removePlaylist() {;
         if (currentUserId === playlist.creatorId) {
             await dispatch(deletePlaylist(playlistId));
             history.push("/");
@@ -52,4 +57,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(deletePlaylistModal)
+export default connect(mapStateToProps, mapDispatchToProps)(DeletePlaylistModal)

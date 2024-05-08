@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom";
 import { fetchAlbum } from "../../store/album";
 import Navigation from "../Navigation";
-import SideBar from "../SideBar";
+import SideBar from "../SideBar/Sidebar";
 import TrackAlbumItem from "./TrackAlbumItem";
 // import TrackPlayButton from "./TrackPlayButton";
 import './AlbumShow.css'

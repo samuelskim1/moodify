@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom";
 import { fetchTrack } from "../../store/track";
 import Navigation from "../Navigation";
-import SideBar from "../SideBar";
+import SideBar from "../SideBar/Sidebar";
 import PlayBar from "../PlayBar/PlayBar";
 import TrackPlayButton from "./TrackPlayButton";
 import './TrackShow.css'

@@ -3,7 +3,7 @@ import { fetchSearchResults } from "../../store/search";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import SideBar from '../SideBar';
+import SideBar from '../SideBar/Sidebar';
 import Navigation from '../Navigation';
 import TrackIndexItem from "../Track/TrackIndexItem";
 import TrackShow from '../Track/TrackShow';

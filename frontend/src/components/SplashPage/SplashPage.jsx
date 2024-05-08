@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink} from "react-router-dom";
 import Navigation from "../Navigation";
-import SideBar from "../SideBar";
+import SideBar from "../SideBar/Sidebar";
 import TrackIndexItem from "../Track/TrackIndexItem";
 import AlbumIndexItem from "../Album/AlbumIndexItem";
 import './SplashPage.css'
