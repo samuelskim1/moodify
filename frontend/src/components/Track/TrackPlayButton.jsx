@@ -125,7 +125,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     console.log("we're mapping dispatch to props!");
     return {
-        openModal: () => dispatch(openModal('login/signup')),
+        openModal: () => dispatch(openModal('Login/Signup-Prompt')),
         closeModal: () => dispatch(closeModal())
     };
 };
