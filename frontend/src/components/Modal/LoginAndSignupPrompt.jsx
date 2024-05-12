@@ -6,21 +6,25 @@ import './LoginAndSignupPrompt';
 
 function LoginAndSignupPrompt() {
 
+    console.log("we made it to Login/Signup-Prompt");
 
-    <div className="modal-content">
-        <div className="modal-login-section">
-            <h2 className="">You can't use this feature unless you're logged in!</h2>
-            <NavLink to="/login">
-                <button onClick={closeModal} className='modal-login-button'>Log In</button>
-            </NavLink>
+    return (
+        <div className="modal-content">
+            <div className="modal-login-section">
+                <h2 className="">You can't use this feature unless you're logged in!</h2>
+                <NavLink to="/login">
+                    <button onClick={closeModal} className='modal-login-button'>Log In</button>
+                </NavLink>
+            </div>
+            <div className="modal-signup-section">
+                <p>Don't have an account? Create a free Moodify account today!</p>
+                <NavLink to="/signup">
+                    <button onClick={closeModal} className='modal-signup-button'>Sign up</button>
+                </NavLink>
+            </div>
         </div>
-        <div className="modal-signup-section">
-            <p>Don't have an account? Create a free Moodify account today!</p>
-            <NavLink to="/signup">
-                <button onClick={closeModal} className='modal-signup-button'>Sign up</button>
-            </NavLink>
-        </div>
-    </div>
+
+    );
 
 //     const mapDispatchToProps = dispatch => {
 //         return {

@@ -7,6 +7,8 @@ import { openModal, closeModal } from '../../store/modal';
 
 function PlaylistCreationLoginSignupPrompt() {
 
+    console.log("we made it to Create-Playlist-Login/Signup-Prompt");
+
     return (
         <div className="modal-content">
             <h2>Create a Playlist</h2>

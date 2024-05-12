@@ -11,6 +11,7 @@ function DeletePlaylistModal() {
     const currentUserId = useSelector(state => state.session?.user?.id);
     const history = useHistory();
 
+    console.log("we made it to Delete-Playlist Modal");
 
     async function removePlaylist() {;
         if (currentUserId === playlist.creatorId) {
@@ -38,7 +39,6 @@ function DeletePlaylistModal() {
                     </NavLink>
                 </div>
             </div>
-        
         </>
     )
 }
@@ -52,7 +52,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     console.log("we're mapping dispatch to props!");
     return {
-        openModal: () => dispatch(openModal('deletePlaylist')),
+        // openModal: () => dispatch(openModal('deletePlaylist')),
         closeModal: () => dispatch(closeModal())
     };
 };

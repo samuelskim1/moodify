@@ -18,13 +18,14 @@ function Modal({ modal, closeModal }) {
     let component;
     switch (modal) {
         case 'Login/Signup-Prompt':
-            component = <LoginAndSignupPrompt />;
+            component = <LoginAndSignupPrompt/>;
             break;
         case 'Delete-Playlist':
             component = <DeletePlaylistModal/>;
             break;
         case 'Create-Playlist-Login/Signup-Prompt':
             component = <PlaylistCreationLoginSignupPrompt/>
+            break;
         default:
             return null;
     }
@@ -47,7 +48,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-    return {
+    return {            
         closeModal: () => dispatch(closeModal())
     };
 };

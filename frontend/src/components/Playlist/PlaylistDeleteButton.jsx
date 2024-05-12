@@ -1,11 +1,11 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector, connect } from 'react-redux';
 import { deletePlaylist } from '../../store/playlist';
 import { useHistory } from 'react-router-dom';
 import './PlaylistDeleteButton.css'
 import { useEffect } from 'react';
 import { openModal, closeModal } from '../../store/modal';
 
-function PlaylistDeleteButton({playlist}) {
+function PlaylistDeleteButton({playlist, openModal}) {
     // const dispatch = useDispatch();
     // const currentUserId = useSelector(state => state.session?.user?.id);
     // const history = useHistory();
@@ -21,14 +21,35 @@ function PlaylistDeleteButton({playlist}) {
     //         await dispatch(deletePlaylist(playlistId));
     //         history.push("/");
     //     }
-        
+    
+    const openPlaylistDeleteModal = (e) => {
+        e.preventDefault();
+        openModal('Delete-Playlist');
+        console.log("opening Playlist Delete Modal!")
+    };
+
     // }
 
     return (
-        <div className="delete-button-container" onClick={openModal("Delete-Playlist")}>
+        <div className="delete-button-container" onClick={(e) => openPlaylistDeleteModal(e)}>
             <i className="fa-regular fa-trash-can"></i>
         </div>
     )
-}
 
-export default PlaylistDeleteButton;
+};
+
+const mapStateToProps = state => {
+    return {
+        modal: state.modal
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    console.log("we're mapping dispatch to props!");
+    return {
+        openModal: () => dispatch(openModal('Delete-Playlist')),
+        closeModal: () => dispatch(closeModal())
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlaylistDeleteButton);
