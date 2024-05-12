@@ -10,15 +10,19 @@ function DeletePlaylistModal() {
     const playlist = useSelector(state => state.playlists[playlistId]);
     const currentUserId = useSelector(state => state.session?.user?.id);
     const history = useHistory();
+    console.log(playlist);
+    console.log(playlistId);
 
     console.log("we made it to Delete-Playlist Modal");
 
-    async function removePlaylist() {;
+    async function removePlaylist(e) {
+        e.preventDefault();
         if (currentUserId === playlist.creatorId) {
             await dispatch(deletePlaylist(playlistId));
+            closeModal();
             history.push("/");
         }
-        closeModal();
+        
     }
 
 
@@ -35,7 +39,7 @@ function DeletePlaylistModal() {
                     <p>Don't have an account? Create a free Moodify account today!</p>
                     <button onClick={closeModal} className='modal-cancel-button'>Cancel</button>
                     <NavLink to="/">
-                        <button onClick={removePlaylist} className='modal-playlist-delete-button'>Delete</button>
+                        <button onClick={(e) => removePlaylist(e)} className='modal-playlist-delete-button'>Delete</button>
                     </NavLink>
                 </div>
             </div>
