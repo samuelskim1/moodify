@@ -8,4 +8,4 @@ function EditPlaylistButton({playlist}) {
         </div>
     )
 }
-export default PlaylistDeleteButton;
+export default EditPlaylistButton;

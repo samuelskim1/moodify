@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useHistory, NavLink } from 'react-router-dom';
 import { openModal, closeModal } from '../../store/modal';
 
-function editPlaylistModal() {
+function EditPlaylistModal() {
 
     // async function removePlaylist() {
     //     const playlistId = playlist.id;
@@ -52,4 +52,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(editPlaylistModal)
+export default connect(mapStateToProps, mapDispatchToProps)(EditPlaylistModal)

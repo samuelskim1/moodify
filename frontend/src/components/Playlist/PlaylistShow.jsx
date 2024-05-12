@@ -7,7 +7,7 @@ import Navigation from "../Navigation";
 import SideBar from "../SideBar/Sidebar";
 import TrackPlaylistItem from "./TrackPlaylistItem";
 import PlaylistDeleteButton from "./PlaylistDeleteButton";
-import EditPlaylistModal from "../Modal/EditPlaylistModal";
+import EditPlaylistButton from "./EditPlaylistButton";
 import './PlaylistShow.css'
 
 function PlaylistShow() {
